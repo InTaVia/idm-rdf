@@ -1,12 +1,8 @@
 @prefix : <http://www.example.org/2021/intavia_idm#> .
-@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
-@prefix edm: <http://www.europeana.eu/schemas/edm/> .
-@prefix ore: <http://www.openarchives.org/ore/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix bioc: <http://ldf.fi/schema/bioc/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.example.org/2021/intavia_idm> .
 
@@ -18,359 +14,325 @@
 #################################################################
 
 ###  http://ldf.fi/schema/bioc/bearer_of
-bioc:bearer_of rdf:type owl:ObjectProperty ;
-               owl:inverseOf bioc:inheres_in ;
-               rdfs:domain crm:E39_Actor ;
-               rdfs:range bioc:Actor_Role ;
-               rdfs:comment "enduring or time limited unary role"@en ;
-               rdfs:label "bearer of (bioc)"@en .
+<http://ldf.fi/schema/bioc/bearer_of> rdf:type owl:ObjectProperty ;
+                                      owl:inverseOf <http://ldf.fi/schema/bioc/inheres_in> ;
+                                      rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                      rdfs:range <http://ldf.fi/schema/bioc/Actor_Role> ;
+                                      rdfs:comment "enduring or time limited unary role"@en ;
+                                      rdfs:label "bearer of (bioc)"@en .
 
 
 ###  http://ldf.fi/schema/bioc/had_participant_in_role
-bioc:had_participant_in_role rdf:type owl:ObjectProperty ;
-                             rdfs:domain crm:E5_Event ;
-                             rdfs:range bioc:Actor_Role ;
-                             rdfs:label "had participant in role (bioc)"@en .
+<http://ldf.fi/schema/bioc/had_participant_in_role> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+                                                    rdfs:range <http://ldf.fi/schema/bioc/Actor_Role> ;
+                                                    rdfs:label "had participant in role (bioc)"@en .
 
 
 ###  http://ldf.fi/schema/bioc/has_family_relation
-bioc:has_family_relation rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf bioc:has_person_relation ;
-                         rdfs:domain crm:E21_Person ;
-                         rdfs:range bioc:Family_Relationship_Role ;
-                         rdfs:label "has family relation (bioc)"@en .
+<http://ldf.fi/schema/bioc/has_family_relation> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://ldf.fi/schema/bioc/has_person_relation> ;
+                                                rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                                rdfs:range <http://ldf.fi/schema/bioc/Family_Relationship_Role> ;
+                                                rdfs:label "has family relation (bioc)"@en .
 
 
 ###  http://ldf.fi/schema/bioc/has_gender
-bioc:has_gender rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf bioc:bearer_of ;
-                rdfs:domain crm:E21_Person ;
-                rdfs:range bioc:Gender ;
-                rdfs:comment "enduring  or time limited unary occupation role"@en ;
-                rdfs:label "has gender"@en .
+<http://ldf.fi/schema/bioc/has_gender> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf <http://ldf.fi/schema/bioc/bearer_of> ;
+                                       rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                       rdfs:range <http://ldf.fi/schema/bioc/Gender> ;
+                                       rdfs:comment "enduring  or time limited unary occupation role"@en ;
+                                       rdfs:label "has gender"@en .
 
 
 ###  http://ldf.fi/schema/bioc/has_group_relation
-bioc:has_group_relation rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf bioc:has_relation ;
-                        rdfs:domain crm:E21_Person ;
-                        rdfs:range bioc:Group_Relationship_Role ;
-                        rdfs:label "has group relation"@en .
+<http://ldf.fi/schema/bioc/has_group_relation> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://ldf.fi/schema/bioc/has_relation> ;
+                                               rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                               rdfs:range <http://ldf.fi/schema/bioc/Group_Relationship_Role> ;
+                                               rdfs:label "has group relation"@en .
 
 
 ###  http://ldf.fi/schema/bioc/has_intergroup_relation
-bioc:has_intergroup_relation rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf bioc:has_relation ;
-                             rdfs:domain crm:E74_Group ;
-                             rdfs:range bioc:Intergroup_Relationship_Role ;
-                             rdfs:label "has intergroup relation"@en .
+<http://ldf.fi/schema/bioc/has_intergroup_relation> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://ldf.fi/schema/bioc/has_relation> ;
+                                                    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E74_Group> ;
+                                                    rdfs:range <http://ldf.fi/schema/bioc/Intergroup_Relationship_Role> ;
+                                                    rdfs:label "has intergroup relation"@en .
 
 
 ###  http://ldf.fi/schema/bioc/has_nationality
-bioc:has_nationality rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf bioc:bearer_of ;
-                     rdfs:domain crm:E21_Person ;
-                     rdfs:range bioc:Nationality ;
-                     rdfs:label "has nationality"@en .
+<http://ldf.fi/schema/bioc/has_nationality> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://ldf.fi/schema/bioc/bearer_of> ;
+                                            rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                            rdfs:range <http://ldf.fi/schema/bioc/Nationality> ;
+                                            rdfs:label "has nationality"@en .
 
 
 ###  http://ldf.fi/schema/bioc/has_occupation
-bioc:has_occupation rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf bioc:bearer_of ;
-                    rdfs:domain crm:E21_Person ;
-                    rdfs:range bioc:Occupation ;
-                    rdfs:comment "enduring  or time limited unary occupation role"@en ;
-                    rdfs:label "has occupation"@en .
+<http://ldf.fi/schema/bioc/has_occupation> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://ldf.fi/schema/bioc/bearer_of> ;
+                                           rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                           rdfs:range <http://ldf.fi/schema/bioc/Occupation> ;
+                                           rdfs:comment "enduring  or time limited unary occupation role"@en ;
+                                           rdfs:label "has occupation"@en .
 
 
 ###  http://ldf.fi/schema/bioc/has_person_relation
-bioc:has_person_relation rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf bioc:has_relation ;
-                         rdfs:domain crm:E21_Person ;
-                         rdfs:range bioc:Person_Relationship_Role ;
-                         rdfs:label "has person relation (bioc)"@en .
+<http://ldf.fi/schema/bioc/has_person_relation> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://ldf.fi/schema/bioc/has_relation> ;
+                                                rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                                rdfs:range <http://ldf.fi/schema/bioc/Person_Relationship_Role> ;
+                                                rdfs:label "has person relation (bioc)"@en .
 
 
 ###  http://ldf.fi/schema/bioc/has_relation
-bioc:has_relation rdf:type owl:ObjectProperty ;
-                  owl:inverseOf bioc:in_relation_to ;
-                  rdfs:domain crm:E39_Actor ;
-                  rdfs:range bioc:Binary_Relationship_Role ;
-                  rdfs:comment "Interpersonal relationships are represented by relating an actor (a person or group) to another actor in a role by using has_relation or one of its properties."@en ;
-                  rdfs:label "has relation (bioc)"@en .
+<http://ldf.fi/schema/bioc/has_relation> rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf <http://ldf.fi/schema/bioc/in_relation_to> ;
+                                         rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+                                         rdfs:range <http://ldf.fi/schema/bioc/Binary_Relationship_Role> ;
+                                         rdfs:comment "Interpersonal relationships are represented by relating an actor (a person or group) to another actor in a role by using has_relation or one of its properties."@en ;
+                                         rdfs:label "has relation (bioc)"@en .
 
 
 ###  http://ldf.fi/schema/bioc/has_social_relation
-bioc:has_social_relation rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf bioc:has_person_relation ;
-                         rdfs:domain crm:E21_Person ;
-                         rdfs:range bioc:Social_Relationship_Role ;
-                         rdfs:label "has social relation (bioc)"@en .
+<http://ldf.fi/schema/bioc/has_social_relation> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <http://ldf.fi/schema/bioc/has_person_relation> ;
+                                                rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                                rdfs:range <http://ldf.fi/schema/bioc/Social_Relationship_Role> ;
+                                                rdfs:label "has social relation (bioc)"@en .
 
 
 ###  http://ldf.fi/schema/bioc/in_relation_to
-bioc:in_relation_to rdf:type owl:ObjectProperty ;
-                    rdfs:domain bioc:Actor_Role ;
-                    rdfs:range crm:E39_Actor ;
-                    rdfs:label "in relation to (bioc)"@en .
+<http://ldf.fi/schema/bioc/in_relation_to> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://ldf.fi/schema/bioc/Actor_Role> ;
+                                           rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+                                           rdfs:label "in relation to (bioc)"@en .
 
 
 ###  http://ldf.fi/schema/bioc/inheres_in
-bioc:inheres_in rdf:type owl:ObjectProperty ;
-                rdfs:domain bioc:Actor_Role ;
-                rdfs:range crm:E21_Person ;
-                rdfs:comment """Inverse property of bioc:bearer_of. bioc:inheres_in connects a role which is attached to an actor in an interpersonal relationship and the other person in this relationship.
+<http://ldf.fi/schema/bioc/inheres_in> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://ldf.fi/schema/bioc/Actor_Role> ;
+                                       rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                       rdfs:comment """Inverse property of bioc:bearer_of. bioc:inheres_in connects a role which is attached to an actor in an interpersonal relationship and the other person in this relationship.
 Relationships are represented by relating an actor (a person or group) to another actor in a role by using one of the subproperties of the property bioc:has relation."""@en ;
-                rdfs:label "inheres in (bioc)"@en .
+                                       rdfs:label "inheres in (bioc)"@en .
 
 
 ###  http://ldf.fi/schema/bioc/occurred_in_the_presence_of_in_role
-bioc:occurred_in_the_presence_of_in_role rdf:type owl:ObjectProperty ;
-                                         rdfs:domain crm:E5_Event ;
-                                         rdfs:range bioc:Thing_Role ;
-                                         rdfs:label "occurred in the presence of in role"@en .
+<http://ldf.fi/schema/bioc/occurred_in_the_presence_of_in_role> rdf:type owl:ObjectProperty ;
+                                                                rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+                                                                rdfs:range <http://ldf.fi/schema/bioc/Thing_Role> ;
+                                                                rdfs:label "occurred in the presence of in role"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of
-crm:P100_was_death_of rdf:type owl:ObjectProperty ;
-                      rdfs:domain crm:E69_Death ;
-                      rdfs:range crm:E21_Person ;
-                      rdfs:comment "This property property links an E69 Death event to the E21 Person that died"@en ;
-                      rdfs:label "was death of (crm)"@en .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/P108_has_produced
-crm:P108_has_produced rdf:type owl:ObjectProperty ;
-                      rdfs:domain crm:E12_Production ;
-                      rdfs:range crm:E24_Physical_Human-Made_Thing ;
-                      rdfs:comment """This property identifies the instance of E24 Physical Human-Made Thing that came into existence as a result of the instance of E12 Production.
-The identity of an instance of E24 Physical Human-Made Thing is not defined by its matter, but by its existence as a subject of documentation. An E12 Production can result in the creation of multiple instances of E24 Physical Human-Made Thing."""@en ;
-                      rdfs:label "has produced (crm)"@en .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/P11_had_participant
-crm:P11_had_participant rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf crm:P12i_was_present_at ;
-                        rdfs:domain crm:E21_Person ;
-                        rdfs:comment "This property describes the active or passive participation of instances of E39 Actors in an E5 Event. It connects the life-line of the related E39 Actor with the E53 Place and E50 Date of the event. The property implies that the Actor was involved in the event but does not imply any causal relationship. The subject of a portrait can be said to have participated in the creation of the portrait."@en ;
-                        rdfs:label "had participant (crm)"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E69_Death> ;
+                                                       rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                                       rdfs:comment "This property property links an E69 Death event to the E21 Person that died"@en ;
+                                                       rdfs:label "was death of (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at
-crm:P12i_was_present_at rdf:type owl:ObjectProperty ;
-                        rdfs:domain crm:E39_Actor ,
-                                    edm:ProvidedCHO ;
-                        rdfs:range crm:E4_Period ;
-                        rdfs:comment "equivalent to edm:was present at (This property associates the people, things or information resources with an event at which they were present)."@en ;
-                        rdfs:label "was present at"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ,
+                                                                     <http://www.europeana.eu/schemas/edm/ProvidedCHO> ;
+                                                         rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E4_Period> ;
+                                                         rdfs:comment "equivalent to edm:was present at (This property associates the people, things or information resources with an event at which they were present)."@en ;
+                                                         rdfs:label "was present at"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P148_has_component
-crm:P148_has_component rdf:type owl:ObjectProperty ;
-                       rdfs:domain crm:E41_Appellation ;
-                       rdfs:range crm:E41_Appellation ;
-                       rdfs:comment "This property associates an instance of E89 Propositional Object with a structural part of it that is by itself an instance of E89 Propositional Object."@en ;
-                       rdfs:label "has component (crm)"@en .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/P15_was_influenced_by
-crm:P15_was_influenced_by rdf:type owl:ObjectProperty ;
-                          rdfs:domain crm:E7_Activity ;
-                          rdfs:range crm:E1_CRM_Entity ;
-                          rdfs:comment """This is a high-level property, which captures the relationship between an instance of E7 Activity and anything, that is, an instance of E1 CRM Entity that may have had some bearing upon it.
-The property has more specific sub properties.
-
-INTAVIA: property is mainly needed for Production Event (also for Move)"""@en ;
-                          rdfs:label "was influenced by"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P148_has_component> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> ;
+                                                        rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> ;
+                                                        rdfs:comment "This property associates an instance of E89 Propositional Object with a structural part of it that is by itself an instance of E89 Propositional Object."@en ;
+                                                        rdfs:label "has component (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P168_place_is_defined_by
-crm:P168_place_is_defined_by rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf crm:P1_is_identified_by ;
-                             rdfs:domain crm:E53_Place ;
-                             rdfs:range crm:E94_Space_Primitive ;
-                             rdfs:comment "This property associates an instance of E53 Place with an instance of E94 Space Primitive that defines it. Syntactic variants or use of different scripts may result in multiple instances of E94 Space Primitive defining exactly the same place. Transformations between different reference systems always result in new definitions of places approximating each other and not in alternative definitions."@en ;
-                             rdfs:label "place is defined by (crm)"@en .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object
-crm:P16_used_specific_object rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf crm:P15_was_influenced_by ;
-                             rdfs:domain crm:E7_Activity ;
-                             rdfs:range crm:E70_Thing ;
-                             rdfs:comment """This property describes the use of material or immaterial things in a way essential to the performance or the outcome of an instance of E7 Activity.
-This property typically applies to tools, instruments, moulds, raw materials and items embedded in a product. It implies that the presence of the object in question was a necessary condition for the action. For example, the activity of writing this text required the use of a computer. An immaterial thing can be used if at least one of its carriers is present. For example, the software tools on a computer.
-Another example is the use of a particular name by a particular group of people over some span to identify a thing, such as a settlement. In this case, the physical carriers of this name are at least the people understanding its use.
-
-INTAVIA: property is mainly needed for Production Event (also for Move)"""@en ;
-                             rdfs:label "used specific object (crm)"@en .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/P17_was_motivated_by
-crm:P17_was_motivated_by rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf crm:P15_was_influenced_by ;
-                         rdfs:comment """his property describes an item or items that are regarded as a reason for carrying out the instance of E7 Activity.
-For example, the discovery of a large hoard of treasure may call for a celebration, an order from headquarters can start a military manoeuvre.
-
-INTAVIA: property is mainly needed for Production Event (also for Move)"""@en ;
-                         rdfs:label "was motivated by (crm)"@en .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/P19_was_intended_use_of
-crm:P19_was_intended_use_of rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf crm:P15_was_influenced_by ;
-                            rdfs:domain crm:E7_Activity ;
-                            rdfs:range crm:E24_Physical_Human-Made_Thing ;
-                            rdfs:comment """This property relates an instance of E7 Activity with instances of E71 Human-Made Thing, created specifically for use in the activity.
-This is distinct from the intended use of an item in some general type of activity such as the book of common prayer which was intended for use in Church of England services (see P101 had as general use (was use of))."""@en ;
-                            rdfs:label "was intended use of (crm)"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P168_place_is_defined_by> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> ;
+                                                              rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                              rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive> ;
+                                                              rdfs:comment "This property associates an instance of E53 Place with an instance of E94 Space Primitive that defines it. Syntactic variants or use of different scripts may result in multiple instances of E94 Space Primitive defining exactly the same place. Transformations between different reference systems always result in new definitions of places approximating each other and not in alternative definitions."@en ;
+                                                              rdfs:label "place is defined by (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by
-crm:P1_is_identified_by rdf:type owl:ObjectProperty ;
-                        rdfs:domain crm:E21_Person ,
-                                    crm:E53_Place ,
-                                    crm:E74_Group ;
-                        rdfs:range crm:E41_Appellation ,
-                                   crm:E42_Identifier ;
-                        rdfs:label "is identified by (crm)"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ,
+                                                                     <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ,
+                                                                     <http://www.cidoc-crm.org/cidoc-crm/E74_Group> ;
+                                                         rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> ,
+                                                                    <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> ;
+                                                         rdfs:label "is identified by (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P26_moved_to
-crm:P26_moved_to rdf:type owl:ObjectProperty ;
-                 rdfs:domain crm:E39_Actor ,
-                             edm:ProvidedCHO ;
-                 rdfs:range crm:E53_Place ;
-                 rdfs:comment """This property identifies a destination of a E9 Move.
+<http://www.cidoc-crm.org/cidoc-crm/P26_moved_to> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ,
+                                                              <http://www.europeana.eu/schemas/edm/ProvidedCHO> ;
+                                                  rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                  rdfs:comment """This property identifies a destination of a E9 Move.
 A move will be linked to a destination, such as the move of an artefact from storage to display. A move may be linked to many terminal instances of E53 Place by multiple instances of this property. In this case the move describes a distribution of a set of objects. The area of the move includes the origin(s), route and destination(s).
 Therefore the described destination is an instance of E53 Place which P89 falls within (contains) the instance of E53 Place the move P7 took place at."""@en ;
-                 rdfs:label "moved to"@en .
+                                                  rdfs:label "moved to"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P27_moved_from
-crm:P27_moved_from rdf:type owl:ObjectProperty ;
-                   rdfs:domain crm:E39_Actor ,
-                               edm:ProvidedCHO ;
-                   rdfs:range crm:E53_Place ;
-                   rdfs:label "moved from"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P27_moved_from> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ,
+                                                                <http://www.europeana.eu/schemas/edm/ProvidedCHO> ;
+                                                    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                    rdfs:label "moved from"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P2_has_type
-crm:P2_has_type rdf:type owl:ObjectProperty ;
-                owl:equivalentProperty edm:hasType ;
-                rdfs:domain bioc:Person_Relationship_Role ,
-                            bioc:Unary_Role ,
-                            crm:E41_Appellation ,
-                            crm:E42_Identifier ,
-                            edm:ProvidedCHO ;
-                rdfs:range crm:E55_Type ;
-                rdfs:label "has type (crm)"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P2_has_type> rdf:type owl:ObjectProperty ;
+                                                 owl:equivalentProperty <http://www.europeana.eu/schemas/edm/hasType> ;
+                                                 rdfs:domain <http://ldf.fi/schema/bioc/Person_Relationship_Role> ,
+                                                             <http://ldf.fi/schema/bioc/Unary_Role> ,
+                                                             <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> ,
+                                                             <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> ,
+                                                             <http://www.europeana.eu/schemas/edm/ProvidedCHO> ;
+                                                 rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+                                                 rdfs:label "has type (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P37_assigned
-crm:P37_assigned rdf:type owl:ObjectProperty ;
-                 rdfs:domain crm:E15_Identifier_Assignment ;
-                 rdfs:range crm:E42_Identifier ;
-                 rdfs:comment """This property records the identifier that was assigned to an item in an instance of P37 Identifier Assignment.
+<http://www.cidoc-crm.org/cidoc-crm/P37_assigned> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment> ;
+                                                  rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> ;
+                                                  rdfs:comment """This property records the identifier that was assigned to an item in an instance of P37 Identifier Assignment.
 The same identifier may be assigned on more than one occasion.
 An Identifier might be created prior to an assignment."""@en ;
-                 rdfs:label "assigned (crm)"@en .
+                                                  rdfs:label "assigned (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P4_has_time_span
-crm:P4_has_time_span rdf:type owl:ObjectProperty ;
-                     owl:equivalentProperty edm:occuredAt ;
-                     rdfs:domain crm:E2_Temporal_Entity ;
-                     rdfs:range crm:E52_Time_Span ;
-                     rdfs:label "has time span (crm)"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P4_has_time_span> rdf:type owl:ObjectProperty ;
+                                                      owl:equivalentProperty <http://www.europeana.eu/schemas/edm/occuredAt> ;
+                                                      rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+                                                      rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E52_Time_Span> ;
+                                                      rdfs:label "has time span (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P72_has_language
-crm:P72_has_language rdf:type owl:ObjectProperty ;
-                     rdfs:domain crm:E41_Appellation ;
-                     rdfs:range crm:E56_Language ;
-                     rdfs:comment "P72_has_language"@en ;
-                     rdfs:label "has language (crm)"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P72_has_language> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> ;
+                                                      rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E56_Language> ;
+                                                      rdfs:comment "P72_has_language"@en ;
+                                                      rdfs:label "has language (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at
-crm:P7_took_place_at rdf:type owl:ObjectProperty ;
-                     owl:equivalentProperty edm:happenedAt ;
-                     rdfs:domain crm:E4_Period ;
-                     rdfs:range crm:E53_Place ;
-                     rdfs:comment "This property describes the spatial location of an instance of E4 Period. The related E53 Place should be seen as an approximation of the geographical area within which the phenomena that characterise the period in question occurred. P7took place at (witnessed) does not convey any meaning other than spatial positioning (generally on the surface of the earth). For example, the period \"Révolution française\" can be said to have taken place in “France”, the “Victorian” period, may be said to have taken place in “Britain” and its colonies, as well as other parts of Europe and north America. A period can take place at multiple locations. It is a shortcut of the more fully developed path from E4 Period through P161 has spatial projection, E53 Place, P89 falls within (contains) to E53 Place."@en ;
-                     rdfs:label "took place at (crm)"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at> rdf:type owl:ObjectProperty ;
+                                                      owl:equivalentProperty <http://www.europeana.eu/schemas/edm/happenedAt> ;
+                                                      rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E4_Period> ;
+                                                      rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                      rdfs:comment "This property describes the spatial location of an instance of E4 Period. The related E53 Place should be seen as an approximation of the geographical area within which the phenomena that characterise the period in question occurred. P7took place at (witnessed) does not convey any meaning other than spatial positioning (generally on the surface of the earth). For example, the period \"Révolution française\" can be said to have taken place in “France”, the “Victorian” period, may be said to have taken place in “Britain” and its colonies, as well as other parts of Europe and north America. A period can take place at multiple locations. It is a shortcut of the more fully developed path from E4 Period through P161 has spatial projection, E53 Place, P89 falls within (contains) to E53 Place."@en ;
+                                                      rdfs:label "took place at (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life
-crm:P98_brought_into_life rdf:type owl:ObjectProperty ;
-                          rdfs:domain crm:E67_Birth ;
-                          rdfs:range crm:E21_Person ;
-                          rdfs:comment "This property links an E67Birth event to an E21 Person in the role of offspring. Twins, triplets etc. are brought into life by the same Birth event. This is not intended for use with general Natural History material, only people. There is no explicit method for modelling conception and gestation except by using extensions."@en ;
-                          rdfs:label "brought into life (crm)"@en .
+<http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E67_Birth> ;
+                                                           rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> ;
+                                                           rdfs:comment "This property links an E67Birth event to an E21 Person in the role of offspring. Twins, triplets etc. are brought into life by the same Birth event. This is not intended for use with general Natural History material, only people. There is no explicit method for modelling conception and gestation except by using extensions."@en ;
+                                                           rdfs:label "brought into life (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/moved
-crm:moved rdf:type owl:ObjectProperty ;
-          rdfs:domain crm:E9_Move ;
-          rdfs:range crm:E39_Actor ,
-                     edm:ProvidedCHO ;
-          rdfs:comment """This property identifies an instance of E19 Physical Object that was moved by a move event. A move must concern at least one object.
+<http://www.cidoc-crm.org/cidoc-crm/moved> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E9_Move> ;
+                                           rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ,
+                                                      <http://www.europeana.eu/schemas/edm/ProvidedCHO> ;
+                                           rdfs:comment """This property identifies an instance of E19 Physical Object that was moved by a move event. A move must concern at least one object.
 
 The property implies the object’s passive participation. For example, Monet’s painting “Impression sunrise” was moved for the first Impressionist exhibition in 1874."""@en ;
-          rdfs:label "move"@en .
+                                           rdfs:label "move"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/happenedAt
-edm:happenedAt rdf:type owl:ObjectProperty ;
-               rdfs:domain crm:E4_Period ,
-                           edm:Event ;
-               rdfs:range crm:E53_Place ;
-               rdfs:comment """This property associates an event with the place at which the event
+<http://www.europeana.eu/schemas/edm/happenedAt> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E4_Period> ,
+                                                             <http://www.europeana.eu/schemas/edm/Event> ;
+                                                 rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E53_Place> ;
+                                                 rdfs:comment """This property associates an event with the place at which the event
 happened."""@en ;
-               rdfs:label "happened at (edm)"@en .
+                                                 rdfs:label "happened at (edm)"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/hasType
-edm:hasType rdf:type owl:ObjectProperty ;
-            rdfs:comment """This property relates a resource with the concepts it belongs to in a suitable
+<http://www.europeana.eu/schemas/edm/hasType> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                              rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+                                              rdfs:comment """This property relates a resource with the concepts it belongs to in a suitable
 type system such as MIME or any thesaurus that captures categories of objects in a given field (e.g., the “Objects” facet in Getty’s Art and Architecture Thesaurus). It does not capture aboutness."""@en ;
-            rdfs:label "has type (edm)"@en .
+                                              rdfs:label "has type (edm)"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/occuredAt
-edm:occuredAt rdf:type owl:ObjectProperty ;
-              rdfs:domain crm:E2_Temporal_Entity ;
-              rdfs:range crm:E52_Time_Span ;
-              rdfs:comment "This property associates an event to the smallest known time span that overlaps with the occurrence of that event."@en ;
-              rdfs:label "Occured At (edm)"@en .
+<http://www.europeana.eu/schemas/edm/occuredAt> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+                                                rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E52_Time_Span> ;
+                                                rdfs:comment "This property associates an event to the smallest known time span that overlaps with the occurrence of that event."@en ;
+                                                rdfs:label "Occured At (edm)"@en .
+
+
+###  http://www.example.org/2021/intavia_idm#cho_proxy_for
+:cho_proxy_for rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://www.openarchives.org/ore/terms/proxyFor> ;
+               rdfs:domain <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
+               rdfs:range <http://www.europeana.eu/schemas/edm/ProvidedCHO> .
+
+
+###  http://www.example.org/2021/intavia_idm#event_proxy_for
+:event_proxy_for rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://www.openarchives.org/ore/terms/proxyFor> ;
+                 rdfs:domain <http://www.example.org/2021/intavia_idm#Event_Proxy_(ore)> ;
+                 rdfs:range <http://www.europeana.eu/schemas/edm/Event> .
+
+
+###  http://www.example.org/2021/intavia_idm#group_proxy_for
+:group_proxy_for rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://www.openarchives.org/ore/terms/proxyFor> ;
+                 rdfs:domain <http://www.example.org/2021/intavia_idm#Group_Proxy_(ore)> ;
+                 rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E74_Group> .
+
+
+###  http://www.example.org/2021/intavia_idm#person_proxy_for
+:person_proxy_for rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.openarchives.org/ore/terms/proxyFor> ;
+                  rdfs:domain <http://www.example.org/2021/intavia_idm#Person_Proxy_(ore)> ;
+                  rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
 
 
 ###  http://www.openarchives.org/ore/terms/aggregates
-ore:aggregates rdf:type owl:ObjectProperty ;
-               rdfs:domain ore:Aggregation ;
-               rdfs:range edm:InformationResource ,
-                          edm:ProvidedCHO ;
-               rdfs:comment "Aggregations, by definition, aggregate resources. The ore:aggregates relationship expresses that the object resource is a member of the set of Aggregated Resources of the subject (the Aggregation). This relationship between the Aggregation and its Aggregated Resources is thus more specific than a simple part/whole relationship, as expressed by dcterms:hasPart for example."@en ;
-               rdfs:label "aggregates (ore)"@en .
+<http://www.openarchives.org/ore/terms/aggregates> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://www.openarchives.org/ore/terms/Aggregation> ;
+                                                   rdfs:range <http://www.europeana.eu/schemas/edm/InformationResource> ,
+                                                              <http://www.europeana.eu/schemas/edm/ProvidedCHO> ,
+                                                              <http://www.openarchives.org/ore/terms/Proxy> ;
+                                                   rdfs:comment "Aggregations, by definition, aggregate resources. The ore:aggregates relationship expresses that the object resource is a member of the set of Aggregated Resources of the subject (the Aggregation). This relationship between the Aggregation and its Aggregated Resources is thus more specific than a simple part/whole relationship, as expressed by dcterms:hasPart for example."@en ;
+                                                   rdfs:label "aggregates (ore)"@en .
 
 
 ###  http://www.openarchives.org/ore/terms/proxyFor
-ore:proxyFor rdf:type owl:ObjectProperty ;
-             rdfs:domain <http://www.openarchives.org/ore/termsProxy> ;
-             rdfs:range crm:E39_Actor ,
-                        crm:E5_Event ,
-                        crm:E70_Thing ;
-             rdfs:comment "Proxy objects are used to represent a Resource as it is aggregated in a particular Aggregation. The ore:proxyFor relationship is used to link the proxy to the Aggregated Resource it is a proxy for. The subject of the relationship is a Proxy object, and the object of the relationship is the Aggregated Resource."@en ;
-             rdfs:label "proxy for (ore)"@en .
+<http://www.openarchives.org/ore/terms/proxyFor> rdf:type owl:ObjectProperty ;
+                                                 rdfs:comment "Proxy objects are used to represent a Resource as it is aggregated in a particular Aggregation. The ore:proxyFor relationship is used to link the proxy to the Aggregated Resource it is a proxy for. The subject of the relationship is a Proxy object, and the object of the relationship is the Aggregated Resource."@en ;
+                                                 rdfs:label "proxy for (ore)"@en .
 
 
 ###  http://www.openarchives.org/ore/terms/proxyIn
-ore:proxyIn rdf:type owl:ObjectProperty ;
-            rdfs:domain <http://www.openarchives.org/ore/termsProxy> ;
-            rdfs:range ore:Aggregation ;
-            rdfs:comment "Proxy objects must also link to the Aggregation in which the resource being proxied is aggregated. The ore:proxyIn relationship is used for this purpose. The subject of the relationship is a Proxy object, and the object of the relationship is the Aggregation."@en ;
-            rdfs:label "proxy in (ore)"@en .
+<http://www.openarchives.org/ore/terms/proxyIn> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://www.openarchives.org/ore/terms/Proxy> ;
+                                                rdfs:range <http://www.openarchives.org/ore/terms/Aggregation> ;
+                                                rdfs:comment "Proxy objects must also link to the Aggregation in which the resource being proxied is aggregated. The ore:proxyIn relationship is used for this purpose. The subject of the relationship is a Proxy object, and the object of the relationship is the Aggregation."@en ;
+                                                rdfs:label "proxy in (ore)"@en .
 
 
 #################################################################
@@ -378,306 +340,271 @@ ore:proxyIn rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  http://ldf.fi/schema/bioc/Actor_Role
-bioc:Actor_Role rdf:type owl:Class ;
-                rdfs:subClassOf bioc:Entity_Role ;
-                rdfs:label "Actor Role"@en .
+<http://ldf.fi/schema/bioc/Actor_Role> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://ldf.fi/schema/bioc/Entity_Role> ;
+                                       rdfs:label "Actor Role"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Binary_Relationship_Role
-bioc:Binary_Relationship_Role rdf:type owl:Class ;
-                              rdfs:subClassOf bioc:Actor_Role ;
-                              rdfs:comment "This is an atemporal role, i.e., the role exists for the duration of its bearer's existence."@en ;
-                              rdfs:label "Binary Relationship Role"@en .
+<http://ldf.fi/schema/bioc/Binary_Relationship_Role> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://ldf.fi/schema/bioc/Actor_Role> ;
+                                                     rdfs:comment "This is an atemporal role, i.e., the role exists for the duration of its bearer's existence."@en ;
+                                                     rdfs:label "Binary Relationship Role"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Entity_Role
-bioc:Entity_Role rdf:type owl:Class ;
-                 rdfs:subClassOf crm:E1_CRM_Entity ;
-                 rdfs:label "Entity Role (biocrm)"@en .
+<http://ldf.fi/schema/bioc/Entity_Role> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                        rdfs:label "Entity Role (biocrm)"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Event_Role
-bioc:Event_Role rdf:type owl:Class ;
-                rdfs:subClassOf bioc:Actor_Role ;
-                rdfs:comment "This is a temporal role, i.e., the role exists only for the duration of the event the it (its bearer) participates in."@en ;
-                rdfs:label "Event Role"@en .
+<http://ldf.fi/schema/bioc/Event_Role> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://ldf.fi/schema/bioc/Actor_Role> ;
+                                       rdfs:comment "This is a temporal role, i.e., the role exists only for the duration of the event the it (its bearer) participates in."@en ;
+                                       rdfs:label "Event Role"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Family_Relationship_Role
-bioc:Family_Relationship_Role rdf:type owl:Class ;
-                              rdfs:subClassOf bioc:Person_Relationship_Role ;
-                              rdfs:label "Family Relationship Role"@en .
+<http://ldf.fi/schema/bioc/Family_Relationship_Role> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://ldf.fi/schema/bioc/Person_Relationship_Role> ;
+                                                     rdfs:label "Family Relationship Role"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Gender
-bioc:Gender rdf:type owl:Class ;
-            rdfs:subClassOf bioc:Unary_Role ;
-            rdfs:label "Gender"@en .
+<http://ldf.fi/schema/bioc/Gender> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://ldf.fi/schema/bioc/Unary_Role> ;
+                                   rdfs:label "Gender"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Group_Relationship_Role
-bioc:Group_Relationship_Role rdf:type owl:Class ;
-                             rdfs:subClassOf bioc:Binary_Relationship_Role ;
-                             rdfs:label "Group Relationship Role"@en .
+<http://ldf.fi/schema/bioc/Group_Relationship_Role> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://ldf.fi/schema/bioc/Binary_Relationship_Role> ;
+                                                    rdfs:label "Group Relationship Role"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Intergroup_Relationship_Role
-bioc:Intergroup_Relationship_Role rdf:type owl:Class ;
-                                  rdfs:subClassOf bioc:Binary_Relationship_Role ;
-                                  rdfs:label "Inter Group Relationship Role"@en .
+<http://ldf.fi/schema/bioc/Intergroup_Relationship_Role> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://ldf.fi/schema/bioc/Binary_Relationship_Role> ;
+                                                         rdfs:label "Inter Group Relationship Role"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Nationality
-bioc:Nationality rdf:type owl:Class ;
-                 rdfs:subClassOf bioc:Unary_Role ;
-                 rdfs:label "Nationality"@en .
+<http://ldf.fi/schema/bioc/Nationality> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://ldf.fi/schema/bioc/Unary_Role> ;
+                                        rdfs:label "Nationality"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Occupation
-bioc:Occupation rdf:type owl:Class ;
-                rdfs:subClassOf bioc:Unary_Role .
+<http://ldf.fi/schema/bioc/Occupation> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://ldf.fi/schema/bioc/Unary_Role> .
 
 
 ###  http://ldf.fi/schema/bioc/Person_Relationship_Role
-bioc:Person_Relationship_Role rdf:type owl:Class ;
-                              rdfs:subClassOf bioc:Binary_Relationship_Role ;
-                              rdfs:label "Person Relationship Role"@en .
+<http://ldf.fi/schema/bioc/Person_Relationship_Role> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://ldf.fi/schema/bioc/Binary_Relationship_Role> ;
+                                                     rdfs:label "Person Relationship Role"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Social_Relationship_Role
-bioc:Social_Relationship_Role rdf:type owl:Class ;
-                              rdfs:subClassOf bioc:Person_Relationship_Role ;
-                              rdfs:label "Social Relationship Role"@en .
+<http://ldf.fi/schema/bioc/Social_Relationship_Role> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://ldf.fi/schema/bioc/Person_Relationship_Role> ;
+                                                     rdfs:label "Social Relationship Role"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Thing_Role
-bioc:Thing_Role rdf:type owl:Class ;
-                rdfs:subClassOf bioc:Entity_Role ;
-                rdfs:label "Thing Role"@en .
+<http://ldf.fi/schema/bioc/Thing_Role> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://ldf.fi/schema/bioc/Entity_Role> ;
+                                       rdfs:label "Thing Role"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Unary_Role
-bioc:Unary_Role rdf:type owl:Class ;
-                rdfs:subClassOf bioc:Actor_Role ;
-                rdfs:comment "This is an atemporal role, i.e., the role exists for the duration of its bearer's existence."@en ;
-                rdfs:label "Unary Role"@en .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/E11_Modification
-crm:E11_Modification rdf:type owl:Class ;
-                     rdfs:subClassOf crm:E7_Activity ;
-                     rdfs:comment """This class comprises instances of E7 Activity that are undertaken to create, alter or change instances of E24 Physical Human-Made Thing.
-This class includes the production of an item from raw materials and other so far undocumented objects. It also includes the conservation treatment of an object.
-Since the distinction between modification and production is not always clear, modification is regarded as the more generally applicable concept. This implies that some items may be consumed or destroyed in an instance of E11 Modification, and that others may be produced as a result of it. An event should also be documented using an instance of E81 Transformation if it results in the destruction of one or more objects and the simultaneous production of others using parts or material from the originals. In this case, the new items have separate identities.
-An activity undertaken on an object which was designed to alter it, but which, in fact, it did not in any seemingly significant way (such as the application of a solvent during conservation which failed to dissolve any part of the object), is still considered as an instance of E11 Modification. Typically, any such activity will leave at least forensic traces of evidence on the object.
-If the instance of E29 Design or Procedure utilized for the modification prescribes the use of specific materials, they should be documented using property P68 foresees use of (use foreseen by): E57 Material of E29 Design or Procedure, rather than via P126 employed (was employed in): E57 Material."""@en ;
-                     rdfs:label "Modification (crm)"@en .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/E12_Production
-crm:E12_Production rdf:type owl:Class ;
-                   rdfs:subClassOf crm:E11_Modification ,
-                                   crm:E63_Beginning_of_Existence ;
-                   rdfs:label "Production (crm)"@en .
+<http://ldf.fi/schema/bioc/Unary_Role> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://ldf.fi/schema/bioc/Actor_Role> ;
+                                       rdfs:comment "This is an atemporal role, i.e., the role exists for the duration of its bearer's existence."@en ;
+                                       rdfs:label "Unary Role"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment
-crm:E13_Attribute_Assignment rdf:type owl:Class ;
-                             rdfs:subClassOf crm:E7_Activity ;
-                             rdfs:comment """This class comprises the actions of making assertions about one property of an object or any single relation between two items or concepts. The type of the property asserted to hold between two items or concepts can be described by the property P177 assigned property type: E55 Type.
+<http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+                                                              rdfs:comment """This class comprises the actions of making assertions about one property of an object or any single relation between two items or concepts. The type of the property asserted to hold between two items or concepts can be described by the property P177 assigned property type: E55 Type.
 For example, the class describes the actions of people making propositions and statements during certain scientific/scholarly procedures, e.g., the person and date when a condition statement was made, an identifier was assigned, the museum object was measured, etc. Which kinds of such assignments and statements need to be documented explicitly in structures of a schema rather than free text, depends on whether this information should be accessible by structured queries.
 This class allows for the documentation of how the respective assignment came about, and whose opinion it was. Note that all instances of properties described in a knowledge base are the opinion of someone. Per default, they are the opinion of the team maintaining the knowledge base. This fact must not individually be registered for all instances of properties provided by the maintaining team, because it would result in an endless recursion of whose opinion was the description of an opinion. Therefore, the use of instances of E13 Attribute Assignment marks the fact, that the maintaining team is in general neutral to the validity of the respective assertion, but registers someone else’s opinion and how it came about.
 All properties assigned in such an action can also be seen as directly relating the respective pair of items or concepts. Multiple use of instances of E13 Attribute Assignment may possibly lead to a collection of contradictory values.
 All cases of properties in this model that are also described indirectly through a subclass of E13 Attribute Assignment are characterised as \"short cuts\" of a path via this subclass. This redundant modelling of two alternative views is preferred because many implementations may have good reasons to model either the action of assertion or the short cut, and the relation between both alternatives can be captured by simple rules."""@en ;
-                             rdfs:label "Attribute Assignment (crm)"@en .
+                                                              rdfs:label "Attribute Assignment (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment
-crm:E15_Identifier_Assignment rdf:type owl:Class ;
-                              rdfs:subClassOf crm:E13_Attribute_Assignment ;
-                              rdfs:label "Identifier Assignment (crm)"@en .
+<http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
+                                                               rdfs:label "Identifier Assignment (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity
-crm:E1_CRM_Entity rdf:type owl:Class ;
-                  rdfs:comment """This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. 
+<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> rdf:type owl:Class ;
+                                                   rdfs:comment """This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. 
 It is an abstract concept providing for three general properties:
 1.	Identification by name or appellation, and in particular by a preferred identifier
 2.	Classification by type, allowing further refinement of the specific subclass an instance belongs to 
 3.	Attachment of free text for the expression of anything not captured by formal properties
 With the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity."""@en ;
-                  rdfs:label "CRM Entity"@en .
+                                                   rdfs:label "CRM Entity"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E21_Person
-crm:E21_Person rdf:type owl:Class ;
-               rdfs:subClassOf crm:E39_Actor ;
-               rdfs:comment """This class comprises real persons who live or are assumed to have lived. 
+<http://www.cidoc-crm.org/cidoc-crm/E21_Person> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+                                                rdfs:comment """This class comprises real persons who live or are assumed to have lived. 
 Legendary figures that may have existed, such as Ulysses and King Arthur, fall into this class if the documentation refers to them as historical figures. In cases where doubt exists as to whether several persons are in fact identical, multiple instances can be created and linked to indicate their relationship. The CRM does not propose a specific form to support reasoning about possible identity."""@en ;
-               rdfs:label "Person"@en .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Human-Made_Thing
-crm:E24_Physical_Human-Made_Thing rdf:type owl:Class ;
-                                  rdfs:subClassOf crm:E70_Thing ;
-                                  rdfs:comment """This class comprises all persistent physical items of any size that are purposely created by human activity. This class comprises, besides others, Human-Made objects, such as a sword, and Human-Made features, such as rock art. For example, a “cup and ring” carving on bedrock is regarded as instance of E24 Physical Human-Made Thing.
-Instances of Human-Made thing may be the result of modifying pre-existing physical things, preserving larger parts or most of the original matter and structure, which poses the question if they are new or even Human-Made, the respective interventions of production made on such original material should be obvious and sufficient to regard that the product has a new, distinct identity and intended function and is human-made. Substantial continuity of the previous matter and structure in the new product can be documented by describing the production process also as an instance of E81 Transformation.
-Whereas interventions of conservation and repair are not regarded to produce a new Human-Made thing, the results of preparation of natural history specimens that substantially change their natural or original state should be regarded as physical Human-Made things, including the uncovering of petrified biological features from a solid piece of stone. On the other side, scribbling a museum number on a natural object should not be regarded to make it Human-Made. This notwithstanding, parts, sections, segments, or features of a physical Human-Made thing may continue to be non-Human-Made and preserved during the production process, for example natural pearls used as a part of an eardrop."""@en ;
-                                  rdfs:label "Physical Human-Made Thing"@en .
+                                                rdfs:label "Person"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity
-crm:E2_Temporal_Entity rdf:type owl:Class ;
-                       rdfs:subClassOf crm:E1_CRM_Entity ;
-                       rdfs:comment "This class comprises all phenomena, such as the instances of E4 Periods, E5 Events and states, which happen over a limited extent in time. In some contexts, these are also called perdurants. This class is disjoint from E77 Persistent Item. This is an abstract class and has no direct instances. E2 Temporal Entity is specialized into E4 Period, which applies to a particular geographic area (defined with a greater or lesser degree of precision), and E3 Condition State, which applies to instances of E18 Physical Thing."@en ;
-                       rdfs:label "Temporal Entity"@en .
+<http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                                        rdfs:comment "This class comprises all phenomena, such as the instances of E4 Periods, E5 Events and states, which happen over a limited extent in time. In some contexts, these are also called perdurants. This class is disjoint from E77 Persistent Item. This is an abstract class and has no direct instances. E2 Temporal Entity is specialized into E4 Period, which applies to a particular geographic area (defined with a greater or lesser degree of precision), and E3 Condition State, which applies to instances of E18 Physical Thing."@en ;
+                                                        rdfs:label "Temporal Entity"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E39_Actor
-crm:E39_Actor rdf:type owl:Class ;
-              owl:equivalentClass edm:Agent ;
-              rdfs:subClassOf crm:E77_Persistent_Item ;
-              rdfs:label "Actor"@en .
+<http://www.cidoc-crm.org/cidoc-crm/E39_Actor> rdf:type owl:Class ;
+                                               owl:equivalentClass <http://www.europeana.eu/schemas/edm/Agent> ;
+                                               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+                                               rdfs:label "Actor"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E41_Appellation
-crm:E41_Appellation rdf:type owl:Class ;
-                    rdfs:subClassOf crm:E1_CRM_Entity ;
-                    rdfs:comment """This class comprises signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class or category within a certain context.
+<http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                                     rdfs:comment """This class comprises signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class or category within a certain context.
 Instances of E41 Appellation do not identify things by their meaning, even if they happen to have one, but instead by convention, tradition, or agreement. Instances of E41 Appellation are cultural constructs; as such, they have a context, a history, and a use in time and space by some group of users. A given instance of E41 Appellation can have alternative forms, i.e., other instances of E41 Appellation that are always regarded as equivalent independent from the thing it denotes. 
 Specific subclasses of E41 Appellation should be used when instances of E41 Appellation of a characteristic form are used for particular objects. Instances of E49 Time Appellation, for example, which take the form of instances of E50 Date, can be easily recognised.
 E41 Appellation should not be confused with the act of naming something. Cf. E15 Identifier Assignment"""@en ;
-                    rdfs:label "Appellation"@en .
+                                                     rdfs:label "Appellation"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E42_Identifier
-crm:E42_Identifier rdf:type owl:Class ;
-                   rdfs:subClassOf crm:E41_Appellation ;
-                   rdfs:comment "This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory numbers, registration codes, etc. and are typically composed of alphanumeric sequences. The class E42 Identifier is not normally used for machine-generated identifiers used for automated processing unless these are also used by human agents."@en ;
-                   rdfs:label "Identifier"@en .
+<http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E41_Appellation> ;
+                                                    rdfs:comment "This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory numbers, registration codes, etc. and are typically composed of alphanumeric sequences. The class E42 Identifier is not normally used for machine-generated identifiers used for automated processing unless these are also used by human agents."@en ;
+                                                    rdfs:label "Identifier"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E4_Period
-crm:E4_Period rdf:type owl:Class ;
-              owl:equivalentClass edm:Event ;
-              rdfs:subClassOf crm:E2_Temporal_Entity ;
-              rdfs:comment "This class comprises sets of coherent phenomena or cultural manifestations occurring in time and space. It is the social or physical coherence of these phenomena that identify an E4 Period and not the associated spatiotemporal extent. This extent is only the \"ground\" or space in an abstract physical sense that the actual process of growth, spread and retreat has covered. Consequently, different periods can overlap and coexist in time and space, such as when a nomadic culture exists in the same area and time as a sedentary culture. This also means that overlapping land use rights, common among first nations, amounts to overlapping periods. Often, this class is used to describe prehistoric or historic periods such as the \"Neolithic Period\", the \"Ming Dynasty\" or the \"McCarthy Era\", but also geopolitical units and activities of settlements are regarded as special cases of E4 Period. However, there are no assumptions about the scale of the associated phenomena. In particular all events are seen as synthetic processes consisting of coherent phenomena. Therefore E4 Period is a superclass of E5 Event. For example, a modern clinical E67 Birth can be seen as both an atomic E5 Event and as an E4 Period that consists of multiple activities performed by multiple instances of E39 Actor. As the actual extent of an E4 Period in spacetime we regard the trajectories of the participating physical things during their participation in an instance of E4 Period. This includes the open spaces via which these things have interacted and the spaces by which they had the potential to interact during that period or event in the way defined by the type of the respective period or event. Examples include the air in a meeting room transferring the voices of the participants. Since these phenomena are fuzzy, we assume the spatiotemporal extent to be contiguous, except for cases of phenomena spreading out over islands or other separated areas, including geopolitical units distributed over disconnected areas such as islands or colonies. Whether the trajectories necessary for participants to travel between these areas are regarded as part of the spatiotemporal extent or not has to be decided in each case based on a concrete analysis, taking use of the sea for other purposes than travel, such as fishing, into consideration. One may also argue that the activities to govern disconnected areas imply travelling through spaces connecting them and that these areas hence are spatially connected in a way, but it appears counterintuitive to consider for instance travel routes in international waters as extensions of geopolitical units. Consequently, an instance of E4 Period may occupy a number of disjoint spacetime volumes, however there must not be a discontinuity in the timespan covered by these spacetime volumes. This means that an instance of E4 Period must be contiguous in time. If it has ended in all areas, it has ended as a whole. However it may end in one area before another, such as in the Polynesian migration, and it continues as long as it is ongoing in at least one area. We model E4 Period as a subclass of E2 Temporal Entity and of E92 Spacetime volume. The latter is intended as a phenomenal spacetime volume as defined in CRMgeo (Doerr and Hiebel 2013). By virtue of this multiple inheritance we can discuss the physical extent of an E4 Period without representing each instance of it together with an instance of its associated spacetime volume. This model combines two quite different kinds of substance: an instance of E4 Period is a phenomena while a space-time volume is an aggregation of points in spacetime. However, the real spatiotemporal extent of an instance of E4 Period is regarded to be unique to it due to all its details and fuzziness; its identity and existence depends uniquely on the identity of the instance of E4 Period. Therefore this multiple inheritance is unambiguous and effective and furthermore corresponds to the intuitions of natural language. There are two different conceptualisations of 'artistic style', defined either by physical features or by historical context. For example, “Impressionism” can be viewed as a period lasting from approximately 1870 to 1905 during which paintings with particular characteristics were produced by a group of artists that included (among others) Monet, Renoir, Pissarro, Sisley and Degas. Alternatively, it can be regarded as a style applicable to all paintings sharing the characteristics of the works produced by the Impressionist painters, regardless of historical context. The first interpretation is an instance of E4 Period, and the second defines morphological object types that fall under E55 Type. Another specific case of an E4 Period is the set of activities and phenomena associated with a settlement, such as the populated period of Nineveh."@en ;
-              rdfs:label "Period"@en .
+<http://www.cidoc-crm.org/cidoc-crm/E4_Period> rdf:type owl:Class ;
+                                               owl:equivalentClass <http://www.europeana.eu/schemas/edm/Event> ;
+                                               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity> ;
+                                               rdfs:comment "This class comprises sets of coherent phenomena or cultural manifestations occurring in time and space. It is the social or physical coherence of these phenomena that identify an E4 Period and not the associated spatiotemporal extent. This extent is only the \"ground\" or space in an abstract physical sense that the actual process of growth, spread and retreat has covered. Consequently, different periods can overlap and coexist in time and space, such as when a nomadic culture exists in the same area and time as a sedentary culture. This also means that overlapping land use rights, common among first nations, amounts to overlapping periods. Often, this class is used to describe prehistoric or historic periods such as the \"Neolithic Period\", the \"Ming Dynasty\" or the \"McCarthy Era\", but also geopolitical units and activities of settlements are regarded as special cases of E4 Period. However, there are no assumptions about the scale of the associated phenomena. In particular all events are seen as synthetic processes consisting of coherent phenomena. Therefore E4 Period is a superclass of E5 Event. For example, a modern clinical E67 Birth can be seen as both an atomic E5 Event and as an E4 Period that consists of multiple activities performed by multiple instances of E39 Actor. As the actual extent of an E4 Period in spacetime we regard the trajectories of the participating physical things during their participation in an instance of E4 Period. This includes the open spaces via which these things have interacted and the spaces by which they had the potential to interact during that period or event in the way defined by the type of the respective period or event. Examples include the air in a meeting room transferring the voices of the participants. Since these phenomena are fuzzy, we assume the spatiotemporal extent to be contiguous, except for cases of phenomena spreading out over islands or other separated areas, including geopolitical units distributed over disconnected areas such as islands or colonies. Whether the trajectories necessary for participants to travel between these areas are regarded as part of the spatiotemporal extent or not has to be decided in each case based on a concrete analysis, taking use of the sea for other purposes than travel, such as fishing, into consideration. One may also argue that the activities to govern disconnected areas imply travelling through spaces connecting them and that these areas hence are spatially connected in a way, but it appears counterintuitive to consider for instance travel routes in international waters as extensions of geopolitical units. Consequently, an instance of E4 Period may occupy a number of disjoint spacetime volumes, however there must not be a discontinuity in the timespan covered by these spacetime volumes. This means that an instance of E4 Period must be contiguous in time. If it has ended in all areas, it has ended as a whole. However it may end in one area before another, such as in the Polynesian migration, and it continues as long as it is ongoing in at least one area. We model E4 Period as a subclass of E2 Temporal Entity and of E92 Spacetime volume. The latter is intended as a phenomenal spacetime volume as defined in CRMgeo (Doerr and Hiebel 2013). By virtue of this multiple inheritance we can discuss the physical extent of an E4 Period without representing each instance of it together with an instance of its associated spacetime volume. This model combines two quite different kinds of substance: an instance of E4 Period is a phenomena while a space-time volume is an aggregation of points in spacetime. However, the real spatiotemporal extent of an instance of E4 Period is regarded to be unique to it due to all its details and fuzziness; its identity and existence depends uniquely on the identity of the instance of E4 Period. Therefore this multiple inheritance is unambiguous and effective and furthermore corresponds to the intuitions of natural language. There are two different conceptualisations of 'artistic style', defined either by physical features or by historical context. For example, “Impressionism” can be viewed as a period lasting from approximately 1870 to 1905 during which paintings with particular characteristics were produced by a group of artists that included (among others) Monet, Renoir, Pissarro, Sisley and Degas. Alternatively, it can be regarded as a style applicable to all paintings sharing the characteristics of the works produced by the Impressionist painters, regardless of historical context. The first interpretation is an instance of E4 Period, and the second defines morphological object types that fall under E55 Type. Another specific case of an E4 Period is the set of activities and phenomena associated with a settlement, such as the populated period of Nineveh."@en ;
+                                               rdfs:label "Period"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E52_Time_Span
-crm:E52_Time_Span rdf:type owl:Class ;
-                  owl:equivalentClass edm:TimeSpan ;
-                  rdfs:subClassOf crm:E1_CRM_Entity ;
-                  rdfs:comment """This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration. 
+<http://www.cidoc-crm.org/cidoc-crm/E52_Time_Span> rdf:type owl:Class ;
+                                                   owl:equivalentClass <http://www.europeana.eu/schemas/edm/TimeSpan> ;
+                                                   rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                                   rdfs:comment """This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration. 
  
 Time Span has no other semantic connotations. Time-Spans are used to define the temporal extent of instances of E4 Period, E5 Event and any other phenomena valid for a certain time. An E52 Time-Span may be identified by one or more instances of E49 Time Appellation. 
  
 Since our knowledge of history is imperfect, instances of E52 Time-Span can best be considered as approximations of the actual Time-Spans of temporal entities. The properties of E52 Time-Span are intended to allow these approximations to be expressed precisely.  An extreme case of approximation, might, for example, define an E52 Time-Span having unknown beginning, end and duration. Used as a common E52 Time-Span for two events, it would nevertheless define them as being simultaneous, even if nothing else was known. 
  
 Automatic processing and querying of instances of E52 Time-Span is facilitated if data can be parsed into an E61 Time Primitive."""@en ;
-                  rdfs:label "Time Span"@en .
+                                                   rdfs:label "Time Span"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E53_Place
-crm:E53_Place rdf:type owl:Class ;
-              rdfs:subClassOf crm:E1_CRM_Entity ;
-              rdfs:comment """This class comprises extents in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter. 
+<http://www.cidoc-crm.org/cidoc-crm/E53_Place> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                               rdfs:comment """This class comprises extents in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter. 
 The instances of E53 Place are usually determined by reference to the position of “immobile” objects such as buildings, cities, mountains, rivers, or dedicated geodetic marks. A Place can be determined by combining a frame of reference and a location with respect to this frame. It may be identified by one or more instances of E44 Place Appellation.
  It is sometimes argued that instances of E53 Place are best identified by global coordinates or absolute reference systems. However, relative references are often more relevant in the context of cultural documentation and tend to be more precise. In particular, we are often interested in position in relation to large, mobile objects, such as ships. For example, the Place at which Nelson died is known with reference to a large mobile object – H.M.S Victory. A resolution of this Place in terms of absolute coordinates would require knowledge of the movements of the vessel and the precise time of death, either of which may be revised, and the result would lack historical and cultural relevance.
 Any object can serve as a frame of reference for E53 Place determination. The model foresees the notion of a \"section\" of an E19 Physical Object as a valid E53 Place determination."""@en ;
-              rdfs:label "Place"@en .
+                                               rdfs:label "Place"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E55_Type
-crm:E55_Type rdf:type owl:Class ;
-             rdfs:subClassOf crm:E1_CRM_Entity ;
-             rdfs:comment """This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CRM classes. Instances of E55 Type represent concepts  in contrast to instances of E41 Appellation which are used to name instances of CRM classes. 
+<http://www.cidoc-crm.org/cidoc-crm/E55_Type> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                              rdfs:comment """This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CRM classes. Instances of E55 Type represent concepts  in contrast to instances of E41 Appellation which are used to name instances of CRM classes. 
 E55 Type is the CRM’s interface to domain specific ontologies and thesauri. These can be represented in the CRM as subclasses of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader  term (has narrower term). Such hierarchies may be extended with additional properties."""@en ;
-             rdfs:label "Type"@en .
+                                              rdfs:label "Type"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E56_Language
-crm:E56_Language rdf:type owl:Class ;
-                 rdfs:subClassOf crm:E1_CRM_Entity ;
-                 rdfs:comment "This class is a specialization of E55 Type and comprises the natural languages in the sense of concepts. This type is used categorically in the model without reference to instances of it, i.e. the Model does not foresee the description of instances of instances of E56 Language, e.g.: “instances of Mandarin Chinese”. It is recommended that internationally or nationally agreed codes and terminology are used to denote instances of E56 Language, such as those defined in ISO 639:1988."@en ;
-                 rdfs:label "Language"@en .
+<http://www.cidoc-crm.org/cidoc-crm/E56_Language> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                                  rdfs:comment "This class is a specialization of E55 Type and comprises the natural languages in the sense of concepts. This type is used categorically in the model without reference to instances of it, i.e. the Model does not foresee the description of instances of instances of E56 Language, e.g.: “instances of Mandarin Chinese”. It is recommended that internationally or nationally agreed codes and terminology are used to denote instances of E56 Language, such as those defined in ISO 639:1988."@en ;
+                                                  rdfs:label "Language"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E5_Event
-crm:E5_Event rdf:type owl:Class ;
-             rdfs:subClassOf crm:E4_Period ;
-             rdfs:comment """This class comprises distinct, delimited and coherent processes and interactions of a material nature, in cultural, social or physical systems, involving and affecting instances of E77 Persistent Item in a way characteristic of the kind of process. Typical examples are meetings, births, deaths, actions of decision taking, making or inventing things, but also more complex and extended ones such as conferences, elections, building of a castle, or battles.
+<http://www.cidoc-crm.org/cidoc-crm/E5_Event> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E4_Period> ;
+                                              rdfs:comment """This class comprises distinct, delimited and coherent processes and interactions of a material nature, in cultural, social or physical systems, involving and affecting instances of E77 Persistent Item in a way characteristic of the kind of process. Typical examples are meetings, births, deaths, actions of decision taking, making or inventing things, but also more complex and extended ones such as conferences, elections, building of a castle, or battles.
 While the continuous growth of a tree lacks the limits characteristic of an event, its germination from a seed does qualify as an event. Similarly, the blowing of the wind lacks the distinctness and limits of an event, but a hurricane, flood or earthquake would qualify as an event. Mental processes are considered as events, in cases where they are connected with the material externalization of their results; for example, the creation of a poem, a performance or a change of intention that becomes obvious from subsequent actions or declarations.
 The effects of an instance of E5 Event may not lead to relevant permanent changes of properties or relations of the items involved in it, for example an unrecorded performance. Of course, in order to be documented, some kind of evidence for an event must exist, be it witnesses, traces or products of the event.
 While instances of E4 Period always require some form of coherence between its constituent phenomena, in addition, the essential constituents of instances of E5 Event should contribute to an overall effect; for example, the statements made during a meeting and the listening of the audience.
 Viewed at a coarse level of detail, an instance of E5 Event may appear as if it had an ‘instantaneous’ overall effect, but any process or interaction of material nature in reality have an extent in time and space. At a fine level, instances of E5 Event may be analyzed into component phenomena and phases within a space and timeframe, and as such can be seen as a period, regardless of the size of the phenomena. The reverse is not necessarily the case: not all instances of E4 Period give rise to a noteworthy overall effect and are thus not instances of E5 Event."""@en ;
-             rdfs:label "Event (crm)"@en .
-
-
-###  http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence
-crm:E63_Beginning_of_Existence rdf:type owl:Class ;
-                               rdfs:subClassOf crm:E5_Event ;
-                               rdfs:comment """his class comprises events that bring into existence any instance of E77 Persistent Item.
-It may be used for temporal reasoning about things (intellectual products, physical items, groups of people, living beings) beginning to exist; it serves as a hook for determination of a “terminus post quem” or “terminus ante quem”."""@en ;
-                               rdfs:label "Beginning of Existence (crm)"@en .
+                                              rdfs:label "E 5 Event (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E67_Birth
-crm:E67_Birth rdf:type owl:Class ;
-              rdfs:subClassOf crm:E5_Event ;
-              rdfs:comment """This class comprises the births of human beings. E67 Birth is a biological event focussing on the context of people coming into life. (E63 Beginning of Existence comprises the coming into life of any living beings). 
+<http://www.cidoc-crm.org/cidoc-crm/E67_Birth> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+                                               rdfs:comment """This class comprises the births of human beings. E67 Birth is a biological event focussing on the context of people coming into life. (E63 Beginning of Existence comprises the coming into life of any living beings). 
 Twins, triplets etc. are brought into life by the same E67 Birth event. The introduction of the E67 Birth event as a documentation element allows the description of a range of family relationships in a simple model. Suitable extensions may describe more details and the complexity of motherhood with the intervention of modern medicine. In this model, the biological father is not seen as a necessary participant in the E67 Birth event."""@en ;
-              rdfs:label "Birth"@en .
+                                               rdfs:label "Birth"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E69_Death
-crm:E69_Death rdf:type owl:Class ;
-              rdfs:subClassOf crm:E5_Event ;
-              rdfs:comment "If a person is killed, their death should be instantiated as E69 Death and as E7 Activity. The death or perishing of other living beings should be documented using E64 End of Existence."@en ;
-              rdfs:label "Death"@en .
+<http://www.cidoc-crm.org/cidoc-crm/E69_Death> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+                                               rdfs:comment "If a person is killed, their death should be instantiated as E69 Death and as E7 Activity. The death or perishing of other living beings should be documented using E64 End of Existence."@en ;
+                                               rdfs:label "Death"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E70_Thing
-crm:E70_Thing rdf:type owl:Class ;
-              rdfs:subClassOf crm:E77_Persistent_Item ;
-              rdfs:comment """This general class comprises discrete, identifiable, instances of E77 Persistent Item that are documented as single units, that either consist of matter or depend on being carried by matter and are characterized by relative stability.
+<http://www.cidoc-crm.org/cidoc-crm/E70_Thing> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> ;
+                                               rdfs:comment """This general class comprises discrete, identifiable, instances of E77 Persistent Item that are documented as single units, that either consist of matter or depend on being carried by matter and are characterized by relative stability.
 
 They may be intellectual products or physical things. They may for instance have a solid physical form, an electronic encoding, or they may be a logical concept or structure."""@en ;
-              rdfs:label "Thing (crm)"@en .
+                                               rdfs:label "Thing (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E74_Group
-crm:E74_Group rdf:type owl:Class ;
-              rdfs:subClassOf crm:E39_Actor ;
-              rdfs:comment """This class comprises any gatherings or organizations of E39 Actors that act collectively or in a similar way due to any form of unifying relationship. In the wider sense this class also comprises official positions which used to be regarded in certain contexts as one actor, independent of the current holder of the office, such as the president of a country. In such cases, it may happen that the Group never had more than one member. A joint pseudonym (i.e., a name that seems indicative of an individual but that is actually used as a persona by two or more people) is a particular case of E74 Group.
+<http://www.cidoc-crm.org/cidoc-crm/E74_Group> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> ;
+                                               rdfs:comment """This class comprises any gatherings or organizations of E39 Actors that act collectively or in a similar way due to any form of unifying relationship. In the wider sense this class also comprises official positions which used to be regarded in certain contexts as one actor, independent of the current holder of the office, such as the president of a country. In such cases, it may happen that the Group never had more than one member. A joint pseudonym (i.e., a name that seems indicative of an individual but that is actually used as a persona by two or more people) is a particular case of E74 Group.
 A gathering of people becomes an E74 Group when it exhibits organizational characteristics usually typified by a set of ideas or beliefs held in common, or actions performed together. These might be communication, creating some common artifact, a common purpose such as study, worship, business, sports, etc. Nationality can be modeled as membership in an E74 Group (cf. HumanML markup). Married couples and other concepts of family are regarded as particular examples of E74 Group."""@en ;
-              rdfs:label "Group"@en .
+                                               rdfs:label "Group"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item
-crm:E77_Persistent_Item rdf:type owl:Class ;
-                        rdfs:subClassOf crm:E1_CRM_Entity ;
-                        rdfs:comment """This class comprises items that have persistent characteristics of structural nature substantially related to their identity and their integrity, sometimes known as “endurants” in philosophy. Persistent Items may be physical entities, such as people, animals or things, conceptual entities such as ideas, concepts, products of the imagination or even names.
+<http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                                         rdfs:comment """This class comprises items that have persistent characteristics of structural nature substantially related to their identity and their integrity, sometimes known as “endurants” in philosophy. Persistent Items may be physical entities, such as people, animals or things, conceptual entities such as ideas, concepts, products of the imagination or even names.
 Instances of E77 Persistent Item may be present or be part of interactions in different periods or events. They can repeatedly be recognized at disparate occasions during their existence by characteristics of structural nature. The respective characteristics need not be exactly the same during all the existence of an instance of E77 Persistent Item. Often, they undergo gradual change, still bearing some similarities with that of previous times, or disappear completely and new emerge. For instance, a person, from the time of being born on, will gradually change all its features and acquire new ones, such as a scar. Even the DNA in different body cells will develop defects and mutations. Nevertheless, relevant characteristics use to be sufficiently similar to recognize the instance for some substantial period of time.
 The more specific criteria that determine the identity of instances of subclasses of E77 Persistent Item may vary considerably and are described of referred to in the respective scope notes. The decision about which exact criteria to use depends on whether the observable behaviour of the respective part of reality such confined conforms to the reasoning the user is interested in. For example, a building can be regarded as no longer existing if it is dismantled and the materials reused in a different configuration. On the other hand, human beings go through radical and profound changes during their life-span, affecting both material composition and form, yet preserve their identity by other criteria, such as being bodily separated from other persons. Similarly, inanimate objects may be subject to exchange of parts and matter. On the opposite, the identity of a (version of a) text of a scientific publication is given by the exact arrangement of its relevant symbols.
 The main classes of objects that fall outside the scope of the E77 Persistent Item class are temporal objects such as periods, events and acts, and descriptive properties.
 An instance of E77 Persistent Item does not require actual knowledge of the identifying features of the instance being currently known. There may be cases, where the actual identifying features of an instance of E77 Persistent Item are not decidable at a particular state of knowledge."""@en ;
-                        rdfs:label "Persistent Item (crm)"@en .
+                                                         rdfs:label "Persistent Item (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E7_Activity
-crm:E7_Activity rdf:type owl:Class ;
-                rdfs:subClassOf crm:E5_Event ;
-                rdfs:comment """This class comprises changes of the physical location of the instances of E19 Physical Object.
+<http://www.cidoc-crm.org/cidoc-crm/E7_Activity> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E5_Event> ;
+                                                 rdfs:comment """This class comprises changes of the physical location of the instances of E19 Physical Object.
 Note, that the class E9 Move inherits the property P7 took place at (witnessed): E53 Place. This property should be used to describe the trajectory or a larger area within which a move takes place, whereas the properties P26 moved to (was destination of), P27 moved from (was origin of) describe the start and end points only. Moves may also be documented to consist of other moves (via P9 consists of (forms part of)), in order to describe intermediate stages on a trajectory. In that case, start and end points of the partial moves should match appropriately between each other and with the overall event."""@en ;
-                rdfs:label "Activity (crm)"@en .
+                                                 rdfs:label "E7 Activity"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive
-crm:E94_Space_Primitive rdf:type owl:Class ;
-                        rdfs:subClassOf crm:E1_CRM_Entity ;
-                        rdfs:comment """CHECK AGAIN WITH OFFICIAL Cidoc CRM 7.1.1 RDFS version (not included in github version yet)!
+<http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                                         rdfs:comment """CHECK AGAIN WITH OFFICIAL Cidoc CRM 7.1.1 RDFS version (not included in github version yet)!
 
 FROM version 6.2.1.: The primitive values \"E60 Number\", \"E61 Time Primitive\", \"E62 String\" and \"E94 Space Primitive\" referred in
    the Model for formal completeness are interpreted as rdf: literal.
@@ -690,73 +617,73 @@ An instance of E94 Space Primitive defines an instance of E53 Place in the sense
 Definitions of instances of E53 Place using different spatial reference systems are always definitions of different instances of E53 Place.
 
 Instances of E94 Space Primitive provide the ability to link CIDOC CRM encoded data to the kinds of geometries used in maps or Geoinformation systems. They may be used for visualization of the instances of E53 Place they define, in their geographic context and for computing topological relations between places based on these geometries. E94 Space Primitive is not further elaborated upon within this model. It is considered good practice to maintain compatibility with OGC standards."""@en ;
-                        rdfs:label "Space Primitive (crm)"@en .
+                                                         rdfs:label "Space Primitive (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E9_Move
-crm:E9_Move rdf:type owl:Class ;
-            rdfs:subClassOf crm:E7_Activity ;
-            rdfs:comment """This class comprises changes of the physical location of the instances of E19 Physical Object.
+<http://www.cidoc-crm.org/cidoc-crm/E9_Move> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+                                             rdfs:comment """This class comprises changes of the physical location of the instances of E19 Physical Object.
 Note, that the class E9 Move inherits the property P7 took place at (witnessed): E53 Place. This property should be used to describe the trajectory or a larger area within which a move takes place, whereas the properties P26 moved to (was destination of), P27 moved from (was origin of) describe the start and end points only. Moves may also be documented to consist of other moves (via P9 consists of (forms part of)), in order to describe intermediate stages on a trajectory. In that case, start and end points of the partial moves should match appropriately between each other and with the overall event."""@en ;
-            rdfs:label "E9 Move"@en .
+                                             rdfs:label "E9 Move"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/Agent
-edm:Agent rdf:type owl:Class ;
-          rdfs:subClassOf edm:NonInformationResource ;
-          rdfs:comment "This class comprises people, either individually or in groups, who have the potential to perform intentional actions for which they can be held responsible."@en ;
-          rdfs:label "Agent"@en .
+<http://www.europeana.eu/schemas/edm/Agent> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+                                            rdfs:comment "This class comprises people, either individually or in groups, who have the potential to perform intentional actions for which they can be held responsible."@en ;
+                                            rdfs:label "Agent"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/Event
-edm:Event rdf:type owl:Class ;
-          rdfs:subClassOf edm:NonInformationResource ;
-          rdfs:comment "An event is a change \"of states in cultural, social or physical systems, regardless of scale, brought about by a series or group of coherent physical, cultural, technological or legal phenomena\" (E5 Event in CIDOC CRM) or a \"set of coherent phenomena or cultural manifestations bounded in time and  space\" (E4 Period in CIDOC CRM)"@en ;
-          rdfs:label "Event (edm)"@en .
+<http://www.europeana.eu/schemas/edm/Event> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+                                            rdfs:comment "An event is a change \"of states in cultural, social or physical systems, regardless of scale, brought about by a series or group of coherent physical, cultural, technological or legal phenomena\" (E5 Event in CIDOC CRM) or a \"set of coherent phenomena or cultural manifestations bounded in time and  space\" (E4 Period in CIDOC CRM)"@en ;
+                                            rdfs:label "Event (edm)"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/InformationResource
-edm:InformationResource rdf:type owl:Class ;
-                        rdfs:subClassOf :EDM_Classes ;
-                        rdfs:comment "An information resource is a resource whose essential characteristics can be conveyed in a single message. It can be associated with a URI, it can have a representation, for example: a text is an InformationResource."@en ;
-                        rdfs:label "InformationResource (edm)"@en .
+<http://www.europeana.eu/schemas/edm/InformationResource> rdf:type owl:Class ;
+                                                          rdfs:subClassOf :EDM_Classes ;
+                                                          rdfs:comment "An information resource is a resource whose essential characteristics can be conveyed in a single message. It can be associated with a URI, it can have a representation, for example: a text is an InformationResource."@en ;
+                                                          rdfs:label "InformationResource (edm)"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/NonInformationResource
-edm:NonInformationResource rdf:type owl:Class ;
-                           rdfs:subClassOf :EDM_Classes ;
-                           rdfs:comment "All resources that are not information resources."@en ;
-                           rdfs:label "Non-Information Resource (edm)"@en .
+<http://www.europeana.eu/schemas/edm/NonInformationResource> rdf:type owl:Class ;
+                                                             rdfs:subClassOf :EDM_Classes ;
+                                                             rdfs:comment "All resources that are not information resources."@en ;
+                                                             rdfs:label "Non-Information Resource (edm)"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/ProvidedCHO
-edm:ProvidedCHO rdf:type owl:Class ;
-                rdfs:subClassOf crm:E24_Physical_Human-Made_Thing ,
-                                :EDM_Classes ;
-                rdfs:comment """This class comprises the Cultural Heritage objects that Europeana collects descriptions about.
+<http://www.europeana.eu/schemas/edm/ProvidedCHO> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ,
+                                                                  :EDM_Classes ;
+                                                  rdfs:comment """This class comprises the Cultural Heritage objects that Europeana collects descriptions about.
 comment CE:  ProvidedCHO just in \"InTaVia named Entity Graph\"? and in the source-specific graphs as edm:Proxy"""@en ;
-                rdfs:label "Provided CHO"@en .
+                                                  rdfs:label "Provided CHO"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/TimeSpan
-edm:TimeSpan rdf:type owl:Class ;
-             rdfs:subClassOf edm:NonInformationResource ;
-             rdfs:comment "The class of \"abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration\" (CIDOC CRM)"@en ;
-             rdfs:label "Time Span (edm)"@en .
+<http://www.europeana.eu/schemas/edm/TimeSpan> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.europeana.eu/schemas/edm/NonInformationResource> ;
+                                               rdfs:comment "The class of \"abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration\" (CIDOC CRM)"@en ;
+                                               rdfs:label "Time Span (edm)"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/WebResource
-edm:WebResource rdf:type owl:Class ;
-                rdfs:subClassOf edm:InformationResource ;
-                rdfs:comment "An information resource is a resource whose essential characteristics can be conveyed in a single message. It can be associated with a URI, it can have a representation, for example: a text is an InformationResource."@en ;
-                rdfs:label "Web Resource (edm)"@en .
+<http://www.europeana.eu/schemas/edm/WebResource> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.europeana.eu/schemas/edm/InformationResource> ;
+                                                  rdfs:comment "An information resource is a resource whose essential characteristics can be conveyed in a single message. It can be associated with a URI, it can have a representation, for example: a text is an InformationResource."@en ;
+                                                  rdfs:label "Web Resource (edm)"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/dataProvider
-edm:dataProvider rdf:type owl:Class ;
-                 rdfs:subClassOf :EDM_Classes ;
-                 rdfs:comment "The name or identifier of the organisation who contributes data indirectly to an aggregation service (e.g. Europeana)."@en ;
-                 rdfs:label "Data Provider (edm)"@en .
+<http://www.europeana.eu/schemas/edm/dataProvider> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :EDM_Classes ;
+                                                   rdfs:comment "The name or identifier of the organisation who contributes data indirectly to an aggregation service (e.g. Europeana)."@en ;
+                                                   rdfs:label "Data Provider (edm)"@en .
 
 
 ###  http://www.example.org/2021/intavia_idm#EDM_Classes
@@ -767,18 +694,41 @@ edm:dataProvider rdf:type owl:Class ;
 :ORE_classes rdf:type owl:Class .
 
 
-###  http://www.openarchives.org/ore/termsProxy
-<http://www.openarchives.org/ore/termsProxy> rdf:type owl:Class ;
-                                             rdfs:subClassOf :ORE_classes ;
-                                             rdfs:comment "A Proxy represents an Aggregated Resource as it exists in a specific Aggregation. All assertions made about an entity are globally true, not only within the context of the Aggregation. As such, in order to make assertions which are only true of a resource as it exists in an Aggregation, a Proxy object is required. For example, one might want to cite an article as it appears in a specific journal, or assign aggregation-specific metadata to a Resource. Aggregations should not aggregate Proxy resources, instead the resource itself should be aggregated and the lineage of the inclusion of the resource in the aggregation should be expressed with the ore:lineage relationship."@en ;
-                                             rdfs:label "Proxy (ore)"@en .
+###  http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)
+<http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.openarchives.org/ore/terms/Proxy> ;
+                                                          rdfs:comment "A Proxy represents an Aggregated Resource as it exists in a specific Aggregation. All assertions made about an entity are globally true, not only within the context of the Aggregation. As such, in order to make assertions which are only true of a resource as it exists in an Aggregation, a Proxy object is required. For example, one might want to cite an article as it appears in a specific journal, or assign aggregation-specific metadata to a Resource. Aggregations should not aggregate Proxy resources, instead the resource itself should be aggregated and the lineage of the inclusion of the resource in the aggregation should be expressed with the ore:lineage relationship."@en .
+
+
+###  http://www.example.org/2021/intavia_idm#Event_Proxy_(ore)
+<http://www.example.org/2021/intavia_idm#Event_Proxy_(ore)> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.openarchives.org/ore/terms/Proxy> ;
+                                                            rdfs:comment "A Proxy represents an Aggregated Resource as it exists in a specific Aggregation. All assertions made about an entity are globally true, not only within the context of the Aggregation. As such, in order to make assertions which are only true of a resource as it exists in an Aggregation, a Proxy object is required. For example, one might want to cite an article as it appears in a specific journal, or assign aggregation-specific metadata to a Resource. Aggregations should not aggregate Proxy resources, instead the resource itself should be aggregated and the lineage of the inclusion of the resource in the aggregation should be expressed with the ore:lineage relationship."@en .
+
+
+###  http://www.example.org/2021/intavia_idm#Group_Proxy_(ore)
+<http://www.example.org/2021/intavia_idm#Group_Proxy_(ore)> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.openarchives.org/ore/terms/Proxy> .
+
+
+###  http://www.example.org/2021/intavia_idm#Person_Proxy_(ore)
+<http://www.example.org/2021/intavia_idm#Person_Proxy_(ore)> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.openarchives.org/ore/terms/Proxy> ;
+                                                             rdfs:comment "A Proxy represents an Aggregated Resource as it exists in a specific Aggregation. All assertions made about an entity are globally true, not only within the context of the Aggregation. As such, in order to make assertions which are only true of a resource as it exists in an Aggregation, a Proxy object is required. For example, one might want to cite an article as it appears in a specific journal, or assign aggregation-specific metadata to a Resource. Aggregations should not aggregate Proxy resources, instead the resource itself should be aggregated and the lineage of the inclusion of the resource in the aggregation should be expressed with the ore:lineage relationship."@en .
 
 
 ###  http://www.openarchives.org/ore/terms/Aggregation
-ore:Aggregation rdf:type owl:Class ;
-                rdfs:subClassOf :ORE_classes ;
-                rdfs:comment "A set of related resources (Aggregated Resources), grouped together such that the set can be treated as a single resource. This is the entity described within the ORE interoperability framework by a Resource Map."@en ;
-                rdfs:label "Aggregation (ore)"@en .
+<http://www.openarchives.org/ore/terms/Aggregation> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :ORE_classes ;
+                                                    rdfs:comment "A set of related resources (Aggregated Resources), grouped together such that the set can be treated as a single resource. This is the entity described within the ORE interoperability framework by a Resource Map."@en ;
+                                                    rdfs:label "Aggregation (ore)"@en .
+
+
+###  http://www.openarchives.org/ore/terms/Proxy
+<http://www.openarchives.org/ore/terms/Proxy> rdf:type owl:Class ;
+                                              rdfs:subClassOf :ORE_classes ;
+                                              rdfs:comment "A Proxy represents an Aggregated Resource as it exists in a specific Aggregation. All assertions made about an entity are globally true, not only within the context of the Aggregation. As such, in order to make assertions which are only true of a resource as it exists in an Aggregation, a Proxy object is required. For example, one might want to cite an article as it appears in a specific journal, or assign aggregation-specific metadata to a Resource. Aggregations should not aggregate Proxy resources, instead the resource itself should be aggregated and the lineage of the inclusion of the resource in the aggregation should be expressed with the ore:lineage relationship."@en ;
+                                              rdfs:label "Proxy(ore)"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

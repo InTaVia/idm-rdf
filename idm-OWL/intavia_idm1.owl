@@ -1,4 +1,5 @@
 @prefix : <http://www.example.org/2021/intavia_idm#> .
+@prefix bioc: <http://ldf.fi/schema/bioc/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix ore: <http://www.openarchives.org/ore/terms/> .

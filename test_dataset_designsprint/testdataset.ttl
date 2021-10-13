@@ -51,11 +51,33 @@
     crm:P37_assigned <https://www.apis.acdh.oeaw.ac.at/personid/92486> ;
     bioc:had_participant_in_role <https://www.intavia.org/role/ResponsibleForIdentifier/12347> .
 
-<https://www.intavia.org/idm/role/responsibleArtist/12345> crm:P2_has_type "responsibleArtist" .
+<https://www.intavia.org/idm/role/responsibleArtist/123> crm:P2_has_type "responsibleArtist" .
 
-<https://www.intavia.org/idm/role/responsibleArtist/12346> crm:P2_has_type "responsibleArtist" .
+<https://www.intavia.org/idm/role/responsibleArtist/124> crm:P2_has_type "responsibleArtist" .
 
-<https://www.intavia.org/idm/role/responsibleArtist/12347> crm:P2_has_type "responsibleArtist" .
+<https://www.intavia.org/idm/role/responsibleArtist/125> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/126> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/127> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/128> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/129> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/130> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/131> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/132> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/133> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/134> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/135> crm:P2_has_type "responsibleArtist" .
+
+<https://www.intavia.org/idm/role/responsibleArtist/136> crm:P2_has_type "responsibleArtist" .
 
 <https://www.intavia.org/institution/AustrianAcademyofSciences> bioc:bearer_of <https://www.intavia.org/idm/role/ResponsibleForIdentifier/12345>,
         <https://www.intavia.org/idm/role/ResponsibleForIdentifier/12346>,
@@ -129,79 +151,115 @@
     crm:P108_has_produced <https://www.intavia.org/cho/136> ;
     bioc:had_participant_in_role <https://www.intavia.org/role/responsibleArtist/136> .
 
+<https://www.intavia.org/role/description/124> crm:P3_has_note "Repräsentationsraum im Österreichischen Haus auf der Werkbundausstellung Köln 1914. Ober dem Kamin Gustav Klimts Entwurf zu \"Die Erwartung\" oder \"Die Tänzerin\" im Speisesaal des Palais Stoclet, Brüssel. Photographie von August Kreyenkamp (Köln) und Bruno Reiffenstein (Wien). 24:18 cm.\"@de" .
+
+<https://www.intavia.org/role/description/125> crm:P3_has_note "Repräsentationsraum im Österreichischen Haus auf der Werkbundausstellung Köln 1914. Ober dem Kamin Gustav Klimts Entwurf zu \"Die Erwartung\" oder \"Die Tänzerin\" im Speisesaal des Palais Stoclet, Brüssel. Photographie von August Kreyenkamp (Köln) und Bruno Reiffenstein (Wien). 24:18 cm.\"@de" .
+
+<https://www.intavia.org/role/description/126> crm:P3_has_note "Repräsentationsraum im Österreichischen Haus auf der Werkbundausstellung Köln 1914. Ober dem Kamin Gustav Klimts Entwurf zu \"Die Erwartung\" oder \"Die Tänzerin\" im Speisesaal des Palais Stoclet, Brüssel. Photographie von August Kreyenkamp (Köln) und Bruno Reiffenstein (Wien). 24:18 cm.\"@de" .
+
+<https://www.intavia.org/role/description/127> crm:P3_has_note "Repräsentationsraum im Österreichischen Haus auf der Werkbundausstellung Köln 1914. Ober dem Kamin Gustav Klimts Entwurf zu \"Die Erwartung\" oder \"Die Tänzerin\" im Speisesaal des Palais Stoclet, Brüssel. Photographie von August Kreyenkamp (Köln) und Bruno Reiffenstein (Wien). 24:18 cm.\"@de" .
+
+<https://www.intavia.org/role/description/128> crm:P3_has_note "Repräsentationsraum im Österreichischen Haus auf der Werkbundausstellung Köln 1914. Ober dem Kamin Gustav Klimts Entwurf zu \"Die Erwartung\" oder \"Die Tänzerin\" im Speisesaal des Palais Stoclet, Brüssel. Photographie von August Kreyenkamp (Köln) und Bruno Reiffenstein (Wien). 24:18 cm.\"@de" .
+
+<https://www.intavia.org/role/description/134> crm:P3_has_note """Vorfrühling im Wiener Prater. 
+Gemälde.@de""" .
+
+<https://www.intavia.org/role/description/135> crm:P3_has_note """Vorfrühling im Wiener Prater. 
+Gemälde.@de""" .
+
+<https://www.intavia.org/role/description/136> crm:P3_has_note """Vorfrühling im Wiener Prater. 
+Gemälde.@de""" .
+
 bioc:Male a bioc:Gender .
 
 <https://www.intavia.org/cho/123> a edm:ProvidedCHO ;
-    crm:P1_is_identified_by "Hafenbild: Rochester in England@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/123> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/15508/29592> .
 
 <https://www.intavia.org/cho/124> a edm:ProvidedCHO ;
-    crm:P1_is_identified_by "Werkbundausstellung\"@de" ;
-    crm:P3_has_note "Repräsentationsraum im Österreichischen Haus auf der Werkbundausstellung Köln 1914. Ober dem Kamin Gustav Klimts Entwurf zu \"Die Erwartung\" oder \"Die Tänzerin\" im Speisesaal des Palais Stoclet, Brüssel. Photographie von August Kreyenkamp (Köln) und Bruno Reiffenstein (Wien). 24:18 cm.\"@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/124> ;
     owl:sameAs <6http://data.europeana.eu/proxy/provider/2024911/photography_ProvidedCHO_IMAGNO_brandst_tter_images_GesmbH_00624103> .
 
 <https://www.intavia.org/cho/125> a edm:ProvidedCHO ;
-    crm:P1_is_identified_by "Werkbundausstellung\"@de" ;
-    crm:P3_has_note "Repräsentationsraum im Österreichischen Haus auf der Werkbundausstellung Köln 1914. Ober dem Kamin Gustav Klimts Entwurf zu \"Die Erwartung\" oder \"Die Tänzerin\" im Speisesaal des Palais Stoclet, Brüssel. Photographie von August Kreyenkamp (Köln) und Bruno Reiffenstein (Wien). 24:18 cm.\"@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/125> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/2024911/photography_ProvidedCHO_IMAGNO_brandst_tter_images_GesmbH_00624103> .
 
 <https://www.intavia.org/cho/126> a edm:ProvidedCHO ;
-    crm:P1_is_identified_by "Werkbundausstellung\"@de" ;
-    crm:P3_has_note "Repräsentationsraum im Österreichischen Haus auf der Werkbundausstellung Köln 1914. Ober dem Kamin Gustav Klimts Entwurf zu \"Die Erwartung\" oder \"Die Tänzerin\" im Speisesaal des Palais Stoclet, Brüssel. Photographie von August Kreyenkamp (Köln) und Bruno Reiffenstein (Wien). 24:18 cm.\"@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/126> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/2024911/photography_ProvidedCHO_IMAGNO_brandst_tter_images_GesmbH_00624103> .
 
 <https://www.intavia.org/cho/127> a edm:ProvidedCHO ;
-    crm:P1_is_identified_by "Werkbundausstellung\"@de" ;
-    crm:P3_has_note "Repräsentationsraum im Österreichischen Haus auf der Werkbundausstellung Köln 1914. Ober dem Kamin Gustav Klimts Entwurf zu \"Die Erwartung\" oder \"Die Tänzerin\" im Speisesaal des Palais Stoclet, Brüssel. Photographie von August Kreyenkamp (Köln) und Bruno Reiffenstein (Wien). 24:18 cm.\"@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/127> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/2024911/photography_ProvidedCHO_IMAGNO_brandst_tter_images_GesmbH_00624103> .
 
 <https://www.intavia.org/cho/128> a edm:ProvidedCHO ;
-    crm:P1_is_identified_by "Werkbundausstellung\"@de" ;
-    crm:P3_has_note "Repräsentationsraum im Österreichischen Haus auf der Werkbundausstellung Köln 1914. Ober dem Kamin Gustav Klimts Entwurf zu \"Die Erwartung\" oder \"Die Tänzerin\" im Speisesaal des Palais Stoclet, Brüssel. Photographie von August Kreyenkamp (Köln) und Bruno Reiffenstein (Wien). 24:18 cm.\"@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/128> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/2024911/photography_ProvidedCHO_IMAGNO_brandst_tter_images_GesmbH_00624103> .
 
 <https://www.intavia.org/cho/129> a edm:ProvidedCHO ;
     crm:P130_shows_features_of <http://www.kulturpool.at/plugins/kulturpool/showitem.action?kupoContext=default&itemExtId=22396> ;
-    crm:P1_is_identified_by "Stehende, in Tücher gehüllt (Studie für das Bildnis Ria Munk III)\"@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/129> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/15508/22396> .
 
 <https://www.intavia.org/cho/130> a edm:ProvidedCHO ;
     crm:P130_shows_features_of <http://www.kulturpool.at/plugins/kulturpool/showitem.action?kupoContext=default&itemExtId=22492> ;
-    crm:P1_is_identified_by "Im Lehnstuhl Sitzende (Studie für das Bildnis Marie Henneberg)\"@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/130> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/15508/22492> .
 
 <https://www.intavia.org/cho/131> a edm:ProvidedCHO ;
     crm:P130_shows_features_of <http://www.kulturpool.at/plugins/kulturpool/showitem.action?kupoContext=default&itemExtId=22493> ;
-    crm:P1_is_identified_by "Stehende Dame in Straßentoilette nach links\"@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/131> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/15508/22493> .
 
 <https://www.intavia.org/cho/132> a edm:ProvidedCHO ;
     crm:P130_shows_features_of <http://www.kulturpool.at/plugins/kulturpool/showitem.action?kupoContext=default&itemExtId=22494> ;
-    crm:P1_is_identified_by "Studie für die linke der Gorgonen im \"Beethovenfries\"@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/132> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/15508/22494> .
 
 <https://www.intavia.org/cho/133> a edm:ProvidedCHO ;
     crm:P130_shows_features_of <http://www.kulturpool.at/plugins/kulturpool/showitem.action?kupoContext=default&itemExtId=22495> ;
-    crm:P1_is_identified_by "Studie für das Bildnis Eugenia Primavesi (sitzend von vorne, den Oberkörper zur Seite gedreht)\"@de" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/133> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/15508/22495> .
 
 <https://www.intavia.org/cho/134> a edm:ProvidedCHO ;
-    crm:P1_is_identified_by "Blau, Tina@de" ;
-    crm:P3_has_note """Vorfrühling im Wiener Prater. 
-Gemälde.@de""" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/134> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/92063/BibliographicResource_3000095547409> .
 
 <https://www.intavia.org/cho/135> a edm:ProvidedCHO ;
-    crm:P1_is_identified_by "Blau, Tina@de" ;
-    crm:P3_has_note """Vorfrühling im Wiener Prater. 
-Gemälde.@de""" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/135> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/92063/BibliographicResource_3000095547409> .
 
 <https://www.intavia.org/cho/136> a edm:ProvidedCHO ;
-    crm:P1_is_identified_by "Blau, Tina@de" ;
-    crm:P3_has_note """Vorfrühling im Wiener Prater. 
-Gemälde.@de""" ;
+    crm:P1_is_identified_by <https://www.intavia.org/cho/title/136> ;
     owl:sameAs <http://data.europeana.eu/proxy/provider/92063/BibliographicResource_3000095547409> .
+
+<https://www.intavia.org/cho/title/123> crm:P3_has_note "Hafenbild: Rochester in England@de" .
+
+<https://www.intavia.org/cho/title/124> crm:P3_has_note "Werkbundausstellung\"@de" .
+
+<https://www.intavia.org/cho/title/125> crm:P3_has_note "Werkbundausstellung\"@de" .
+
+<https://www.intavia.org/cho/title/126> crm:P3_has_note "Werkbundausstellung\"@de" .
+
+<https://www.intavia.org/cho/title/127> crm:P3_has_note "Werkbundausstellung\"@de" .
+
+<https://www.intavia.org/cho/title/128> crm:P3_has_note "Werkbundausstellung\"@de" .
+
+<https://www.intavia.org/cho/title/129> crm:P3_has_note "Stehende, in Tücher gehüllt (Studie für das Bildnis Ria Munk III)\"@de" .
+
+<https://www.intavia.org/cho/title/130> crm:P3_has_note "Im Lehnstuhl Sitzende (Studie für das Bildnis Marie Henneberg)\"@de" .
+
+<https://www.intavia.org/cho/title/131> crm:P3_has_note "Stehende Dame in Straßentoilette nach links\"@de" .
+
+<https://www.intavia.org/cho/title/132> crm:P3_has_note "Studie für die linke der Gorgonen im \"Beethovenfries\"@de" .
+
+<https://www.intavia.org/cho/title/133> crm:P3_has_note "Studie für das Bildnis Eugenia Primavesi (sitzend von vorne, den Oberkörper zur Seite gedreht)\"@de" .
+
+<https://www.intavia.org/cho/title/134> crm:P3_has_note "Blau, Tina@de" .
+
+<https://www.intavia.org/cho/title/135> crm:P3_has_note "Blau, Tina@de" .
+
+<https://www.intavia.org/cho/title/136> crm:P3_has_note "Blau, Tina@de" .
 
 <https://www.intavia.org/idm/role/ResponsibleForIdentifier/12345> crm:P2_has_type "ResponsibleForIdentifier" .
 
@@ -285,22 +343,28 @@ Gemälde.@de""" ;
 
 <https://www.intavia.org/role/ResponsibleForIdentifier/12347> a bioc:Actor_Role .
 
-<https://www.intavia.org/timespan/1/12345> crm:P81a_begin_of_the_begin "1850-08-25+00:00:00" ;
+<https://www.intavia.org/timespan/1/12345> a crm:E52_Time_Span ;
+    crm:P81a_begin_of_the_begin "1850-08-25+00:00:00" ;
     crm:P82b_end_of_the_end "1850-08-25+23:59:59" .
 
-<https://www.intavia.org/timespan/1/12346> crm:P81a_begin_of_the_begin "1862-07-14+00:00:00" ;
+<https://www.intavia.org/timespan/1/12346> a crm:E52_Time_Span ;
+    crm:P81a_begin_of_the_begin "1862-07-14+00:00:00" ;
     crm:P82b_end_of_the_end "1862-07-14+23:59:59" .
 
-<https://www.intavia.org/timespan/1/12347> crm:P81a_begin_of_the_begin "1845-11-15+00:00:00" ;
+<https://www.intavia.org/timespan/1/12347> a crm:E52_Time_Span ;
+    crm:P81a_begin_of_the_begin "1845-11-15+00:00:00" ;
     crm:P82b_end_of_the_end "1845-11-15+23:59:59" .
 
-<https://www.intavia.org/timespan/2/12345> crm:P81a_begin_of_the_begin "1940-03-31+00:00:00" ;
+<https://www.intavia.org/timespan/2/12345> a crm:E52_Time_Span ;
+    crm:P81a_begin_of_the_begin "1940-03-31+00:00:00" ;
     crm:P82b_end_of_the_end "1940-03-31+23:59:59" .
 
-<https://www.intavia.org/timespan/2/12346> crm:P81a_begin_of_the_begin "1918-02-06+00:00:00" ;
+<https://www.intavia.org/timespan/2/12346> a crm:E52_Time_Span ;
+    crm:P81a_begin_of_the_begin "1918-02-06+00:00:00" ;
     crm:P82b_end_of_the_end "1918-02-06+23:59:59" .
 
-<https://www.intavia.org/timespan/2/12347> crm:P81a_begin_of_the_begin "1916-10-31+00:00:00" ;
+<https://www.intavia.org/timespan/2/12347> a crm:E52_Time_Span ;
+    crm:P81a_begin_of_the_begin "1916-10-31+00:00:00" ;
     crm:P82b_end_of_the_end "1916-10-31+23:59:59" .
 
 bioc:Female a bioc:Gender .

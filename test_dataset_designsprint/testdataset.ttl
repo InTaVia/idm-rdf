@@ -337,11 +337,11 @@ bioc:Male a bioc:Gender .
 <https://www.intavia.org/personproxy/ErnstKlimt> crm:P1_is_identified_by <https://www.intavia.org/name/1/ErnstKlimt> ;
     idm:person_proxy_for <https://www.intavia.org/person/ErnstKlimt> .
 
-<https://www.intavia.org/role/ResponsibleForIdentifier/12345> a bioc:Actor_Role .
+<https://www.intavia.org/role/ResponsibleForIdentifier/12345> a bioc:Event_Role .
 
-<https://www.intavia.org/role/ResponsibleForIdentifier/12346> a bioc:Actor_Role .
+<https://www.intavia.org/role/ResponsibleForIdentifier/12346> a bioc:Event_Role .
 
-<https://www.intavia.org/role/ResponsibleForIdentifier/12347> a bioc:Actor_Role .
+<https://www.intavia.org/role/ResponsibleForIdentifier/12347> a bioc:Event_Role .
 
 <https://www.intavia.org/timespan/1/12345> a crm:E52_Time_Span ;
     crm:P81a_begin_of_the_begin "1850-08-25+00:00:00" ;
@@ -391,35 +391,34 @@ bioc:Female a bioc:Gender .
     bioc:has_occupation bioc:Painter ;
     idm:person_proxy_for <https://www.intavia.org/person/12347> .
 
-<https://www.intavia.org/role/responsibleArtist/123> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/123> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/124> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/124> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/125> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/125> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/126> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/126> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/127> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/127> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/128> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/128> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/129> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/129> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/130> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/130> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/131> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/131> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/132> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/132> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/133> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/133> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/134> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/134> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/135> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/135> a bioc:Event_Role .
 
-<https://www.intavia.org/role/responsibleArtist/136> a bioc:Actor_Role .
+<https://www.intavia.org/role/responsibleArtist/136> a bioc:Event_Role .
 
 bioc:Painter a bioc:Occupation .
 
 bioc:austrian a bioc:Nationality .
-

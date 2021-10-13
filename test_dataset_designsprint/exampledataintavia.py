@@ -74,11 +74,12 @@ g = Graph()
  
 for index, row in pldf.iterrows():
     """Create RDF Triples, according to IDM ontology."""
-    g.add((URIRef(ex+'person/'+row['intavia_id']), RDF.type, crm.E21_Person))
+    g.add((URIRef(ex+'person/'+row['intavia_id']), RDF.type, idm.Provided_Person))
     """Initialize URI for E21 Person"""
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), idm.person_proxy_for, URIRef(ex+'person/'+row['intavia_id'])))
     """add person proxy to person"""
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), RDF.type, idm.Person_Proxy))
+    g.add((URIRef(ex+'personproxy/'+row['intavia_id']), RDF.type, crm.E21_Person))
     """declare Person_Proxy"""
     g.add((URIRef(ex+'person/'+row['intavia_id']), crm.P1_is_identified_by, (URIRef(apis+'personid/'+row['apis_id']))))
     """Add APIS Identifier for Statement to Person Proxy"""
@@ -131,6 +132,7 @@ for index, row in pldf.iterrows():
     g.add((URIRef(ex+'deathevent/'+row['intavia_id']), crm.P100_was_death_of, (URIRef(ex+'personproxy/'+row['intavia_id']))))
     """adds death event to Person Proxy"""
     g.add((URIRef(ex+'deathevent/'+row['intavia_id']), RDF.type, crm.E69_Death))
+    g.add((URIRef(ex+'deathevent/'+row['intavia_id']), RDF.type, crm.E5_Event))
     """"defines event as Cidoc Birth Event"""
     g.add((URIRef(ex+'deathevent/'+row['intavia_id']), crm.P4_has_time_span, (URIRef(ex+'timespan/'+'2/'+row['intavia_id']))))
     """time span for death event"""
@@ -159,8 +161,10 @@ for index, row in pldf.iterrows():
         """add type of relation"""
         g.add((URIRef(ex+'familyrelation/'+'1/'+'/'+row['intavia_id']), bioc.inheres_in, (URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']))))
         """points to second person in family relation"""
+        g.add((URIRef(ex+'person/'+row['sibling_forename']+row['sibling_surname']), RDF.type, idm.Provided_Person))
+        g.add((URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']), RDF.type, idm.Person_Proxy))
         g.add((URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']), idm.person_proxy_for, (URIRef(ex+'person/'+row['sibling_forename']+row['sibling_surname']))))
-        g.add((URIRef(ex+'person/'+row['sibling_forename']+row['sibling_surname']), RDF.type, crm.E21_Person))
+        g.add((URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']), RDF.type, crm.E21_Person))
         """defines sibling as person"""
         g.add((URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']), crm.P1_is_identified_by, (URIRef(ex+'name/'+'1/'+row['sibling_forename']+row['sibling_surname']))))
         """add name to Person Proxy"""
@@ -185,13 +189,11 @@ for index, row in pldf.iterrows():
 
 for index, row in chodf.iterrows():
     g.add((URIRef(ex+'production_event/'+row['cho_id']), RDF.type, crm.E12_Production))
+    g.add((URIRef(ex+'production_event/'+row['cho_id']), RDF.type, crm.E5_Event))
     """define production event"""
-    g.add((URIRef(ex+'cho/'+row['cho_id']), RDF.type, edm.ProvidedCHO))
-    """add cho object"""
-    g.add((URIRef(ex+'production_event/'+row['cho_id']), crm.P108_has_produced, (URIRef(ex+'cho/'+row['cho_id']))))
-    """production event produced cho"""
-    g.add((URIRef(ex+'cho/'+row['cho_id']), owl.sameAs, (URIRef(row['item']))))
-    """defines that InTaVia cho is equivalent to Europeana CHO"""
+    g.add((URIRef(ex+'cho/'+row['cho_id']), RDF.type, idm.Provided_CHO))
+    g.add((URIRef(ex+'choproxy/'+row['cho_id']), idm.cho_proxy_for, (URIRef(ex+'cho/'+row['cho_id']))))
+    g.add((URIRef(ex+'choproxy/'+row['cho_id']), RDF.type, idm.CHO_Proxy))
     if Literal(row['person_id']) != "nan":
         g.add((URIRef(ex+'production_event/'+row['cho_id']), bioc.had_participant_in_role, (URIRef(ex+'role/'+'responsibleArtist'+'/'+row['cho_id']))))
         """define participant in production event"""
@@ -202,14 +204,14 @@ for index, row in chodf.iterrows():
         g.add((URIRef(idm+'role/'+'responsibleArtist'+'/'+row['cho_id']), crm.P2_has_type, Literal('responsibleArtist')))
         """defines type of role"""
     if (row['title']) != "nan":
-        g.add((URIRef(ex+'cho/'+row['cho_id']), crm.P1_is_identified_by, (URIRef(ex+'cho/'+'title/'+row['cho_id']))))
+        g.add((URIRef(ex+'choproxy/'+row['cho_id']), crm.P1_is_identified_by, (URIRef(ex+'cho/'+'title/'+row['cho_id']))))
         g.add(((URIRef(ex+'cho/'+'title/'+row['cho_id']), crm.P3_has_note,Literal(row['title']))))
         """adds title to CHO"""
     if (row['description']) != "nan":
             g.add((URIRef(ex+'role/'+'description/'+row['cho_id']), crm.P3_has_note, Literal(row['description'])))
             """adds description to CHO"""
     if (row['relation']) != "nan":
-        g.add((URIRef(ex+'cho/'+row['cho_id']), crm.P130_shows_features_of, (URIRef(row['relation']))))
+        g.add((URIRef(ex+'choproxy/'+row['cho_id']), crm.P130_shows_features_of, (URIRef(row['relation']))))
         """relation to other CHO (edm: The name or identifier of a related resource, generally used for other related CHOs. The recommended best practice is to identify the resource using a formal identification scheme.)"""
     #g.add((URIRef(ex+'production_event/'+row['cho_id']), crm.P7_took_place_at, Literal(row['coverage'])))
     #"""adds region to CHO (edm category includes also temporal contextualisation, but these links don't work, we have to seperate these values in the data ingestion pipeline, regions are geonames references, temporal contextualisation is from semium.org (e.g. https://semium.org/time/1979))"""

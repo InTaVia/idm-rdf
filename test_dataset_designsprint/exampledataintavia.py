@@ -81,7 +81,7 @@ for index, row in pldf.iterrows():
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), RDF.type, idm.Person_Proxy))
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), RDF.type, crm.E21_Person))
     """declare Person_Proxy"""
-    g.add((URIRef(ex+'person/'+row['intavia_id']), crm.P1_is_identified_by, (URIRef(apis+'personid/'+row['apis_id']))))
+    g.add((URIRef(ex+'personproxy/'+row['intavia_id']), crm.P1_is_identified_by, (URIRef(apis+'personid/'+row['apis_id']))))
     """Add APIS Identifier for Statement to Person Proxy"""
     g.add((URIRef(ex+'personid/'+row['apis_id']), RDF.type, crm.E42_Identifier))
     """define APIS ID as Identifier"""
@@ -197,7 +197,7 @@ for index, row in chodf.iterrows():
     if Literal(row['person_id']) != "nan":
         g.add((URIRef(ex+'production_event/'+row['cho_id']), bioc.had_participant_in_role, (URIRef(ex+'role/'+'responsibleArtist'+'/'+row['cho_id']))))
         """define participant in production event"""
-        g.add((URIRef(ex+'person/'+row['person_id']), bioc.bearer_of, (URIRef(ex+'role/'+'responsibleArtist'+'/'+row['cho_id']))))
+        g.add((URIRef(ex+'personproxy/'+row['person_id']), bioc.bearer_of, (URIRef(ex+'role/'+'responsibleArtist'+'/'+row['cho_id']))))
         """defines who is responsible for the artwork"""
         g.add((URIRef(ex+'role/'+'responsibleArtist'+'/'+row['cho_id']), RDF.type, bioc.Event_Role))
         """define role as bioc actor role"""

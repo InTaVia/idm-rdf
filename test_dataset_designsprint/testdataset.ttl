@@ -340,28 +340,11 @@ bioc:Male a bioc:Gender .
     crm:P2_has_type "forename" ;
     crm:P3_has_note "Ernst" .
 
-<https://www.intavia.org/person/12345> a idm:Provided_Person ;
-    crm:P1_is_identified_by <https://www.apis.acdh.oeaw.ac.at/personid/85656> ;
-    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/123> .
+<https://www.intavia.org/person/12345> a idm:Provided_Person .
 
-<https://www.intavia.org/person/12346> a idm:Provided_Person ;
-    crm:P1_is_identified_by <https://www.apis.acdh.oeaw.ac.at/personid/70682> ;
-    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/124>,
-        <https://www.intavia.org/role/responsibleArtist/125>,
-        <https://www.intavia.org/role/responsibleArtist/126>,
-        <https://www.intavia.org/role/responsibleArtist/127>,
-        <https://www.intavia.org/role/responsibleArtist/128>,
-        <https://www.intavia.org/role/responsibleArtist/129>,
-        <https://www.intavia.org/role/responsibleArtist/130>,
-        <https://www.intavia.org/role/responsibleArtist/131>,
-        <https://www.intavia.org/role/responsibleArtist/132>,
-        <https://www.intavia.org/role/responsibleArtist/133> .
+<https://www.intavia.org/person/12346> a idm:Provided_Person .
 
-<https://www.intavia.org/person/12347> a idm:Provided_Person ;
-    crm:P1_is_identified_by <https://www.apis.acdh.oeaw.ac.at/personid/92486> ;
-    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/134>,
-        <https://www.intavia.org/role/responsibleArtist/135>,
-        <https://www.intavia.org/role/responsibleArtist/136> .
+<https://www.intavia.org/person/12347> a idm:Provided_Person .
 
 <https://www.intavia.org/person/ErnstKlimt> a idm:Provided_Person .
 
@@ -404,7 +387,9 @@ bioc:Female a bioc:Gender .
 
 <https://www.intavia.org/personproxy/12345> a crm:E21_Person,
         idm:Person_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/name/1/12345> ;
+    crm:P1_is_identified_by <https://www.apis.acdh.oeaw.ac.at/personid/85656>,
+        <https://www.intavia.org/name/1/12345> ;
+    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/123> ;
     bioc:has_gender bioc:Female ;
     bioc:has_nationality bioc:austrian ;
     bioc:has_occupation bioc:Painter ;
@@ -412,7 +397,18 @@ bioc:Female a bioc:Gender .
 
 <https://www.intavia.org/personproxy/12346> a crm:E21_Person,
         idm:Person_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/name/1/12346> ;
+    crm:P1_is_identified_by <https://www.apis.acdh.oeaw.ac.at/personid/70682>,
+        <https://www.intavia.org/name/1/12346> ;
+    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/124>,
+        <https://www.intavia.org/role/responsibleArtist/125>,
+        <https://www.intavia.org/role/responsibleArtist/126>,
+        <https://www.intavia.org/role/responsibleArtist/127>,
+        <https://www.intavia.org/role/responsibleArtist/128>,
+        <https://www.intavia.org/role/responsibleArtist/129>,
+        <https://www.intavia.org/role/responsibleArtist/130>,
+        <https://www.intavia.org/role/responsibleArtist/131>,
+        <https://www.intavia.org/role/responsibleArtist/132>,
+        <https://www.intavia.org/role/responsibleArtist/133> ;
     bioc:has_family_relation <https://www.intavia.org/familyrelation/1/12346> ;
     bioc:has_gender bioc:Male ;
     bioc:has_nationality bioc:austrian ;
@@ -421,7 +417,11 @@ bioc:Female a bioc:Gender .
 
 <https://www.intavia.org/personproxy/12347> a crm:E21_Person,
         idm:Person_Proxy ;
-    crm:P1_is_identified_by <https://www.intavia.org/name/1/12347> ;
+    crm:P1_is_identified_by <https://www.apis.acdh.oeaw.ac.at/personid/92486>,
+        <https://www.intavia.org/name/1/12347> ;
+    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/134>,
+        <https://www.intavia.org/role/responsibleArtist/135>,
+        <https://www.intavia.org/role/responsibleArtist/136> ;
     bioc:has_gender bioc:Female ;
     bioc:has_nationality bioc:austrian ;
     bioc:has_occupation bioc:Painter ;

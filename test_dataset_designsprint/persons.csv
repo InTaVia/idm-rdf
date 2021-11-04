@@ -1,0 +1,4 @@
+intavia_id,forename,surname,birthdate,birthplace, deathdate,deathplace,occupation_general,gender,nationality,sibling_forename,sibling_surname,apis_id
+12345,Marie,Egner,1850-08-25,,1940-03-31,,Painter,Female,austrian,,,85656
+12346,Gustav,Klimt,1862-07-14,Wien,1918-02-06,Wien,Painter,Male,austrian,Ernst,Klimt,70682
+12347,Tina,Blau,1845-11-15,,1916-10-31,,Painter,Female,austrian,,,92486

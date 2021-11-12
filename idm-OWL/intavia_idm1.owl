@@ -271,6 +271,7 @@ crm:P2_has_type rdf:type owl:ObjectProperty ;
                 rdfs:domain bioc:Entity_Role ,
                             crm:E41_Appellation ,
                             crm:E42_Identifier ,
+                            crm:E54_Dimension ,
                             edm:ProvidedCHO ;
                 rdfs:range crm:E55_Type ;
                 rdfs:label "has type (crm)"@en .
@@ -293,6 +294,13 @@ crm:P31_has_modified rdf:type owl:ObjectProperty ;
                      rdfs:label "P31 has modified (crm)"@en .
 
 
+###  http://www.cidoc-crm.org/cidoc-crm/P32_used_general_technique
+crm:P32_used_general_technique rdf:type owl:ObjectProperty ;
+                               rdfs:domain crm:E12_Production ;
+                               rdfs:range crm:E55_Type ;
+                               rdfs:label "used general technique (crm)"@en .
+
+
 ###  http://www.cidoc-crm.org/cidoc-crm/P37_assigned
 crm:P37_assigned rdf:type owl:ObjectProperty ;
                  rdfs:domain crm:E15_Identifier_Assignment ;
@@ -303,12 +311,43 @@ An Identifier might be created prior to an assignment."""@en ;
                  rdfs:label "assigned (crm)"@en .
 
 
+###  http://www.cidoc-crm.org/cidoc-crm/P39_measured
+crm:P39_measured rdf:type owl:ObjectProperty ;
+                 rdfs:domain crm:E16_Measurement ;
+                 rdfs:range <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
+                 rdfs:label "measured (crm)"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P40_observed_dimension
+crm:P40_observed_dimension rdf:type owl:ObjectProperty ;
+                           rdfs:domain crm:E16_Measurement ;
+                           rdfs:range crm:E54_Dimension ;
+                           rdfs:label "observed dimension (crm)"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P45_consists_of
+crm:P45_consists_of rdf:type owl:ObjectProperty ;
+                    rdfs:domain <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
+                    rdfs:range crm:E57_Material ;
+                    rdfs:label "consists of (crm)"@en .
+
+
 ###  http://www.cidoc-crm.org/cidoc-crm/P4_has_time_span
 crm:P4_has_time_span rdf:type owl:ObjectProperty ;
                      owl:equivalentProperty edm:occuredAt ;
                      rdfs:domain crm:E2_Temporal_Entity ;
                      rdfs:range crm:E52_Time_Span ;
                      rdfs:label "has time span (crm)"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P62_depicts
+crm:P62_depicts rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
+                rdfs:range crm:E1_CRM_Entity ;
+                rdfs:comment """This property identifies something that is depicted by an instance of E24 Physical Human-Made Thing. Depicting is meant in the sense that an instance of E24 Physical Human-Made Thing intentionally shows, through its optical qualities or form, a representation of the entity depicted. Photographs are by default regarded as being intentional in this sense. Anything that is designed to change the properties of the depiction, such as an e-book reader, is specifically excluded. The property does not pertain to inscriptions or any other information encoding.
+
+This property is a shortcut of the more fully developed path from E24 Physical Human-Made Thing through P65 shows visual item, E36 Visual Item, P138 represents to E1 CRM Entity. P138.1 mode of depiction allows the nature of the depiction to be refined."""@en ;
+                rdfs:label "depicts (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P72_has_language
@@ -326,6 +365,13 @@ crm:P7_took_place_at rdf:type owl:ObjectProperty ;
                      rdfs:range crm:E53_Place ;
                      rdfs:comment "This property describes the spatial location of an instance of E4 Period. The related E53 Place should be seen as an approximation of the geographical area within which the phenomena that characterise the period in question occurred. P7took place at (witnessed) does not convey any meaning other than spatial positioning (generally on the surface of the earth). For example, the period \"Révolution française\" can be said to have taken place in “France”, the “Victorian” period, may be said to have taken place in “Britain” and its colonies, as well as other parts of Europe and north America. A period can take place at multiple locations. It is a shortcut of the more fully developed path from E4 Period through P161 has spatial projection, E53 Place, P89 falls within (contains) to E53 Place."@en ;
                      rdfs:label "took place at (crm)"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P91_has_unit
+crm:P91_has_unit rdf:type owl:ObjectProperty ;
+                 rdfs:domain crm:E54_Dimension ;
+                 rdfs:range crm:E58_Measurement_Unit ;
+                 rdfs:label "has unit (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life
@@ -429,6 +475,33 @@ ore:proxyIn rdf:type owl:ObjectProperty ;
             rdfs:range ore:Aggregation ;
             rdfs:comment "Proxy objects must also link to the Aggregation in which the resource being proxied is aggregated. The ore:proxyIn relationship is used for this purpose. The subject of the relationship is a Proxy object, and the object of the relationship is the Aggregation."@en ;
             rdfs:label "proxy in (ore)"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/rights
+<http://purl.org/dc/elements/1.1/rights> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
+                                         rdfs:range rdfs:Literal ,
+                                                    xsd:anyURI ;
+                                         rdfs:label "rights (dc)"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P90_has_value
+crm:P90_has_value rdf:type owl:DatatypeProperty ;
+                  rdfs:domain crm:E54_Dimension ;
+                  rdfs:range rdfs:Literal ;
+                  rdfs:comment "has value (crm)"@en .
+
+
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:DatatypeProperty ;
+           rdfs:domain edm:ProvidedCHO ,
+                       :Provided_Group ,
+                       :Provided_Person ;
+           rdfs:range xsd:anyURI .
 
 
 #################################################################
@@ -555,7 +628,8 @@ An event should also be documented using an instance of E81 Transformation if it
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment
 crm:E13_Attribute_Assignment rdf:type owl:Class ;
-                             rdfs:subClassOf crm:E7_Activity ;
+                             rdfs:subClassOf crm:E5_Event ,
+                                             crm:E7_Activity ;
                              rdfs:comment """This class comprises the actions of making assertions about one property of an object or any single relation between two items or concepts. The type of the property asserted to hold between two items or concepts can be described by the property P177 assigned property type: E55 Type.
 For example, the class describes the actions of people making propositions and statements during certain scientific/scholarly procedures, e.g., the person and date when a condition statement was made, an identifier was assigned, the museum object was measured, etc. Which kinds of such assignments and statements need to be documented explicitly in structures of a schema rather than free text, depends on whether this information should be accessible by structured queries.
 This class allows for the documentation of how the respective assignment came about, and whose opinion it was. Note that all instances of properties described in a knowledge base are the opinion of someone. Per default, they are the opinion of the team maintaining the knowledge base. This fact must not individually be registered for all instances of properties provided by the maintaining team, because it would result in an endless recursion of whose opinion was the description of an opinion. Therefore, the use of instances of E13 Attribute Assignment marks the fact, that the maintaining team is in general neutral to the validity of the respective assertion, but registers someone else’s opinion and how it came about.
@@ -568,6 +642,12 @@ All cases of properties in this model that are also described indirectly through
 crm:E15_Identifier_Assignment rdf:type owl:Class ;
                               rdfs:subClassOf crm:E13_Attribute_Assignment ;
                               rdfs:label "Identifier Assignment (crm)"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E16_Measurement
+crm:E16_Measurement rdf:type owl:Class ;
+                    rdfs:subClassOf crm:E13_Attribute_Assignment ;
+                    rdfs:label "Measurement (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity
@@ -662,6 +742,12 @@ Any object can serve as a frame of reference for E53 Place determination. The mo
               rdfs:label "Place"@en .
 
 
+###  http://www.cidoc-crm.org/cidoc-crm/E54_Dimension
+crm:E54_Dimension rdf:type owl:Class ;
+                  rdfs:subClassOf crm:E1_CRM_Entity ;
+                  rdfs:label "Dimension (crm)"@en .
+
+
 ###  http://www.cidoc-crm.org/cidoc-crm/E55_Type
 crm:E55_Type rdf:type owl:Class ;
              rdfs:subClassOf crm:E1_CRM_Entity ;
@@ -675,6 +761,25 @@ crm:E56_Language rdf:type owl:Class ;
                  rdfs:subClassOf crm:E1_CRM_Entity ;
                  rdfs:comment "This class is a specialization of E55 Type and comprises the natural languages in the sense of concepts. This type is used categorically in the model without reference to instances of it, i.e. the Model does not foresee the description of instances of instances of E56 Language, e.g.: “instances of Mandarin Chinese”. It is recommended that internationally or nationally agreed codes and terminology are used to denote instances of E56 Language, such as those defined in ISO 639:1988."@en ;
                  rdfs:label "Language"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E57_Material
+crm:E57_Material rdf:type owl:Class ;
+                 rdfs:subClassOf crm:E55_Type ;
+                 rdfs:comment """This class is a specialization of E55 Type and comprises the concepts of materials.
+
+Instances of E57 Material may denote properties of matter before its use, during its use, and as incorporated in an object, such as ultramarine powder, tempera paste, reinforced concrete. Discrete pieces of raw-materials kept in museums, such as bricks, sheets of fabric, pieces of metal, should be modelled individually in the same way as other objects. Discrete used or processed pieces, such as the stones from Nefer Titi's temple, should be modelled as parts (cf. P46 is composed of (forms part of): E18 Physical Thing).
+
+This type is used categorically in the model without reference to instances of it, i.e., the Model does not foresee the description of instances of instances of E57 Material, e.g.: “instances of gold”.
+
+It is recommended that internationally or nationally agreed codes and terminology are used."""@en ;
+                 rdfs:label "Material (crm)"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit
+crm:E58_Measurement_Unit rdf:type owl:Class ;
+                         rdfs:subClassOf crm:E55_Type ;
+                         rdfs:label "Measurement Unit (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E5_Event

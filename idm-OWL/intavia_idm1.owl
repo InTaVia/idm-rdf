@@ -11,7 +11,11 @@
 @base <http://www.example.org/2021/intavia_idm> .
 
 <http://www.example.org/2021/intavia_idm> rdf:type owl:Ontology ;
+<<<<<<< HEAD
                                            rdfs:comment "IDM (InTaVia data model) (in progress) combines Cidoc CRM version 7.1.1 (https://cidoc-crm.org/rdfs/7.1.1/CIDOC_CRM_v7.1.1.rdfs), BioCRM extension, EDM/ Europana Data Model (based on EDM OWL, aligned with EDM version 5.2.4, last update: 2013-05-20 (to be replaced with version 5.2.8 manually or get current EDM OWL from Europeana), skos:definition of EDM is implemented as rdfs:comment), PROV-O and Open Archives Initiatives ORE (Version 1.0, 2008-10-17))."@en .
+=======
+                                           rdfs:comment "IDM/ InTaVia data model (in progress) combines CIDOC CRM Version  7.1.1. (https://gitlab.isl.ics.forth.gr/cidoc-crm/cidoc_crm_rdf/-/blob/v7.1.1_preparation/CIDOC_CRM_7.1.1_RDFS_Impl_v1.1.rdfs), BioCRM extension (http://ldf.fi/schema/bioc/.), EDM/ Europana Data Model (based on EDM OWL, aligned with EDM version 5.2.4, last update: 2013-05-20, skos:definition of EDM is implemented as rdfs:comment), PROV-O, P-Plan and Open Archives Initiatives ORE (Version 1.0, 2008-10-17)."@en .
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 
 #################################################################
 #    Object Properties
@@ -126,6 +130,7 @@ bioc:inheres_in rdf:type owl:ObjectProperty ;
                 rdfs:comment """Inverse property of bioc:bearer_of. bioc:inheres_in connects a role which is attached to an actor in an interpersonal relationship and the other person in this relationship.
 Relationships are represented by relating an actor (a person or group) to another actor in a role by using one of the subproperties of the property bioc:has relation."""@en ;
                 rdfs:label "inheres in (bioc)"@en .
+<<<<<<< HEAD
 
 
 ###  http://ldf.fi/schema/bioc/occured_in_the_presence_of_in_role
@@ -134,6 +139,23 @@ bioc:occured_in_the_presence_of_in_role rdf:type owl:ObjectProperty ;
                                         rdfs:range bioc:Thing_Role ;
                                         rdfs:comment "role of a thing (cultural heritage object) in an event"@en ;
                                         rdfs:label "occured in the presence of in role (bioc)"@en .
+=======
+
+
+###  http://ldf.fi/schema/bioc/occured_in_the_presence_of_in_role
+bioc:occured_in_the_presence_of_in_role rdf:type owl:ObjectProperty ;
+                                        rdfs:domain crm:E4_Period ;
+                                        rdfs:range bioc:Thing_Role ;
+                                        rdfs:comment "role of a thing (cultural heritage object) in an event"@en ;
+                                        rdfs:label "occured in the presence of in role (bioc)"@en .
+
+
+###  http://ldf.fi/schema/bioc/occurred_in_the_presence_of_in_role
+bioc:occurred_in_the_presence_of_in_role rdf:type owl:ObjectProperty ;
+                                         rdfs:domain crm:E5_Event ;
+                                         rdfs:range bioc:Thing_Role ;
+                                         rdfs:label "occurred in the presence of in role"@en .
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of
@@ -153,6 +175,7 @@ The identity of an instance of E24 Physical Human-Made Thing is not defined by i
                       rdfs:label "has produced (crm)"@en .
 
 
+<<<<<<< HEAD
 ###  http://www.cidoc-crm.org/cidoc-crm/P128_carries
 crm:P128_carries rdf:type owl:ObjectProperty ;
                  rdfs:domain <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
@@ -161,11 +184,17 @@ crm:P128_carries rdf:type owl:ObjectProperty ;
                  rdfs:label "carries (crm)"@en .
 
 
+=======
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 ###  http://www.cidoc-crm.org/cidoc-crm/P13_destroyed
 crm:P13_destroyed rdf:type owl:ObjectProperty ;
                   rdfs:domain crm:E6_Destruction ;
                   rdfs:range <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
+<<<<<<< HEAD
                   rdfs:label "destroyed (crm)"@en .
+=======
+                  rdfs:label "P13 destroyed (crm)"@en .
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P148_has_component
@@ -190,6 +219,18 @@ INTAVIA: property is mainly needed for Production Event (also for Move)"""@en ;
                           rdfs:label "was influenced by"@en .
 
 
+<<<<<<< HEAD
+=======
+###  http://www.cidoc-crm.org/cidoc-crm/P168_place_is_defined_by
+crm:P168_place_is_defined_by rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf crm:P1_is_identified_by ;
+                             rdfs:domain crm:E53_Place ;
+                             rdfs:range crm:E94_Space_Primitive ;
+                             rdfs:comment "This property associates an instance of E53 Place with an instance of E94 Space Primitive that defines it. Syntactic variants or use of different scripts may result in multiple instances of E94 Space Primitive defining exactly the same place. Transformations between different reference systems always result in new definitions of places approximating each other and not in alternative definitions."@en ;
+                             rdfs:label "place is defined by (crm)"@en .
+
+
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 ###  http://www.cidoc-crm.org/cidoc-crm/P17_was_motivated_by
 crm:P17_was_motivated_by rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf crm:P15_was_influenced_by ;
@@ -261,7 +302,10 @@ crm:P27_moved_from rdf:type owl:ObjectProperty ;
 crm:P2_has_type rdf:type owl:ObjectProperty ;
                 owl:equivalentProperty edm:hasType ;
                 rdfs:domain bioc:Entity_Role ,
+<<<<<<< HEAD
                             crm:E11_Modification ,
+=======
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
                             crm:E41_Appellation ,
                             crm:E42_Identifier ,
                             crm:E54_Dimension ,
@@ -284,7 +328,11 @@ The involved actors and their roles (recipient / surrendering actor) are documen
 crm:P31_has_modified rdf:type owl:ObjectProperty ;
                      rdfs:domain crm:E11_Modification ;
                      rdfs:range <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
+<<<<<<< HEAD
                      rdfs:label "has modified (crm)"@en .
+=======
+                     rdfs:label "P31 has modified (crm)"@en .
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P32_used_general_technique
@@ -325,6 +373,7 @@ crm:P45_consists_of rdf:type owl:ObjectProperty ;
                     rdfs:label "consists of (crm)"@en .
 
 
+<<<<<<< HEAD
 ###  http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of
 crm:P46_is_composed_of rdf:type owl:ObjectProperty ;
                        rdfs:domain crm:E78_Curated_Holding ,
@@ -342,6 +391,8 @@ This property is transitive and non-reflexive"""@en ;
                        rdfs:label "is composed of (crm)"@en .
 
 
+=======
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 ###  http://www.cidoc-crm.org/cidoc-crm/P4_has_time_span
 crm:P4_has_time_span rdf:type owl:ObjectProperty ;
                      owl:equivalentProperty edm:occuredAt ;
@@ -350,6 +401,7 @@ crm:P4_has_time_span rdf:type owl:ObjectProperty ;
                      rdfs:label "has time span (crm)"@en .
 
 
+<<<<<<< HEAD
 ###  http://www.cidoc-crm.org/cidoc-crm/P55_has_current_location
 crm:P55_has_current_location rdf:type owl:ObjectProperty ;
                              owl:equivalentProperty edm:currentLocation ;
@@ -358,6 +410,8 @@ crm:P55_has_current_location rdf:type owl:ObjectProperty ;
                              rdfs:label "has current location (crm)"@en .
 
 
+=======
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 ###  http://www.cidoc-crm.org/cidoc-crm/P62_depicts
 crm:P62_depicts rdf:type owl:ObjectProperty ;
                 rdfs:domain <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
@@ -513,6 +567,7 @@ ore:proxyIn rdf:type owl:ObjectProperty ;
                                          rdfs:label "rights (dc)"@en .
 
 
+<<<<<<< HEAD
 ###  http://www.cidoc-crm.org/cidoc-crm/P102_has_title
 crm:P102_has_title rdf:type owl:DatatypeProperty ;
                    rdfs:domain <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
@@ -538,10 +593,13 @@ crm:P3_has_note rdf:type owl:DatatypeProperty ;
                 rdfs:label "has note (crm)"@en .
 
 
+=======
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 ###  http://www.cidoc-crm.org/cidoc-crm/P90_has_value
 crm:P90_has_value rdf:type owl:DatatypeProperty ;
                   rdfs:domain crm:E54_Dimension ;
                   rdfs:range rdfs:Literal ;
+<<<<<<< HEAD
                   rdfs:label "has value (crm)"@en .
 
 
@@ -550,6 +608,9 @@ edm:dataProvider rdf:type owl:DatatypeProperty ;
                  rdfs:domain <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> ;
                  rdfs:range rdfs:Literal ,
                             xsd:anyURI .
+=======
+                  rdfs:comment "has value (crm)"@en .
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 
 
 ###  http://www.w3.org/2002/07/owl#sameAs
@@ -670,6 +731,7 @@ If the instance of E29 Design or Procedure utilized for the modification prescri
 ###  http://www.cidoc-crm.org/cidoc-crm/E12_Production
 crm:E12_Production rdf:type owl:Class ;
                    rdfs:subClassOf crm:E11_Modification ,
+                                   crm:E5_Event ,
                                    crm:E63_Beginning_of_Existence ;
                    rdfs:comment """This class comprises activities that are designed to, and succeed in, creating one or more new items.
 
@@ -962,6 +1024,28 @@ The class also applies to the establishment or loss of ownership of instances of
 5. the loss of title due to destruction of the item
 It may also describe events where a collector appropriates legal title, for example by annexation or field collection. The interpretation of the museum notion of \"accession\" differs between institutions. The CIDOC CRM therefore models legal ownership (E8 Acquisition) and physical custody (E10 Transfer of Custody) separately. Institutions will then model their specific notions of accession and deaccession as combinations of these."""@en ;
                    rdfs:label "Acquisition (crm)"@en .
+<<<<<<< HEAD
+=======
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive
+crm:E94_Space_Primitive rdf:type owl:Class ;
+                        rdfs:subClassOf crm:E1_CRM_Entity ;
+                        rdfs:comment """CHECK AGAIN WITH OFFICIAL Cidoc CRM 7.1.1 RDFS version (not included in github version yet)!
+
+FROM version 6.2.1.: The primitive values \"E60 Number\", \"E61 Time Primitive\", \"E62 String\" and \"E94 Space Primitive\" referred in
+   the Model for formal completeness are interpreted as rdf: literal.
+-> replace with literal?
+
+This class comprises instances of E59 Primitive Value for space that should be implemented with appropriate validation, precision and references to spatial coordinate systems to express geometries on or relative to Earth, or on any other stable constellations of matter, relevant to cultural and scientific documentation.
+
+An instance of E94 Space Primitive defines an instance of E53 Place in the sense of a declarative place as elaborated in CRMgeo (Doerr & Hiebel 2013), which means that the identity of the place is derived from its geometric definition. Such a declarative place may allow for the approximation of instances of E53 Place defined by the actual extent of some phenomenon, such as a settlement or a riverbed, or other forms of identification rather than by an instance of E94 Space Primitive. Note that using an instance of E94 Space Primitive for approximating the actual extent of some place always defines a (declarative) instance of E53 Place in its own right.
+
+Definitions of instances of E53 Place using different spatial reference systems are always definitions of different instances of E53 Place.
+
+Instances of E94 Space Primitive provide the ability to link CIDOC CRM encoded data to the kinds of geometries used in maps or Geoinformation systems. They may be used for visualization of the instances of E53 Place they define, in their geographic context and for computing topological relations between places based on these geometries. E94 Space Primitive is not further elaborated upon within this model. It is considered good practice to maintain compatibility with OGC standards."""@en ;
+                        rdfs:label "Space Primitive (crm)"@en .
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E9_Move
@@ -1047,6 +1131,7 @@ edm:dataProvider rdf:type owl:Class ;
                 rdfs:subClassOf :IDM_classes ;
                 rdfs:comment "class for groups in InTaVia, functions equivalent to Provided CHO in EDM, properties are attached to Proxies. not to Provided CHO"@en ;
                 rdfs:label "Provided Group"@en .
+<<<<<<< HEAD
 
 
 ###  http://www.example.org/2021/intavia_idm#Provided_Person
@@ -1056,6 +1141,17 @@ edm:dataProvider rdf:type owl:Class ;
                  rdfs:label "Provided Person"@en .
 
 
+=======
+
+
+###  http://www.example.org/2021/intavia_idm#Provided_Person
+:Provided_Person rdf:type owl:Class ;
+                 rdfs:subClassOf :IDM_classes ;
+                 rdfs:comment "class for persons in InTaVia, functions equivalent to Provided CHO in EDM, properties are attached to Proxies. not to Provided CHO"@en ;
+                 rdfs:label "Provided Person"@en .
+
+
+>>>>>>> 57910bf3e9565105852be43f2eb063b8085ddfbc
 ###  http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)
 <http://www.example.org/2021/intavia_idm#CHO_Proxy_(ore)> rdf:type owl:Class ;
                                                           rdfs:subClassOf :IDM_classes ,

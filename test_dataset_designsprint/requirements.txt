@@ -1,0 +1,4 @@
+pandas==1.3.4
+rdflib==6.0.0
+SparqlWrapper
+lxml

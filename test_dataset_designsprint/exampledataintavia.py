@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Dec  8 09:58:52 2020
-
-@author: CE
-"""
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
 Created on Tue Dec  1 18:55:23 2020
 
 @author: CE
@@ -52,43 +44,76 @@ apis=Namespace('https://www.apis.acdh.oeaw.ac.at/')
 owl=Namespace('http://www.w3.org/2002/07/owl#')
 """Defines OWL namespace."""
 
-
 pldf = pd.read_csv("persons.csv", sep=",", quotechar='"', encoding='utf-8')
 """Read CSV in Pandas Dataframe."""
 
 chodf = pd.read_csv("cho.csv", sep=",", quotechar='"', encoding='utf-8')
 
-pldf.columns = ['intavia_id', 'forename', 'surname', 'birthdate', 'birthplace', 'deathdate', 'deathplace', 'occupation_general', 'gender', 'nationality','sibling_forename','sibling_surname', 'apis_id']
+pldf.columns = ['intavia_id', 'forename', 'surname', 'birthdate', 'birthplace', 'deathdate', 'deathplace', 'occupation_general', 'gender', 'nationality','sibling_forename','sibling_surname', 'apis_id', 'id_type']
 
-chodf.columns = ['cho_id','person_id','item','title','coverage','created','description','relation','subject','type']
-
-
+chodf.columns = ['person_id', 'cho_id', 'creator','contributor','date','cdate','mediumI','mediumII','mediumIII','mediumIV','mediumV','mediumVI','mediumVII','mediumVIII','extent','currentLocation','dcidentifierI','dcidentifierII','providerproxy','providedcho','mf','aggregation','dp','rights','title','coverage','creation','description','relation','subjectI','subjectII','subjectIII','subjectIV','subjectV','typeI','typeII','typeIII','typeIV','typeV','typeVII','typeVIII','typeIX','typeX','language']
 
 pldf = pldf.applymap(str)
 """Convert all items in the Personlistdataframe to strings."""
 chodf = chodf.applymap(str)
 
+def medium_triple(med, cho_id, columntitle):
+    """Triples for medium of CHO"""
+    if med != "nan":
+        if med.startswith('http'):
+            g.add((URIRef(ex+'choproxy/'+row['cho_id']), crm.P45_consists_of, (URIRef(med))))
+        else:
+            g.add((URIRef(ex+'choproxy/'+row['cho_id']), crm.P45_consists_of, (URIRef(ex+'medium/'+columntitle+'/'+cho_id))))
+            g.add((URIRef(ex+'medium/'+columntitle+'/'+cho_id), rdfs.label, Literal(med)))
+
+def type_triple(type, cho_id, columntitle):
+    """Triples for type of CHO"""
+    if type != "nan":
+        if type.startswith('http'):
+            g.add((URIRef(ex+'production_event/'+row['cho_id']), crm.P32_used_general_technique, (URIRef(type))))
+            g.add((URIRef(type), RDF.type, crm.E55_Type))
+        else:
+            g.add((URIRef(ex+'production_event/'+row['cho_id']), crm.P32_used_general_technique, (URIRef(ex+'type/'+columntitle+'/'+cho_id))))
+            g.add((URIRef(ex+'type/'+columntitle+'/'+cho_id), RDF.type, crm.E55_Type))
+            g.add((URIRef(ex+'type/'+columntitle+'/'+cho_id), rdfs.label, Literal(type)))
+
+def subject_triple(subject, cho_id, columntitle):
+    """Triples for subject of CHO"""
+    if subject != "nan":
+        if subject.startswith('http'):
+            g.add((URIRef(ex+'choproxy/'+row['cho_id']), crm.P62_depicts, (URIRef(subject))))
+            g.add((URIRef(subject), RDF.type, crm.E1_CRM_Entity))
+        else:
+            g.add((URIRef(ex+'choproxy/'+row['cho_id']), crm.P62_depicts, (URIRef(ex+'subject/'+columntitle+'/'+cho_id))))
+            g.add((URIRef(ex+'subject/'+columntitle+'/'+cho_id), RDF.type, crm.E1_CRM_Entity))
+            g.add((URIRef(ex+'type/'+columntitle+'/'+cho_id), rdfs.label, Literal(subject)))
+
 
 g = Graph()
-#Create undirected graph, assigned to g 
+#Create undirected graph, assigned to g
  
 for index, row in pldf.iterrows():
-    """Create RDF Triples, according to IDM ontology."""
-    g.add((URIRef(ex+'person/'+row['intavia_id']), RDF.type, idm.Provided_Person))
-    """Initialize URI for E21 Person"""
-    g.add((URIRef(ex+'personproxy/'+row['intavia_id']), idm.person_proxy_for, URIRef(ex+'person/'+row['intavia_id'])))
+    """Create RDF Triples, according to IDM data model."""
+    g.add((URIRef(ex+'providedperson/'+row['intavia_id']), RDF.type, idm.Provided_Person))
+    """Initialize URI for Provided Person"""
+    g.add((URIRef(ex+'personproxy/'+row['intavia_id']), idm.person_proxy_for, URIRef(ex+'providedperson/'+row['intavia_id'])))
     """add person proxy to person"""
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), RDF.type, idm.Person_Proxy))
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), RDF.type, crm.E21_Person))
-    """declare Person_Proxy"""
+    """declare Person_Proxy and CRM E21 Person"""
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), crm.P1_is_identified_by, (URIRef(apis+'personid/'+row['apis_id']))))
     """Add APIS Identifier for Statement to Person Proxy"""
     g.add((URIRef(ex+'personid/'+row['apis_id']), RDF.type, crm.E42_Identifier))
-    """define APIS ID as Identifier"""
-    g.add((URIRef(ex+'personid/'+row['apis_id']), crm.P3_has_note , (Literal(row['apis_id']))))
-    """add value of APIS ID"""
-    g.add((URIRef(ex+'personid/'+row['apis_id']), crm.P2_has_type, (Literal('APIS Identifier'))))
+    """define specific APIS ID as Identifier"""
+    g.add((URIRef(ex+'personid/'+row['apis_id']), rdfs.label, (Literal(row['apis_id']))))
+    """add human-readable value of APIS ID"""
+    g.add((URIRef(ex+'personid/'+row['apis_id']), crm.P2_has_type, (URIRef(ex+'idtype/'+row['id_type']))))
     """define type of Identifier"""
+    g.add((URIRef(ex+'idtype/'+row['id_type']), rdfs.label, (Literal('APIS Identifier'))))
+    """add human-readable id type"""
+    g.add((URIRef(ex+'idtype/'+row['id_type']), RDF.type, crm.E55_Type))
+    """declare CRM E55 Type"""
+    #identifierassignment
     g.add((URIRef(ex+'identassig/'+row['intavia_id']), RDF.type, crm.E15_Identifier_Assignment))
     """defined event as Identifier Assignment"""
     g.add((URIRef(ex+'identassig/'+row['intavia_id']), crm.P37_assigned, (URIRef(apis+'personid/'+row['apis_id']))))
@@ -96,131 +121,210 @@ for index, row in pldf.iterrows():
     g.add((URIRef(ex+'identassig/'+row['intavia_id']), bioc.had_participant_in_role, (URIRef(ex+'role/'+'ResponsibleForIdentifier'+'/'+row['intavia_id']))))
     """Identifier Assignment had participant in role ResponsibleForIdentifier"""
     g.add((URIRef(ex+'role/'+'ResponsibleForIdentifier'+'/'+row['intavia_id']), RDF.type, bioc.Event_Role))
-    """assigned role as an actor role"""
+    """assigned role as an event role"""
+    g.add((URIRef(ex+'role/'+'ResponsibleForIdentifier'+'/'+row['intavia_id']), rdfs.label, (Literal('responsible Actor'))))
+    """add human-readable role for identifier assignment event"""
     g.add((URIRef(ex+'institution/'+'AustrianAcademyofSciences'), bioc.bearer_of, (URIRef(idm+'role/'+'ResponsibleForIdentifier'+'/'+row['intavia_id']))))
     """defines who is responsible for the identifier assignment"""
-    g.add((URIRef(idm+'role/'+'ResponsibleForIdentifier'+'/'+row['intavia_id']), crm.P2_has_type, Literal('ResponsibleForIdentifier')))
-    """defines type of role"""
+    g.add((URIRef(ex+'institution/'+'AustrianAcademyofSciences'), bioc.bearer_of, (URIRef(idm+'role/'+'ResponsibleForIdentifier'+'/'+row['intavia_id']))))
+    """add human-readable label for responsible institution"""
     #name
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), crm.P1_is_identified_by, (URIRef(ex+'name/'+'1/'+row['intavia_id']))))
     """add name to Person Proxy"""
-    g.add((URIRef(ex+'name/'+'1/'+row['intavia_id']), RDF.type, crm.E41_Appellation))
-    """defines name as Cidoc E41 Appellation"""
+    g.add((URIRef(ex+'name/'+'1/'+row['intavia_id']), RDF.type, crm.E33_E41_Linguistic_Appellation))
+    """defines name as Cidoc E33_E41_Linguistic_Appellation"""
+    g.add((URIRef(ex+'name/'+'2/'+row['intavia_id']), RDF.type, crm.E33_E41_Linguistic_Appellation))
+    """defines name as Cidoc E33_E41_Linguistic_Appellation"""
+    g.add((URIRef(ex+'name/'+'3/'+row['intavia_id']), RDF.type, crm.E33_E41_Linguistic_Appellation))
+    """defines name as Cidoc E33_E41_Linguistic_Appellation"""
+    #surname
     g.add((URIRef(ex+'name/'+'1/'+row['intavia_id']), crm.P148_has_component, (URIRef(ex+'name/'+'2/'+row['intavia_id']))))
     """add surname"""
-    g.add((URIRef(ex+'name/'+'2/'+row['intavia_id']), crm.P2_has_type, Literal("surname")))
+    g.add((URIRef(ex+'name/'+'2/'+row['intavia_id']), crm.P2_has_type, (URIRef(ex+'nametype/'+'surname'))))
     """define as type surname"""
-    g.add((URIRef(ex+'name/'+'2/'+row['intavia_id']), crm.P3_has_note , (Literal(row['surname']))))
+    g.add((URIRef(ex+'nametype/'+'surname'), rdfs.label, (Literal('surname'))))
+    """add human-readable label for nametype"""
+    g.add((URIRef(ex+'name/'+'2/'+row['intavia_id']), rdfs.value , (Literal(row['surname']))))
     """add string for surname"""
+    #forename
     g.add((URIRef(ex+'name/'+'1/'+row['intavia_id']), crm.P148_has_component, (URIRef(ex+'name/'+'3/'+row['intavia_id']))))
     """add forename"""
-    g.add((URIRef(ex+'name/'+'3/'+row['intavia_id']), crm.P2_has_type , Literal("forename")))
+    g.add((URIRef(ex+'name/'+'3/'+row['intavia_id']), crm.P2_has_type, (URIRef(ex+'nametype/'+'forename'))))
     """define as type forename"""
-    g.add((URIRef(ex+'name/'+'3/'+row['intavia_id']), crm.P3_has_note , (Literal(row['forename']))))
-    """add string for forename"""
+    g.add((URIRef(ex+'nametype/'+'forename'), rdfs.label, (Literal('forename'))))
+    """add human-readable label for nametype"""
+    g.add((URIRef(ex+'name/'+'3/'+row['intavia_id']), rdfs.value, (Literal(row['forename']))))
+    """add string for surname"""
+    #birth
     g.add((URIRef(ex+'birthevent/'+row['intavia_id']), crm.P98_brought_into_life, (URIRef(ex+'personproxy/'+row['intavia_id']))))
     """adds birth event to Person Proxy"""
     g.add((URIRef(ex+'birthevent/'+row['intavia_id']), RDF.type, crm.E67_Birth))
-    """"defines event as Cidoc Birth Event"""
+    """defines event as Cidoc Birth Event"""
     g.add((URIRef(ex+'birthevent/'+row['intavia_id']), crm.P4_has_time_span, (URIRef(ex+'timespan/'+'1/'+row['intavia_id']))))
     """time span for birth event"""
     g.add((URIRef(ex+'timespan/'+'1/'+row['intavia_id']), RDF.type, crm.E52_Time_Span))
+    """defines specific time-span as class E52 Time Span"""
     g.add((URIRef(ex+'timespan/'+'1/'+row['intavia_id']), crm.P81a_begin_of_the_begin, (Literal(row['birthdate'])+'+00:00:00')))
     """defines begin of birthdate"""
     g.add((URIRef(ex+'timespan/'+'1/'+row['intavia_id']), crm.P82b_end_of_the_end, (Literal(row['birthdate'])+'+23:59:59')))
     """defines begin of birthdate"""
+    #death
     g.add((URIRef(ex+'deathevent/'+row['intavia_id']), crm.P100_was_death_of, (URIRef(ex+'personproxy/'+row['intavia_id']))))
     """adds death event to Person Proxy"""
     g.add((URIRef(ex+'deathevent/'+row['intavia_id']), RDF.type, crm.E69_Death))
-    g.add((URIRef(ex+'deathevent/'+row['intavia_id']), RDF.type, crm.E5_Event))
-    """"defines event as Cidoc Birth Event"""
+    """defines event as Cidoc Death Event"""
     g.add((URIRef(ex+'deathevent/'+row['intavia_id']), crm.P4_has_time_span, (URIRef(ex+'timespan/'+'2/'+row['intavia_id']))))
     """time span for death event"""
     g.add((URIRef(ex+'timespan/'+'2/'+row['intavia_id']), crm.P81a_begin_of_the_begin, (Literal(row['deathdate'])+'+00:00:00')))
     """defines begin of deathdate"""
     g.add((URIRef(ex+'timespan/'+'2/'+row['intavia_id']), RDF.type, crm.E52_Time_Span))
+    """defines specific time-span as class E52 Time Span"""
     g.add((URIRef(ex+'timespan/'+'2/'+row['intavia_id']), crm.P82b_end_of_the_end, (Literal(row['deathdate'])+'+23:59:59')))
     """defines end of deathdate"""
+    #gender
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), bioc.has_gender, (URIRef(bioc+row['gender']))))
+    """defines gender of Person_Proxy"""
+    g.add((URIRef(bioc+row['gender']), rdfs.label, (Literal(row['gender']))))
+    """add human-readable label to gender"""
     g.add((URIRef(bioc+row['gender']), RDF.type, bioc.Gender))
     """define Gender as biocrm gender"""
+    #occupation
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), bioc.has_occupation, (URIRef(bioc+row['occupation_general']))))
     """add occupation to Person Proxy"""
+    g.add((URIRef(bioc+row['occupation_general']), rdfs.label, (Literal(row['occupation_general']))))
+    """add human-readable label to general occupation"""
     g.add((URIRef(bioc+row['occupation_general']), RDF.type, bioc.Occupation))
     """define occupation as biocrm occupation"""
+    #nationality
     g.add((URIRef(ex+'personproxy/'+row['intavia_id']), bioc.has_nationality, (URIRef(bioc+row['nationality']))))
     """add nationality to Person Proxy"""
+    g.add((URIRef(bioc+row['nationality']), rdfs.label, (Literal(row['nationality']))))
+    """add human-readable label to nationality"""
     g.add((URIRef(bioc+row['nationality']), RDF.type, bioc.Nationality))
     """define nationality as biocrm nationality"""
+    #family relation
     if (row['sibling_surname']) != "nan":
         g.add((URIRef(ex+'personproxy/'+row['intavia_id']), bioc.has_family_relation, (URIRef(ex+'familyrelation/'+'1/'+row['intavia_id']))))
         """add family relation"""
-        g.add((URIRef(ex+'familyrelation/'+'1/'+'/'+row['intavia_id']), RDF.type, bioc.Family_Relation))
-        """family relation is from Bioc"""
-        g.add((URIRef(ex+'familyrelation/'+'1/'+'/'+row['intavia_id']), crm.P2_has_type, Literal('Sibling')))
-        """add type of relation"""
+        g.add((URIRef(ex+'familyrelation/'+'1/'+'/'+row['intavia_id']), RDF.type, bioc.Family_Relationship_Role))
+        """family relationship role is from Bioc"""
+        g.add((URIRef(ex+'familyrelation/'+'1/'+'/'+row['intavia_id']), crm.P2_has_type, (URIRef(ex+'familyreltype/'+'sibling'))))
+        """add type of family relation"""
+        g.add((URIRef(ex+'familyreltype/'+'sibling'), rdfs.label, Literal('Sibling')))
+        """add human-readable label to sibling type"""
         g.add((URIRef(ex+'familyrelation/'+'1/'+'/'+row['intavia_id']), bioc.inheres_in, (URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']))))
         """points to second person in family relation"""
         g.add((URIRef(ex+'person/'+row['sibling_forename']+row['sibling_surname']), RDF.type, idm.Provided_Person))
         g.add((URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']), RDF.type, idm.Person_Proxy))
-        g.add((URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']), idm.person_proxy_for, (URIRef(ex+'person/'+row['sibling_forename']+row['sibling_surname']))))
         g.add((URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']), RDF.type, crm.E21_Person))
+        g.add((URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']), idm.person_proxy_for, (URIRef(ex+'person/'+row['sibling_forename']+row['sibling_surname']))))
         """defines sibling as person"""
         g.add((URIRef(ex+'personproxy/'+row['sibling_forename']+row['sibling_surname']), crm.P1_is_identified_by, (URIRef(ex+'name/'+'1/'+row['sibling_forename']+row['sibling_surname']))))
         """add name to Person Proxy"""
-        g.add((URIRef(ex+'name/'+'1/'+row['sibling_forename']+row['sibling_surname']), RDF.type, crm.E41_Appellation))
+        g.add((URIRef(ex+'name/'+'1/'+row['sibling_forename']+row['sibling_surname']), RDF.type, crm.E41_E33_Linguistic_Appellation))
         """defines name as Cidoc E41 Appellation"""
         g.add((URIRef(ex+'name/'+'1/'+row['sibling_forename']+row['sibling_surname']), crm.P148_has_component, (URIRef(ex+'name/'+'2/'+row['sibling_forename']+row['sibling_surname']))))
         """add surname"""
-        g.add((URIRef(ex+'name/'+'2/'+row['sibling_forename']+row['sibling_surname']), RDF.type, crm.E41_Appellation))
+        g.add((URIRef(ex+'name/'+'2/'+row['sibling_forename']+row['sibling_surname']), RDF.type, crm.E41_E33_Linguistic_Appellation))
         """defines surname as Cidoc E41 Appellation"""
-        g.add((URIRef(ex+'name/'+'2/'+row['sibling_forename']+row['sibling_surname']), crm.P2_has_type, Literal('surname')))
+        g.add((URIRef(ex+'name/'+'2/'+row['sibling_forename']+row['sibling_surname']), crm.P2_has_type, (URIRef(ex+'nametype/'+'surname'))))
         """define as type surname"""
-        g.add((URIRef(ex+'name/'+'2/'+row['sibling_forename']+row['sibling_surname']), crm.P3_has_note , (Literal(row['sibling_surname']))))
+        g.add((URIRef(ex+'name/'+'2/'+row['sibling_forename']+row['sibling_surname']), rdfs.value , (Literal(row['sibling_surname']))))
         """add string for surname"""
         g.add((URIRef(ex+'name/'+'1/'+row['sibling_forename']+row['sibling_surname']), crm.P148_has_component, (URIRef(ex+'name/'+'3/'+row['sibling_forename']+row['sibling_surname']))))
         """add forename"""
-        g.add((URIRef(ex+'name/'+'3/'+row['sibling_forename']+row['sibling_surname']), RDF.type, crm.E41_Appellation))
-        """defines forename as Cidoc E41 Appellation"""
-        g.add((URIRef(ex+'name/'+'3/'+row['sibling_forename']+row['sibling_surname']), crm.P2_has_type, Literal('forename')))
+        g.add((URIRef(ex+'name/'+'3/'+row['sibling_forename']+row['sibling_surname']), RDF.type, crm.E41_E33_Linguistic_Appellation))
+        """defines forename as Cidoc crm.E41_E33_Linguistic_Appellation"""
+        g.add((URIRef(ex+'name/'+'3/'+row['sibling_forename']+row['sibling_surname']), crm.P2_has_type, (URIRef(ex+'nametype/'+'forename'))))
         """define as type forename"""
-        g.add((URIRef(ex+'name/'+'3/'+row['sibling_forename']+row['sibling_surname']), crm.P3_has_note , (Literal(row['sibling_forename']))))
+        g.add((URIRef(ex+'name/'+'3/'+row['sibling_forename']+row['sibling_surname']), rdfs.value, (Literal(row['sibling_forename']))))
         """add string for forename"""
 
 for index, row in chodf.iterrows():
     g.add((URIRef(ex+'production_event/'+row['cho_id']), RDF.type, crm.E12_Production))
-    g.add((URIRef(ex+'production_event/'+row['cho_id']), RDF.type, crm.E5_Event))
     """define production event"""
     g.add((URIRef(ex+'cho/'+row['cho_id']), RDF.type, idm.Provided_CHO))
+    """define provided cho"""
     g.add((URIRef(ex+'choproxy/'+row['cho_id']), idm.cho_proxy_for, (URIRef(ex+'cho/'+row['cho_id']))))
+    """define proxy for provided cho"""
     g.add((URIRef(ex+'choproxy/'+row['cho_id']), RDF.type, idm.CHO_Proxy))
-    if Literal(row['person_id']) != "nan":
+    g.add((URIRef(ex+'choproxy/'+row['cho_id']), RDF.type, crm.E18_Physical_Thing))
+    g.add((URIRef(ex+'production_event/'+row['cho_id']), bioc.occured_in_the_presence_of_in_role, (URIRef(ex+'productionthingrole/'+row['cho_id']))))
+    """adds thingrole to productionevent"""
+    g.add((URIRef(ex+'productionthingrole/'+row['cho_id']), RDF.type, bioc.Thing_Role))
+    g.add((URIRef(ex+'productionthingrole/'+row['cho_id']), crm.P12_occurred_in_the_presence_of, (URIRef(ex+'choproxy/'+row['cho_id']))))
+    """connects production event and cho proxy"""
+    g.add((URIRef(ex+'productionthingrole/'+row['cho_id']), crm.P4_has_time_span, (URIRef(ex+'timespan/'+'1/'+row['cho_id']))))
+    g.add((URIRef(ex+'timespan/'+'1/'+row['cho_id']), RDF.type, crm.E52_Time_Span))
+    """time-span for production event"""
+    #medium
+    medium_triple(row['mediumI'], row['cho_id'],'mediumI')
+    medium_triple(row['mediumII'], row['cho_id'],'mediumII')
+    medium_triple(row['mediumIII'], row['cho_id'],'mediumIII')
+    medium_triple(row['mediumIV'], row['cho_id'],'mediumIV')
+    medium_triple(row['mediumV'], row['cho_id'],'mediumV')
+    medium_triple(row['mediumVII'], row['cho_id'],'mediumVII')
+    medium_triple(row['mediumVIII'], row['cho_id'],'mediumVIII')
+    #creationdate
+    if row['cdate'] != 'nan':
+        g.add((URIRef(ex+'timespan/'+'1/'+row['cho_id']), crm.P3_has_note, Literal(row['cdate'])))
+        """dates are not available in a coherent data format, P3 is used until data cleaning"""
+    #creator
+    if Literal(row['person_id']) != 'nan':
         g.add((URIRef(ex+'production_event/'+row['cho_id']), bioc.had_participant_in_role, (URIRef(ex+'role/'+'responsibleArtist'+'/'+row['cho_id']))))
-        """define participant in production event"""
+        """define participant as responsible artist in production event"""
         g.add((URIRef(ex+'personproxy/'+row['person_id']), bioc.bearer_of, (URIRef(ex+'role/'+'responsibleArtist'+'/'+row['cho_id']))))
-        """defines who is responsible for the artwork"""
+        """specific responsible person for CHO production event"""
         g.add((URIRef(ex+'role/'+'responsibleArtist'+'/'+row['cho_id']), RDF.type, bioc.Event_Role))
         """define role as bioc actor role"""
-        g.add((URIRef(idm+'role/'+'responsibleArtist'+'/'+row['cho_id']), crm.P2_has_type, Literal('responsibleArtist')))
-        """defines type of role"""
+        g.add((URIRef(idm+'role/'+'responsibleArtist'+'/'+row['cho_id']), rdfs.label, Literal('responsibleArtist')))
+        """human-readable label for type of role"""
+    #title
     if (row['title']) != "nan":
-        g.add((URIRef(ex+'choproxy/'+row['cho_id']), crm.P1_is_identified_by, (URIRef(ex+'cho/'+'title/'+row['cho_id']))))
-        g.add(((URIRef(ex+'cho/'+'title/'+row['cho_id']), crm.P3_has_note,Literal(row['title']))))
+        g.add((URIRef(ex+'choproxy/'+row['cho_id']), crm.P1_is_identified_by, (URIRef(ex+'cho/'+row['cho_id']+'/title'))))
+        g.add(((URIRef(ex+'cho/'+row['cho_id']+'/title'), rdfs.label, Literal(row['title']))))
+        g.add((URIRef(ex+'cho/'+row['cho_id']+'/title'), RDF.type, crm.E41_E33_Linguistic_Appellation))
         """adds title to CHO"""
+    #description
     if (row['description']) != "nan":
             g.add((URIRef(ex+'role/'+'description/'+row['cho_id']), crm.P3_has_note, Literal(row['description'])))
             """adds description to CHO"""
+    #relation
     if (row['relation']) != "nan":
         g.add((URIRef(ex+'choproxy/'+row['cho_id']), crm.P130_shows_features_of, (URIRef(row['relation']))))
         """relation to other CHO (edm: The name or identifier of a related resource, generally used for other related CHOs. The recommended best practice is to identify the resource using a formal identification scheme.)"""
-    #g.add((URIRef(ex+'production_event/'+row['cho_id']), crm.P7_took_place_at, Literal(row['coverage'])))
-    #"""adds region to CHO (edm category includes also temporal contextualisation, but these links don't work, we have to seperate these values in the data ingestion pipeline, regions are geonames references, temporal contextualisation is from semium.org (e.g. https://semium.org/time/1979))"""
-    #not 100% accurate for this concrete cidoc Event
-    #g.add((URIRef(ex+'rights/'+row['cho_id']), crm.P129_is_about, (URIRef(ex+'cho/'+row['cho_id']))))
-    #"""Rights on the DIGITAL object, not the actual CHO"""
-    #g.add((URIRef(ex+'rights/'+row['cho_id']), RDF.type, crm.E30_Right)
-    #"""defines those rights as E30 rights"""
-    #g.add(row['rights'], crm.P75_possesses, (URIRef(ex+'rights/'+row['cho_id']))
+    #extent
+    if (row['extent']) != "nan":
+        g.add((URIRef(ex+'measurementevent/'+row['cho_id']), crm.P39_measured, (URIRef(ex+'choproxy/'+row['cho_id']))))
+        g.add((URIRef(ex+'measurementevent/'+row['cho_id']), RDF.type, crm.E16_Measurement))
+        g.add((URIRef(ex+'measurementevent/'+row['cho_id']), crm.P40_observed_dimension, (URIRef(ex+'measurement/'+row['cho_id']))))
+        g.add((URIRef(ex+'measurement/'+row['cho_id']), rdfs.value, Literal(row['extent'])))
+        """a more detailed modeling (with measurement unit and type of measurement) is not possible until data is structured"""
+    #dataProvider
+    g.add((URIRef(ex+'choproxy/'+row['cho_id']), edm.dataProvider, Literal(row['dp'])))
+    #modelling in Cidoc to be discussed
+    #mediafiles, just images
+    if (row['mf']) != "nan":
+        g.add((URIRef(row['mf']), crm.P138_represents, (URIRef(ex+'choproxy/'+row['cho_id']))))
+        g.add((URIRef(row['mf']), RDF.type, crm.E36_Visual_Item))
+        g.add((URIRef(row['mf']), crm.P104_is_subject_to, (URIRef(row['rights']))))
+        g.add((URIRef(row['rights']), RDF.type, crm.E30_Right))
+    #general technique/ type
+    type_triple(row['typeI'], row['cho_id'],'typeI')
+    type_triple(row['typeII'], row['cho_id'],'typeII')
+    type_triple(row['typeIII'], row['cho_id'],'typeIII')
+    type_triple(row['typeIV'], row['cho_id'],'typeIV')
+    type_triple(row['typeV'], row['cho_id'],'typeV')
+    type_triple(row['typeVII'], row['cho_id'],'typeVII')
+    type_triple(row['typeVIII'], row['cho_id'],'typeVIII')
+    type_triple(row['typeIX'], row['cho_id'],'typeIX')
+    type_triple(row['typeX'], row['cho_id'],'typeX')
+    #subject
+    subject_triple(row['subjectI'], row['cho_id'],'subjectI')
+    subject_triple(row['subjectII'], row['cho_id'],'subjectII')
+    subject_triple(row['subjectIII'], row['cho_id'],'subjectIII')
+    subject_triple(row['subjectIV'], row['cho_id'],'subjectIV')
+    subject_triple(row['subjectV'], row['cho_id'],'subjectV')
 
 
 
@@ -239,7 +343,8 @@ g.bind('idm', idm)
 g.bind('owl', owl)
 #Bind namespaces to prefixes for more readable output
  
-exttl = g.serialize(format='turtle').decode('utf-8')    
+ 
+exttl = g.serialize(format='turtle')    
 
 with open('exdataset.rdf', 'w') as f:
     f.write(str(exttl))

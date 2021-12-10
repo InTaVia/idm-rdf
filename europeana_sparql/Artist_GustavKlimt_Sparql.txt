@@ -1,0 +1,90 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ore: <http://www.openarchives.org/ore/terms/>
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+
+select DISTINCT ?creator ?contributor ?date ?cdate ?medium ?extent ?currentLocation ?dcidentifier ?providerproxy ?providedcho ?mf ?aggregation ?dp ?rights ?title ?coverage ?creation ?description ?relation ?subject ?type ?language
+WHERE
+{
+{
+{?providerproxy dc:creator "Gustav Klimt"@de.}
+UNION
+{?providerproxy dc:creator "Klimt, Gustav"@en.}
+UNION
+{?providerproxy dc:creator "Klimt, Gustav". }
+UNION
+{?providerproxy dc:creator "Gustav Klimt". }
+}
+?providerproxy dc:creator ?creator.
+?aggregation edm:aggregatedCHO ?providedcho.
+?providerproxy ore:proxyFor ?providedcho.
+?aggregation edm:dataProvider ?dp.
+OPTIONAL
+{
+?providerproxy dc:contributor ?contributor.
+}
+OPTIONAL
+{
+?providerproxy dc:date ?date.
+}
+OPTIONAL
+{
+?providerproxy dcterms:created ?cdate.
+}
+OPTIONAL
+{
+?providerproxy dcterms:medium ?medium.
+}
+OPTIONAL
+{
+?providerproxy dcterms:extent ?extent.
+}
+OPTIONAL
+{
+?providerproxy edm:currentLocation ?currentLocation.
+}
+OPTIONAL
+{
+?providerproxy dc:identifier ?dcidentifier.
+}
+OPTIONAL
+{
+?aggregation edm:rights ?rights.
+}
+OPTIONAL
+{
+?providerproxy dc:title ?title.
+}
+OPTIONAL
+{
+?providerproxy dc:coverage ?coverage.
+}
+OPTIONAL
+{
+?providerproxy dc:creation ?creation.
+}
+OPTIONAL
+{
+?providerproxy dc:description ?description.
+}
+OPTIONAL
+{
+?providerproxy dc:relation ?relation.
+}
+OPTIONAL
+{
+?providerproxy dc:subject ?subject.
+}
+OPTIONAL
+{
+?providerproxy dc:type ?type.
+}
+OPTIONAL
+{
+?providerproxy dc:language ?language.
+}
+OPTIONAL
+{
+?aggregation edm:object ?mf.
+}
+}
+LIMIT 300

@@ -978,26 +978,28 @@
 
 <https://www.intavia.org/birthevent/12345> a crm:E67_Birth ;
     crm:P4_has_time_span <https://www.intavia.org/timespan/1/12345> ;
-    crm:P98_brought_into_life <https://www.intavia.org/personproxy/12345> .
+    crm:P98_brought_into_life <https://www.intavia.org/personproxy/85656/12345> .
 
 <https://www.intavia.org/birthevent/12346> a crm:E67_Birth ;
     crm:P4_has_time_span <https://www.intavia.org/timespan/1/12346> ;
-    crm:P98_brought_into_life <https://www.intavia.org/personproxy/12346> .
+    crm:P98_brought_into_life <https://www.intavia.org/personproxy/70682/12346> .
 
 <https://www.intavia.org/birthevent/12347> a crm:E67_Birth ;
     crm:P4_has_time_span <https://www.intavia.org/timespan/1/12347> ;
-    crm:P98_brought_into_life <https://www.intavia.org/personproxy/12347> .
+    crm:P98_brought_into_life <https://www.intavia.org/personproxy/10055_t/12347>,
+        <https://www.intavia.org/personproxy/92486/12347> .
 
 <https://www.intavia.org/deathevent/12345> a crm:E69_Death ;
-    crm:P100_was_death_of <https://www.intavia.org/personproxy/12345> ;
+    crm:P100_was_death_of <https://www.intavia.org/personproxy/85656/12345> ;
     crm:P4_has_time_span <https://www.intavia.org/timespan/2/12345> .
 
 <https://www.intavia.org/deathevent/12346> a crm:E69_Death ;
-    crm:P100_was_death_of <https://www.intavia.org/personproxy/12346> ;
+    crm:P100_was_death_of <https://www.intavia.org/personproxy/70682/12346> ;
     crm:P4_has_time_span <https://www.intavia.org/timespan/2/12346> .
 
 <https://www.intavia.org/deathevent/12347> a crm:E69_Death ;
-    crm:P100_was_death_of <https://www.intavia.org/personproxy/12347> ;
+    crm:P100_was_death_of <https://www.intavia.org/personproxy/10055_t/12347>,
+        <https://www.intavia.org/personproxy/92486/12347> ;
     crm:P4_has_time_span <https://www.intavia.org/timespan/2/12347> .
 
 <https://www.intavia.org/familyrelation/1//12346> a bioc:Family_Relationship_Role ;
@@ -1013,7 +1015,8 @@
     bioc:had_participant_in_role <https://www.intavia.org/role/ResponsibleForIdentifier/12346> .
 
 <https://www.intavia.org/identassig/12347> a crm:E15_Identifier_Assignment ;
-    crm:P37_assigned <https://www.apis.acdh.oeaw.ac.at/personid/92486> ;
+    crm:P37_assigned <https://www.apis.acdh.oeaw.ac.at/personid/10055_t>,
+        <https://www.apis.acdh.oeaw.ac.at/personid/92486> ;
     bioc:had_participant_in_role <https://www.intavia.org/role/ResponsibleForIdentifier/12347> .
 
 <https://www.intavia.org/idm/role/responsibleArtist/1> rdfs:label "responsibleArtist" .
@@ -1510,9 +1513,11 @@
 
 <https://www.intavia.org/idm/role/responsibleArtist/99> rdfs:label "responsibleArtist" .
 
-<https://www.intavia.org/institution/AustrianAcademyofSciences> bioc:bearer_of <https://www.intavia.org/idm/role/ResponsibleForIdentifier/12345>,
+<https://www.intavia.org/institution/OEAW> bioc:bearer_of <https://www.intavia.org/idm/role/ResponsibleForIdentifier/12345>,
         <https://www.intavia.org/idm/role/ResponsibleForIdentifier/12346>,
         <https://www.intavia.org/idm/role/ResponsibleForIdentifier/12347> .
+
+<https://www.intavia.org/institution/VUAmsterdam> bioc:bearer_of <https://www.intavia.org/idm/role/ResponsibleForIdentifier/12347> .
 
 <https://www.intavia.org/measurementevent/1> a crm:E16_Measurement ;
     crm:P39_measured <https://www.intavia.org/choproxy/1> ;
@@ -2498,17 +2503,284 @@
     crm:P39_measured <https://www.intavia.org/choproxy/99> ;
     crm:P40_observed_dimension <https://www.intavia.org/measurement/99> .
 
+<https://www.intavia.org/personid/10055_t> a crm:E42_Identifier ;
+    rdfs:label "10055_t" .
+
 <https://www.intavia.org/personid/70682> a crm:E42_Identifier ;
-    rdfs:label "70682" ;
-    crm:P2_has_type <https://www.intavia.org/idtype/apis_id> .
+    rdfs:label "70682" .
 
 <https://www.intavia.org/personid/85656> a crm:E42_Identifier ;
-    rdfs:label "85656" ;
-    crm:P2_has_type <https://www.intavia.org/idtype/apis_id> .
+    rdfs:label "85656" .
 
 <https://www.intavia.org/personid/92486> a crm:E42_Identifier ;
-    rdfs:label "92486" ;
-    crm:P2_has_type <https://www.intavia.org/idtype/apis_id> .
+    rdfs:label "92486" .
+
+<https://www.intavia.org/personid/Apis/70682> crm:P2_has_type <https://www.intavia.org/personid/Apis> .
+
+<https://www.intavia.org/personid/Apis/85656> crm:P2_has_type <https://www.intavia.org/personid/Apis> .
+
+<https://www.intavia.org/personid/Apis/92486> crm:P2_has_type <https://www.intavia.org/personid/Apis> .
+
+<https://www.intavia.org/personid/BiographieNetSource1/10055_t> crm:P2_has_type <https://www.intavia.org/personid/BiographieNetSource1> .
+
+<https://www.intavia.org/personproxy/europeana/12345> a crm:E21_Person,
+        idm:Person_Proxy ;
+    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/1> ;
+    idm:person_proxy_for <https://www.intavia.org/providedperson/12345> .
+
+<https://www.intavia.org/personproxy/europeana/12346> a crm:E21_Person,
+        idm:Person_Proxy ;
+    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/10>,
+        <https://www.intavia.org/role/responsibleArtist/100>,
+        <https://www.intavia.org/role/responsibleArtist/101>,
+        <https://www.intavia.org/role/responsibleArtist/102>,
+        <https://www.intavia.org/role/responsibleArtist/103>,
+        <https://www.intavia.org/role/responsibleArtist/104>,
+        <https://www.intavia.org/role/responsibleArtist/105>,
+        <https://www.intavia.org/role/responsibleArtist/106>,
+        <https://www.intavia.org/role/responsibleArtist/107>,
+        <https://www.intavia.org/role/responsibleArtist/108>,
+        <https://www.intavia.org/role/responsibleArtist/109>,
+        <https://www.intavia.org/role/responsibleArtist/11>,
+        <https://www.intavia.org/role/responsibleArtist/110>,
+        <https://www.intavia.org/role/responsibleArtist/111>,
+        <https://www.intavia.org/role/responsibleArtist/112>,
+        <https://www.intavia.org/role/responsibleArtist/113>,
+        <https://www.intavia.org/role/responsibleArtist/114>,
+        <https://www.intavia.org/role/responsibleArtist/115>,
+        <https://www.intavia.org/role/responsibleArtist/116>,
+        <https://www.intavia.org/role/responsibleArtist/117>,
+        <https://www.intavia.org/role/responsibleArtist/118>,
+        <https://www.intavia.org/role/responsibleArtist/119>,
+        <https://www.intavia.org/role/responsibleArtist/12>,
+        <https://www.intavia.org/role/responsibleArtist/120>,
+        <https://www.intavia.org/role/responsibleArtist/121>,
+        <https://www.intavia.org/role/responsibleArtist/122>,
+        <https://www.intavia.org/role/responsibleArtist/123>,
+        <https://www.intavia.org/role/responsibleArtist/124>,
+        <https://www.intavia.org/role/responsibleArtist/125>,
+        <https://www.intavia.org/role/responsibleArtist/126>,
+        <https://www.intavia.org/role/responsibleArtist/127>,
+        <https://www.intavia.org/role/responsibleArtist/128>,
+        <https://www.intavia.org/role/responsibleArtist/129>,
+        <https://www.intavia.org/role/responsibleArtist/13>,
+        <https://www.intavia.org/role/responsibleArtist/130>,
+        <https://www.intavia.org/role/responsibleArtist/131>,
+        <https://www.intavia.org/role/responsibleArtist/132>,
+        <https://www.intavia.org/role/responsibleArtist/133>,
+        <https://www.intavia.org/role/responsibleArtist/134>,
+        <https://www.intavia.org/role/responsibleArtist/135>,
+        <https://www.intavia.org/role/responsibleArtist/136>,
+        <https://www.intavia.org/role/responsibleArtist/137>,
+        <https://www.intavia.org/role/responsibleArtist/138>,
+        <https://www.intavia.org/role/responsibleArtist/139>,
+        <https://www.intavia.org/role/responsibleArtist/14>,
+        <https://www.intavia.org/role/responsibleArtist/140>,
+        <https://www.intavia.org/role/responsibleArtist/141>,
+        <https://www.intavia.org/role/responsibleArtist/142>,
+        <https://www.intavia.org/role/responsibleArtist/143>,
+        <https://www.intavia.org/role/responsibleArtist/144>,
+        <https://www.intavia.org/role/responsibleArtist/145>,
+        <https://www.intavia.org/role/responsibleArtist/146>,
+        <https://www.intavia.org/role/responsibleArtist/147>,
+        <https://www.intavia.org/role/responsibleArtist/148>,
+        <https://www.intavia.org/role/responsibleArtist/149>,
+        <https://www.intavia.org/role/responsibleArtist/15>,
+        <https://www.intavia.org/role/responsibleArtist/150>,
+        <https://www.intavia.org/role/responsibleArtist/151>,
+        <https://www.intavia.org/role/responsibleArtist/152>,
+        <https://www.intavia.org/role/responsibleArtist/153>,
+        <https://www.intavia.org/role/responsibleArtist/154>,
+        <https://www.intavia.org/role/responsibleArtist/155>,
+        <https://www.intavia.org/role/responsibleArtist/156>,
+        <https://www.intavia.org/role/responsibleArtist/157>,
+        <https://www.intavia.org/role/responsibleArtist/158>,
+        <https://www.intavia.org/role/responsibleArtist/159>,
+        <https://www.intavia.org/role/responsibleArtist/16>,
+        <https://www.intavia.org/role/responsibleArtist/160>,
+        <https://www.intavia.org/role/responsibleArtist/161>,
+        <https://www.intavia.org/role/responsibleArtist/162>,
+        <https://www.intavia.org/role/responsibleArtist/163>,
+        <https://www.intavia.org/role/responsibleArtist/164>,
+        <https://www.intavia.org/role/responsibleArtist/165>,
+        <https://www.intavia.org/role/responsibleArtist/166>,
+        <https://www.intavia.org/role/responsibleArtist/167>,
+        <https://www.intavia.org/role/responsibleArtist/168>,
+        <https://www.intavia.org/role/responsibleArtist/169>,
+        <https://www.intavia.org/role/responsibleArtist/17>,
+        <https://www.intavia.org/role/responsibleArtist/170>,
+        <https://www.intavia.org/role/responsibleArtist/171>,
+        <https://www.intavia.org/role/responsibleArtist/172>,
+        <https://www.intavia.org/role/responsibleArtist/173>,
+        <https://www.intavia.org/role/responsibleArtist/174>,
+        <https://www.intavia.org/role/responsibleArtist/175>,
+        <https://www.intavia.org/role/responsibleArtist/176>,
+        <https://www.intavia.org/role/responsibleArtist/177>,
+        <https://www.intavia.org/role/responsibleArtist/178>,
+        <https://www.intavia.org/role/responsibleArtist/179>,
+        <https://www.intavia.org/role/responsibleArtist/18>,
+        <https://www.intavia.org/role/responsibleArtist/180>,
+        <https://www.intavia.org/role/responsibleArtist/181>,
+        <https://www.intavia.org/role/responsibleArtist/182>,
+        <https://www.intavia.org/role/responsibleArtist/183>,
+        <https://www.intavia.org/role/responsibleArtist/184>,
+        <https://www.intavia.org/role/responsibleArtist/185>,
+        <https://www.intavia.org/role/responsibleArtist/186>,
+        <https://www.intavia.org/role/responsibleArtist/187>,
+        <https://www.intavia.org/role/responsibleArtist/188>,
+        <https://www.intavia.org/role/responsibleArtist/189>,
+        <https://www.intavia.org/role/responsibleArtist/19>,
+        <https://www.intavia.org/role/responsibleArtist/190>,
+        <https://www.intavia.org/role/responsibleArtist/191>,
+        <https://www.intavia.org/role/responsibleArtist/192>,
+        <https://www.intavia.org/role/responsibleArtist/193>,
+        <https://www.intavia.org/role/responsibleArtist/194>,
+        <https://www.intavia.org/role/responsibleArtist/195>,
+        <https://www.intavia.org/role/responsibleArtist/196>,
+        <https://www.intavia.org/role/responsibleArtist/197>,
+        <https://www.intavia.org/role/responsibleArtist/198>,
+        <https://www.intavia.org/role/responsibleArtist/199>,
+        <https://www.intavia.org/role/responsibleArtist/2>,
+        <https://www.intavia.org/role/responsibleArtist/20>,
+        <https://www.intavia.org/role/responsibleArtist/200>,
+        <https://www.intavia.org/role/responsibleArtist/201>,
+        <https://www.intavia.org/role/responsibleArtist/202>,
+        <https://www.intavia.org/role/responsibleArtist/203>,
+        <https://www.intavia.org/role/responsibleArtist/204>,
+        <https://www.intavia.org/role/responsibleArtist/205>,
+        <https://www.intavia.org/role/responsibleArtist/206>,
+        <https://www.intavia.org/role/responsibleArtist/207>,
+        <https://www.intavia.org/role/responsibleArtist/21>,
+        <https://www.intavia.org/role/responsibleArtist/22>,
+        <https://www.intavia.org/role/responsibleArtist/23>,
+        <https://www.intavia.org/role/responsibleArtist/24>,
+        <https://www.intavia.org/role/responsibleArtist/25>,
+        <https://www.intavia.org/role/responsibleArtist/26>,
+        <https://www.intavia.org/role/responsibleArtist/27>,
+        <https://www.intavia.org/role/responsibleArtist/28>,
+        <https://www.intavia.org/role/responsibleArtist/29>,
+        <https://www.intavia.org/role/responsibleArtist/3>,
+        <https://www.intavia.org/role/responsibleArtist/30>,
+        <https://www.intavia.org/role/responsibleArtist/31>,
+        <https://www.intavia.org/role/responsibleArtist/32>,
+        <https://www.intavia.org/role/responsibleArtist/33>,
+        <https://www.intavia.org/role/responsibleArtist/34>,
+        <https://www.intavia.org/role/responsibleArtist/35>,
+        <https://www.intavia.org/role/responsibleArtist/36>,
+        <https://www.intavia.org/role/responsibleArtist/37>,
+        <https://www.intavia.org/role/responsibleArtist/38>,
+        <https://www.intavia.org/role/responsibleArtist/39>,
+        <https://www.intavia.org/role/responsibleArtist/4>,
+        <https://www.intavia.org/role/responsibleArtist/40>,
+        <https://www.intavia.org/role/responsibleArtist/41>,
+        <https://www.intavia.org/role/responsibleArtist/42>,
+        <https://www.intavia.org/role/responsibleArtist/43>,
+        <https://www.intavia.org/role/responsibleArtist/44>,
+        <https://www.intavia.org/role/responsibleArtist/45>,
+        <https://www.intavia.org/role/responsibleArtist/46>,
+        <https://www.intavia.org/role/responsibleArtist/47>,
+        <https://www.intavia.org/role/responsibleArtist/48>,
+        <https://www.intavia.org/role/responsibleArtist/49>,
+        <https://www.intavia.org/role/responsibleArtist/5>,
+        <https://www.intavia.org/role/responsibleArtist/50>,
+        <https://www.intavia.org/role/responsibleArtist/51>,
+        <https://www.intavia.org/role/responsibleArtist/52>,
+        <https://www.intavia.org/role/responsibleArtist/53>,
+        <https://www.intavia.org/role/responsibleArtist/54>,
+        <https://www.intavia.org/role/responsibleArtist/55>,
+        <https://www.intavia.org/role/responsibleArtist/56>,
+        <https://www.intavia.org/role/responsibleArtist/57>,
+        <https://www.intavia.org/role/responsibleArtist/58>,
+        <https://www.intavia.org/role/responsibleArtist/59>,
+        <https://www.intavia.org/role/responsibleArtist/6>,
+        <https://www.intavia.org/role/responsibleArtist/60>,
+        <https://www.intavia.org/role/responsibleArtist/61>,
+        <https://www.intavia.org/role/responsibleArtist/62>,
+        <https://www.intavia.org/role/responsibleArtist/63>,
+        <https://www.intavia.org/role/responsibleArtist/64>,
+        <https://www.intavia.org/role/responsibleArtist/65>,
+        <https://www.intavia.org/role/responsibleArtist/66>,
+        <https://www.intavia.org/role/responsibleArtist/67>,
+        <https://www.intavia.org/role/responsibleArtist/68>,
+        <https://www.intavia.org/role/responsibleArtist/69>,
+        <https://www.intavia.org/role/responsibleArtist/7>,
+        <https://www.intavia.org/role/responsibleArtist/70>,
+        <https://www.intavia.org/role/responsibleArtist/71>,
+        <https://www.intavia.org/role/responsibleArtist/72>,
+        <https://www.intavia.org/role/responsibleArtist/73>,
+        <https://www.intavia.org/role/responsibleArtist/74>,
+        <https://www.intavia.org/role/responsibleArtist/75>,
+        <https://www.intavia.org/role/responsibleArtist/76>,
+        <https://www.intavia.org/role/responsibleArtist/77>,
+        <https://www.intavia.org/role/responsibleArtist/78>,
+        <https://www.intavia.org/role/responsibleArtist/79>,
+        <https://www.intavia.org/role/responsibleArtist/8>,
+        <https://www.intavia.org/role/responsibleArtist/80>,
+        <https://www.intavia.org/role/responsibleArtist/81>,
+        <https://www.intavia.org/role/responsibleArtist/82>,
+        <https://www.intavia.org/role/responsibleArtist/83>,
+        <https://www.intavia.org/role/responsibleArtist/84>,
+        <https://www.intavia.org/role/responsibleArtist/85>,
+        <https://www.intavia.org/role/responsibleArtist/86>,
+        <https://www.intavia.org/role/responsibleArtist/87>,
+        <https://www.intavia.org/role/responsibleArtist/88>,
+        <https://www.intavia.org/role/responsibleArtist/89>,
+        <https://www.intavia.org/role/responsibleArtist/9>,
+        <https://www.intavia.org/role/responsibleArtist/90>,
+        <https://www.intavia.org/role/responsibleArtist/91>,
+        <https://www.intavia.org/role/responsibleArtist/92>,
+        <https://www.intavia.org/role/responsibleArtist/93>,
+        <https://www.intavia.org/role/responsibleArtist/94>,
+        <https://www.intavia.org/role/responsibleArtist/95>,
+        <https://www.intavia.org/role/responsibleArtist/96>,
+        <https://www.intavia.org/role/responsibleArtist/97>,
+        <https://www.intavia.org/role/responsibleArtist/98>,
+        <https://www.intavia.org/role/responsibleArtist/99> ;
+    idm:person_proxy_for <https://www.intavia.org/providedperson/12346> .
+
+<https://www.intavia.org/personproxy/europeana/12347> a crm:E21_Person,
+        idm:Person_Proxy ;
+    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/208>,
+        <https://www.intavia.org/role/responsibleArtist/209>,
+        <https://www.intavia.org/role/responsibleArtist/210>,
+        <https://www.intavia.org/role/responsibleArtist/211>,
+        <https://www.intavia.org/role/responsibleArtist/212>,
+        <https://www.intavia.org/role/responsibleArtist/213>,
+        <https://www.intavia.org/role/responsibleArtist/214>,
+        <https://www.intavia.org/role/responsibleArtist/215>,
+        <https://www.intavia.org/role/responsibleArtist/216>,
+        <https://www.intavia.org/role/responsibleArtist/217>,
+        <https://www.intavia.org/role/responsibleArtist/218>,
+        <https://www.intavia.org/role/responsibleArtist/219>,
+        <https://www.intavia.org/role/responsibleArtist/220>,
+        <https://www.intavia.org/role/responsibleArtist/221>,
+        <https://www.intavia.org/role/responsibleArtist/222>,
+        <https://www.intavia.org/role/responsibleArtist/223>,
+        <https://www.intavia.org/role/responsibleArtist/224>,
+        <https://www.intavia.org/role/responsibleArtist/225>,
+        <https://www.intavia.org/role/responsibleArtist/226>,
+        <https://www.intavia.org/role/responsibleArtist/227>,
+        <https://www.intavia.org/role/responsibleArtist/228>,
+        <https://www.intavia.org/role/responsibleArtist/229>,
+        <https://www.intavia.org/role/responsibleArtist/230>,
+        <https://www.intavia.org/role/responsibleArtist/231>,
+        <https://www.intavia.org/role/responsibleArtist/232>,
+        <https://www.intavia.org/role/responsibleArtist/233>,
+        <https://www.intavia.org/role/responsibleArtist/234>,
+        <https://www.intavia.org/role/responsibleArtist/235>,
+        <https://www.intavia.org/role/responsibleArtist/236>,
+        <https://www.intavia.org/role/responsibleArtist/237>,
+        <https://www.intavia.org/role/responsibleArtist/238>,
+        <https://www.intavia.org/role/responsibleArtist/239>,
+        <https://www.intavia.org/role/responsibleArtist/240>,
+        <https://www.intavia.org/role/responsibleArtist/241>,
+        <https://www.intavia.org/role/responsibleArtist/242>,
+        <https://www.intavia.org/role/responsibleArtist/243>,
+        <https://www.intavia.org/role/responsibleArtist/244>,
+        <https://www.intavia.org/role/responsibleArtist/245>,
+        <https://www.intavia.org/role/responsibleArtist/246>,
+        <https://www.intavia.org/role/responsibleArtist/247> ;
+    idm:person_proxy_for <https://www.intavia.org/providedperson/12347> .
 
 <https://www.intavia.org/production_event/1> a crm:E12_Production ;
     crm:P32_used_general_technique <https://www.intavia.org/type/typeI/1> ;
@@ -6181,31 +6453,39 @@ Red pencil""" .
 <https://www.intavia.org/medium/mediumI/99> rdfs:label """Bleistift
 Graphite""" .
 
-<https://www.intavia.org/name/1/12345> a crm:E33_E41_Linguistic_Appellation ;
-    crm:P148_has_component <https://www.intavia.org/name/2/12345>,
-        <https://www.intavia.org/name/3/12345> .
+<https://www.intavia.org/name/1/10055_t12347> a crm:E33_E41_Linguistic_Appellation ;
+    crm:P148_has_component <https://www.intavia.org/name/2/10055_t12347>,
+        <https://www.intavia.org/name/3/10055_t12347> .
 
-<https://www.intavia.org/name/1/12346> a crm:E33_E41_Linguistic_Appellation ;
-    crm:P148_has_component <https://www.intavia.org/name/2/12346>,
-        <https://www.intavia.org/name/3/12346> .
+<https://www.intavia.org/name/1/7068212346> a crm:E33_E41_Linguistic_Appellation ;
+    crm:P148_has_component <https://www.intavia.org/name/2/7068212346>,
+        <https://www.intavia.org/name/3/7068212346> .
 
-<https://www.intavia.org/name/1/12347> a crm:E33_E41_Linguistic_Appellation ;
-    crm:P148_has_component <https://www.intavia.org/name/2/12347>,
-        <https://www.intavia.org/name/3/12347> .
+<https://www.intavia.org/name/1/8565612345> a crm:E33_E41_Linguistic_Appellation ;
+    crm:P148_has_component <https://www.intavia.org/name/2/8565612345>,
+        <https://www.intavia.org/name/3/8565612345> .
+
+<https://www.intavia.org/name/1/9248612347> a crm:E33_E41_Linguistic_Appellation ;
+    crm:P148_has_component <https://www.intavia.org/name/2/9248612347>,
+        <https://www.intavia.org/name/3/9248612347> .
 
 <https://www.intavia.org/name/1/ErnstKlimt> a crm:E41_E33_Linguistic_Appellation ;
     crm:P148_has_component <https://www.intavia.org/name/2/ErnstKlimt>,
         <https://www.intavia.org/name/3/ErnstKlimt> .
 
-<https://www.intavia.org/name/2/12345> a crm:E33_E41_Linguistic_Appellation ;
+<https://www.intavia.org/name/2/10055_t12347> a crm:E33_E41_Linguistic_Appellation ;
     crm:P2_has_type <https://www.intavia.org/nametype/surname> ;
-    rdfs:value "Egner" .
+    rdfs:value "Blau_t" .
 
-<https://www.intavia.org/name/2/12346> a crm:E33_E41_Linguistic_Appellation ;
+<https://www.intavia.org/name/2/7068212346> a crm:E33_E41_Linguistic_Appellation ;
     crm:P2_has_type <https://www.intavia.org/nametype/surname> ;
     rdfs:value "Klimt" .
 
-<https://www.intavia.org/name/2/12347> a crm:E33_E41_Linguistic_Appellation ;
+<https://www.intavia.org/name/2/8565612345> a crm:E33_E41_Linguistic_Appellation ;
+    crm:P2_has_type <https://www.intavia.org/nametype/surname> ;
+    rdfs:value "Egner" .
+
+<https://www.intavia.org/name/2/9248612347> a crm:E33_E41_Linguistic_Appellation ;
     crm:P2_has_type <https://www.intavia.org/nametype/surname> ;
     rdfs:value "Blau" .
 
@@ -6213,15 +6493,19 @@ Graphite""" .
     crm:P2_has_type <https://www.intavia.org/nametype/surname> ;
     rdfs:value "Klimt" .
 
-<https://www.intavia.org/name/3/12345> a crm:E33_E41_Linguistic_Appellation ;
+<https://www.intavia.org/name/3/10055_t12347> a crm:E33_E41_Linguistic_Appellation ;
     crm:P2_has_type <https://www.intavia.org/nametype/forename> ;
-    rdfs:value "Marie" .
+    rdfs:value "Tina_t" .
 
-<https://www.intavia.org/name/3/12346> a crm:E33_E41_Linguistic_Appellation ;
+<https://www.intavia.org/name/3/7068212346> a crm:E33_E41_Linguistic_Appellation ;
     crm:P2_has_type <https://www.intavia.org/nametype/forename> ;
     rdfs:value "Gustav" .
 
-<https://www.intavia.org/name/3/12347> a crm:E33_E41_Linguistic_Appellation ;
+<https://www.intavia.org/name/3/8565612345> a crm:E33_E41_Linguistic_Appellation ;
+    crm:P2_has_type <https://www.intavia.org/nametype/forename> ;
+    rdfs:value "Marie" .
+
+<https://www.intavia.org/name/3/9248612347> a crm:E33_E41_Linguistic_Appellation ;
     crm:P2_has_type <https://www.intavia.org/nametype/forename> ;
     rdfs:value "Tina" .
 
@@ -6230,6 +6514,8 @@ Graphite""" .
     rdfs:value "Ernst" .
 
 <https://www.intavia.org/person/ErnstKlimt> a idm:Provided_Person .
+
+<https://www.intavia.org/personid/BiographieNetSource1> rdfs:label "BiographieNetSource1" .
 
 <https://www.intavia.org/personproxy/ErnstKlimt> a crm:E21_Person,
         idm:Person_Proxy ;
@@ -7224,12 +7510,6 @@ Graphite""" .
     crm:P12_occurred_in_the_presence_of <https://www.intavia.org/choproxy/99> ;
     crm:P4_has_time_span <https://www.intavia.org/timespan/1/99> .
 
-<https://www.intavia.org/providedperson/12345> a idm:Provided_Person .
-
-<https://www.intavia.org/providedperson/12346> a idm:Provided_Person .
-
-<https://www.intavia.org/providedperson/12347> a idm:Provided_Person .
-
 <https://www.intavia.org/role/ResponsibleForIdentifier/12345> a bioc:Event_Role ;
     rdfs:label "responsible Actor" .
 
@@ -7242,85 +7522,85 @@ Graphite""" .
 <https://www.intavia.org/timespan/1/1> a crm:E52_Time_Span .
 
 <https://www.intavia.org/timespan/1/10> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911/12" .
+    rdfs:label "1911/12" .
 
 <https://www.intavia.org/timespan/1/100> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911-12" .
+    rdfs:label "1911-12" .
 
 <https://www.intavia.org/timespan/1/101> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1916" .
+    rdfs:label "um 1916" .
 
 <https://www.intavia.org/timespan/1/102> a crm:E52_Time_Span ;
-    crm:P3_has_note "1913/14" .
+    rdfs:label "1913/14" .
 
 <https://www.intavia.org/timespan/1/103> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1916" .
+    rdfs:label "um 1916" .
 
 <https://www.intavia.org/timespan/1/104> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/105> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/106> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/107> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/108> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/109> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/11> a crm:E52_Time_Span ;
-    crm:P3_has_note "1909/10" .
+    rdfs:label "1909/10" .
 
 <https://www.intavia.org/timespan/1/110> a crm:E52_Time_Span ;
-    crm:P3_has_note "1916/17" .
+    rdfs:label "1916/17" .
 
 <https://www.intavia.org/timespan/1/111> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1907" .
+    rdfs:label "um 1907" .
 
 <https://www.intavia.org/timespan/1/112> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/113> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/114> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/115> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/116> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1908" .
+    rdfs:label "um 1908" .
 
 <https://www.intavia.org/timespan/1/117> a crm:E52_Time_Span ;
-    crm:P3_has_note "1895" .
+    rdfs:label "1895" .
 
 <https://www.intavia.org/timespan/1/118> a crm:E52_Time_Span ;
-    crm:P3_has_note "1916/17" .
+    rdfs:label "1916/17" .
 
 <https://www.intavia.org/timespan/1/119> a crm:E52_Time_Span ;
-    crm:P3_has_note "1908-09" .
+    rdfs:label "1908-09" .
 
 <https://www.intavia.org/timespan/1/12> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911/12" .
+    rdfs:label "1911/12" .
 
 <https://www.intavia.org/timespan/1/120> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1913" .
+    rdfs:label "um 1913" .
 
 <https://www.intavia.org/timespan/1/121> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1915" .
+    rdfs:label "um 1915" .
 
 <https://www.intavia.org/timespan/1/122> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/123> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904" .
+    rdfs:label "1904" .
 
 <https://www.intavia.org/timespan/1/12345> a crm:E52_Time_Span ;
     crm:P81a_begin_of_the_begin "1850-08-25+00:00:00" ;
@@ -7331,664 +7611,666 @@ Graphite""" .
     crm:P82b_end_of_the_end "1862-07-14+23:59:59" .
 
 <https://www.intavia.org/timespan/1/12347> a crm:E52_Time_Span ;
-    crm:P81a_begin_of_the_begin "1845-11-15+00:00:00" ;
-    crm:P82b_end_of_the_end "1845-11-15+23:59:59" .
+    crm:P81a_begin_of_the_begin "1845-11-15+00:00:00",
+        "1845-11-16+00:00:00" ;
+    crm:P82b_end_of_the_end "1845-11-15+23:59:59",
+        "1845-11-16+23:59:59" .
 
 <https://www.intavia.org/timespan/1/124> a crm:E52_Time_Span ;
-    crm:P3_has_note "1900/01" .
+    rdfs:label "1900/01" .
 
 <https://www.intavia.org/timespan/1/125> a crm:E52_Time_Span ;
-    crm:P3_has_note "1915/16" .
+    rdfs:label "1915/16" .
 
 <https://www.intavia.org/timespan/1/126> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/127> a crm:E52_Time_Span ;
-    crm:P3_has_note "1907/08" .
+    rdfs:label "1907/08" .
 
 <https://www.intavia.org/timespan/1/128> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1917" .
+    rdfs:label "um 1917" .
 
 <https://www.intavia.org/timespan/1/129> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/13> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911/12" .
+    rdfs:label "1911/12" .
 
 <https://www.intavia.org/timespan/1/130> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1897" .
+    rdfs:label "um 1897" .
 
 <https://www.intavia.org/timespan/1/131> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/132> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/133> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/134> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/135> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/136> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/137> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/138> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/139> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/14> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911/12" .
+    rdfs:label "1911/12" .
 
 <https://www.intavia.org/timespan/1/140> a crm:E52_Time_Span ;
-    crm:P3_has_note "1882" .
+    rdfs:label "1882" .
 
 <https://www.intavia.org/timespan/1/141> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897-98" .
+    rdfs:label "1897-98" .
 
 <https://www.intavia.org/timespan/1/142> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897-98" .
+    rdfs:label "1897-98" .
 
 <https://www.intavia.org/timespan/1/143> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/144> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898" .
+    rdfs:label "1898" .
 
 <https://www.intavia.org/timespan/1/145> a crm:E52_Time_Span ;
-    crm:P3_has_note "1895" .
+    rdfs:label "1895" .
 
 <https://www.intavia.org/timespan/1/146> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904" .
+    rdfs:label "1904" .
 
 <https://www.intavia.org/timespan/1/147> a crm:E52_Time_Span ;
-    crm:P3_has_note "1914/15" .
+    rdfs:label "1914/15" .
 
 <https://www.intavia.org/timespan/1/148> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/149> a crm:E52_Time_Span ;
-    crm:P3_has_note "1915/16" .
+    rdfs:label "1915/16" .
 
 <https://www.intavia.org/timespan/1/15> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911/12" .
+    rdfs:label "1911/12" .
 
 <https://www.intavia.org/timespan/1/150> a crm:E52_Time_Span ;
-    crm:P3_has_note "1903-04" .
+    rdfs:label "1903-04" .
 
 <https://www.intavia.org/timespan/1/151> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904" .
+    rdfs:label "1904" .
 
 <https://www.intavia.org/timespan/1/152> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1902" .
+    rdfs:label "um 1902" .
 
 <https://www.intavia.org/timespan/1/153> a crm:E52_Time_Span ;
-    crm:P3_has_note "1908" .
+    rdfs:label "1908" .
 
 <https://www.intavia.org/timespan/1/154> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/155> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/156> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/157> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/158> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/159> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/16> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904" .
+    rdfs:label "1904" .
 
 <https://www.intavia.org/timespan/1/160> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/161> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/162> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/163> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/164> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/165> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/166> a crm:E52_Time_Span ;
-    crm:P3_has_note "1907/08" .
+    rdfs:label "1907/08" .
 
 <https://www.intavia.org/timespan/1/167> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1916" .
+    rdfs:label "um 1916" .
 
 <https://www.intavia.org/timespan/1/168> a crm:E52_Time_Span ;
-    crm:P3_has_note "1915-16" .
+    rdfs:label "1915-16" .
 
 <https://www.intavia.org/timespan/1/169> a crm:E52_Time_Span ;
-    crm:P3_has_note "1915-16" .
+    rdfs:label "1915-16" .
 
 <https://www.intavia.org/timespan/1/17> a crm:E52_Time_Span ;
-    crm:P3_has_note "1907/08" .
+    rdfs:label "1907/08" .
 
 <https://www.intavia.org/timespan/1/170> a crm:E52_Time_Span ;
-    crm:P3_has_note "ca. 1903" .
+    rdfs:label "ca. 1903" .
 
 <https://www.intavia.org/timespan/1/171> a crm:E52_Time_Span ;
-    crm:P3_has_note "1889" .
+    rdfs:label "1889" .
 
 <https://www.intavia.org/timespan/1/172> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898" .
+    rdfs:label "1898" .
 
 <https://www.intavia.org/timespan/1/173> a crm:E52_Time_Span ;
-    crm:P3_has_note "(1898)" .
+    rdfs:label "(1898)" .
 
 <https://www.intavia.org/timespan/1/174> a crm:E52_Time_Span ;
-    crm:P3_has_note "1903/04" .
+    rdfs:label "1903/04" .
 
 <https://www.intavia.org/timespan/1/175> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898" .
+    rdfs:label "1898" .
 
 <https://www.intavia.org/timespan/1/176> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898" .
+    rdfs:label "1898" .
 
 <https://www.intavia.org/timespan/1/177> a crm:E52_Time_Span ;
-    crm:P3_has_note "1907/08" .
+    rdfs:label "1907/08" .
 
 <https://www.intavia.org/timespan/1/178> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911 - 1912" .
+    rdfs:label "1911 - 1912" .
 
 <https://www.intavia.org/timespan/1/179> a crm:E52_Time_Span ;
-    crm:P3_has_note "1896-1897" .
+    rdfs:label "1896-1897" .
 
 <https://www.intavia.org/timespan/1/18> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911/12" .
+    rdfs:label "1911/12" .
 
 <https://www.intavia.org/timespan/1/180> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/181> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904-1905" .
+    rdfs:label "1904-1905" .
 
 <https://www.intavia.org/timespan/1/182> a crm:E52_Time_Span ;
-    crm:P3_has_note "1907-1908" .
+    rdfs:label "1907-1908" .
 
 <https://www.intavia.org/timespan/1/183> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911" .
+    rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/1/184> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1916" .
+    rdfs:label "um 1916" .
 
 <https://www.intavia.org/timespan/1/185> a crm:E52_Time_Span ;
-    crm:P3_has_note "1916/17" .
+    rdfs:label "1916/17" .
 
 <https://www.intavia.org/timespan/1/186> a crm:E52_Time_Span ;
-    crm:P3_has_note "1900-1901" .
+    rdfs:label "1900-1901" .
 
 <https://www.intavia.org/timespan/1/187> a crm:E52_Time_Span ;
-    crm:P3_has_note "1903-1904" .
+    rdfs:label "1903-1904" .
 
 <https://www.intavia.org/timespan/1/188> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904" .
+    rdfs:label "1904" .
 
 <https://www.intavia.org/timespan/1/189> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1908-1910" .
+    rdfs:label "um 1908-1910" .
 
 <https://www.intavia.org/timespan/1/19> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911/12" .
+    rdfs:label "1911/12" .
 
 <https://www.intavia.org/timespan/1/190> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1910" .
+    rdfs:label "um 1910" .
 
 <https://www.intavia.org/timespan/1/191> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911" .
+    rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/1/192> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911" .
+    rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/1/193> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911/12" .
+    rdfs:label "1911/12" .
 
 <https://www.intavia.org/timespan/1/194> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911" .
+    rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/1/195> a crm:E52_Time_Span ;
-    crm:P3_has_note "1913/14" .
+    rdfs:label "1913/14" .
 
 <https://www.intavia.org/timespan/1/196> a crm:E52_Time_Span ;
-    crm:P3_has_note "1913/14" .
+    rdfs:label "1913/14" .
 
 <https://www.intavia.org/timespan/1/197> a crm:E52_Time_Span ;
-    crm:P3_has_note "1915-1916" .
+    rdfs:label "1915-1916" .
 
 <https://www.intavia.org/timespan/1/198> a crm:E52_Time_Span ;
-    crm:P3_has_note "1906-1907" .
+    rdfs:label "1906-1907" .
 
 <https://www.intavia.org/timespan/1/199> a crm:E52_Time_Span ;
-    crm:P3_has_note "1903/1904" .
+    rdfs:label "1903/1904" .
 
 <https://www.intavia.org/timespan/1/2> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1917" .
+    rdfs:label "um 1917" .
 
 <https://www.intavia.org/timespan/1/20> a crm:E52_Time_Span ;
-    crm:P3_has_note "1916/17" .
+    rdfs:label "1916/17" .
 
 <https://www.intavia.org/timespan/1/200> a crm:E52_Time_Span ;
-    crm:P3_has_note "1914/1915" .
+    rdfs:label "1914/1915" .
 
 <https://www.intavia.org/timespan/1/201> a crm:E52_Time_Span ;
-    crm:P3_has_note "1917/1918" .
+    rdfs:label "1917/1918" .
 
 <https://www.intavia.org/timespan/1/202> a crm:E52_Time_Span ;
-    crm:P3_has_note "1907/1908" .
+    rdfs:label "1907/1908" .
 
 <https://www.intavia.org/timespan/1/203> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904/1905" .
+    rdfs:label "1904/1905" .
 
 <https://www.intavia.org/timespan/1/204> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904/1905" .
+    rdfs:label "1904/1905" .
 
 <https://www.intavia.org/timespan/1/205> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/1913" .
+    rdfs:label "1912/1913" .
 
 <https://www.intavia.org/timespan/1/206> a crm:E52_Time_Span .
 
 <https://www.intavia.org/timespan/1/207> a crm:E52_Time_Span ;
-    crm:P3_has_note "1908/1910" .
+    rdfs:label "1908/1910" .
 
 <https://www.intavia.org/timespan/1/208> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/209> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/21> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1907/08" .
+    rdfs:label "um 1907/08" .
 
 <https://www.intavia.org/timespan/1/210> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/211> a crm:E52_Time_Span ;
-    crm:P3_has_note "6. Oktober 1871" .
+    rdfs:label "6. Oktober 1871" .
 
 <https://www.intavia.org/timespan/1/212> a crm:E52_Time_Span ;
-    crm:P3_has_note "6. Oktober 1871" .
+    rdfs:label "6. Oktober 1871" .
 
 <https://www.intavia.org/timespan/1/213> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/214> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/215> a crm:E52_Time_Span ;
-    crm:P3_has_note "8. Oktober 1871" .
+    rdfs:label "8. Oktober 1871" .
 
 <https://www.intavia.org/timespan/1/216> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/217> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/218> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/219> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/22> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911" .
+    rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/1/220> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/221> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/222> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/223> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/224> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/225> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/226> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/227> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/228> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/229> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/23> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912/13" .
+    rdfs:label "1912/13" .
 
 <https://www.intavia.org/timespan/1/230> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/231> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/232> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/233> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/234> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/235> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/236> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/237> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/238> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/239> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/24> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904/05" .
+    rdfs:label "1904/05" .
 
 <https://www.intavia.org/timespan/1/240> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/241> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/242> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/243> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/244> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/245> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/246> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/247> a crm:E52_Time_Span ;
-    crm:P3_has_note "1871" .
+    rdfs:label "1871" .
 
 <https://www.intavia.org/timespan/1/25> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904-05" .
+    rdfs:label "1904-05" .
 
 <https://www.intavia.org/timespan/1/26> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1917" .
+    rdfs:label "um 1917" .
 
 <https://www.intavia.org/timespan/1/27> a crm:E52_Time_Span ;
-    crm:P3_has_note "1885" .
+    rdfs:label "1885" .
 
 <https://www.intavia.org/timespan/1/28> a crm:E52_Time_Span ;
-    crm:P3_has_note "1900-1901" .
+    rdfs:label "1900-1901" .
 
 <https://www.intavia.org/timespan/1/29> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/3> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901" .
+    rdfs:label "1901" .
 
 <https://www.intavia.org/timespan/1/30> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904-05" .
+    rdfs:label "1904-05" .
 
 <https://www.intavia.org/timespan/1/31> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1900" .
+    rdfs:label "um 1900" .
 
 <https://www.intavia.org/timespan/1/32> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/33> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1900" .
+    rdfs:label "um 1900" .
 
 <https://www.intavia.org/timespan/1/34> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898" .
+    rdfs:label "1898" .
 
 <https://www.intavia.org/timespan/1/35> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/36> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/37> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1898" .
+    rdfs:label "um 1898" .
 
 <https://www.intavia.org/timespan/1/38> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897-98" .
+    rdfs:label "1897-98" .
 
 <https://www.intavia.org/timespan/1/39> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897-98" .
+    rdfs:label "1897-98" .
 
 <https://www.intavia.org/timespan/1/4> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1903" .
+    rdfs:label "um 1903" .
 
 <https://www.intavia.org/timespan/1/40> a crm:E52_Time_Span ;
-    crm:P3_has_note "1900-1901" .
+    rdfs:label "1900-1901" .
 
 <https://www.intavia.org/timespan/1/41> a crm:E52_Time_Span ;
-    crm:P3_has_note "1900-01" .
+    rdfs:label "1900-01" .
 
 <https://www.intavia.org/timespan/1/42> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/43> a crm:E52_Time_Span ;
-    crm:P3_has_note "1898/99" .
+    rdfs:label "1898/99" .
 
 <https://www.intavia.org/timespan/1/44> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904-05" .
+    rdfs:label "1904-05" .
 
 <https://www.intavia.org/timespan/1/45> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1900" .
+    rdfs:label "um 1900" .
 
 <https://www.intavia.org/timespan/1/46> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1904" .
+    rdfs:label "um 1904" .
 
 <https://www.intavia.org/timespan/1/47> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904-05" .
+    rdfs:label "1904-05" .
 
 <https://www.intavia.org/timespan/1/48> a crm:E52_Time_Span ;
-    crm:P3_has_note "1900-1901" .
+    rdfs:label "1900-1901" .
 
 <https://www.intavia.org/timespan/1/49> a crm:E52_Time_Span ;
-    crm:P3_has_note "ca. 1898" .
+    rdfs:label "ca. 1898" .
 
 <https://www.intavia.org/timespan/1/5> a crm:E52_Time_Span ;
-    crm:P3_has_note "1901-02" .
+    rdfs:label "1901-02" .
 
 <https://www.intavia.org/timespan/1/50> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1900" .
+    rdfs:label "um 1900" .
 
 <https://www.intavia.org/timespan/1/51> a crm:E52_Time_Span ;
-    crm:P3_has_note "1900-1901" .
+    rdfs:label "1900-1901" .
 
 <https://www.intavia.org/timespan/1/52> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/53> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1904" .
+    rdfs:label "um 1904" .
 
 <https://www.intavia.org/timespan/1/54> a crm:E52_Time_Span ;
-    crm:P3_has_note "1903" .
+    rdfs:label "1903" .
 
 <https://www.intavia.org/timespan/1/55> a crm:E52_Time_Span ;
-    crm:P3_has_note "1900-1901" .
+    rdfs:label "1900-1901" .
 
 <https://www.intavia.org/timespan/1/56> a crm:E52_Time_Span ;
-    crm:P3_has_note "1902/03" .
+    rdfs:label "1902/03" .
 
 <https://www.intavia.org/timespan/1/57> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1900" .
+    rdfs:label "um 1900" .
 
 <https://www.intavia.org/timespan/1/58> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1904" .
+    rdfs:label "um 1904" .
 
 <https://www.intavia.org/timespan/1/59> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/6> a crm:E52_Time_Span ;
-    crm:P3_has_note "1912-13" .
+    rdfs:label "1912-13" .
 
 <https://www.intavia.org/timespan/1/60> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1900" .
+    rdfs:label "um 1900" .
 
 <https://www.intavia.org/timespan/1/61> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897/98" .
+    rdfs:label "1897/98" .
 
 <https://www.intavia.org/timespan/1/62> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1897" .
+    rdfs:label "um 1897" .
 
 <https://www.intavia.org/timespan/1/63> a crm:E52_Time_Span ;
-    crm:P3_has_note "1897-98" .
+    rdfs:label "1897-98" .
 
 <https://www.intavia.org/timespan/1/64> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1900" .
+    rdfs:label "um 1900" .
 
 <https://www.intavia.org/timespan/1/65> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1897" .
+    rdfs:label "um 1897" .
 
 <https://www.intavia.org/timespan/1/66> a crm:E52_Time_Span ;
-    crm:P3_has_note "ca. 1896" .
+    rdfs:label "ca. 1896" .
 
 <https://www.intavia.org/timespan/1/67> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1902" .
+    rdfs:label "um 1902" .
 
 <https://www.intavia.org/timespan/1/68> a crm:E52_Time_Span ;
-    crm:P3_has_note "1900-01" .
+    rdfs:label "1900-01" .
 
 <https://www.intavia.org/timespan/1/69> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1902" .
+    rdfs:label "um 1902" .
 
 <https://www.intavia.org/timespan/1/7> a crm:E52_Time_Span ;
-    crm:P3_has_note "1906-08" .
+    rdfs:label "1906-08" .
 
 <https://www.intavia.org/timespan/1/70> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1916" .
+    rdfs:label "um 1916" .
 
 <https://www.intavia.org/timespan/1/71> a crm:E52_Time_Span ;
-    crm:P3_has_note "1907/08" .
+    rdfs:label "1907/08" .
 
 <https://www.intavia.org/timespan/1/72> a crm:E52_Time_Span ;
-    crm:P3_has_note "1886/87" .
+    rdfs:label "1886/87" .
 
 <https://www.intavia.org/timespan/1/73> a crm:E52_Time_Span ;
-    crm:P3_has_note "1886/87" .
+    rdfs:label "1886/87" .
 
 <https://www.intavia.org/timespan/1/74> a crm:E52_Time_Span ;
-    crm:P3_has_note "1886/87" .
+    rdfs:label "1886/87" .
 
 <https://www.intavia.org/timespan/1/75> a crm:E52_Time_Span ;
-    crm:P3_has_note "1886/87" .
+    rdfs:label "1886/87" .
 
 <https://www.intavia.org/timespan/1/76> a crm:E52_Time_Span ;
-    crm:P3_has_note "1886/87" .
+    rdfs:label "1886/87" .
 
 <https://www.intavia.org/timespan/1/77> a crm:E52_Time_Span ;
-    crm:P3_has_note "1886/87" .
+    rdfs:label "1886/87" .
 
 <https://www.intavia.org/timespan/1/78> a crm:E52_Time_Span ;
-    crm:P3_has_note "1888/89" .
+    rdfs:label "1888/89" .
 
 <https://www.intavia.org/timespan/1/79> a crm:E52_Time_Span ;
-    crm:P3_has_note "1886/87" .
+    rdfs:label "1886/87" .
 
 <https://www.intavia.org/timespan/1/8> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911/12" .
+    rdfs:label "1911/12" .
 
 <https://www.intavia.org/timespan/1/80> a crm:E52_Time_Span ;
-    crm:P3_has_note "1886/87" .
+    rdfs:label "1886/87" .
 
 <https://www.intavia.org/timespan/1/81> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1899" .
+    rdfs:label "um 1899" .
 
 <https://www.intavia.org/timespan/1/82> a crm:E52_Time_Span ;
-    crm:P3_has_note "ca. 1900" .
+    rdfs:label "ca. 1900" .
 
 <https://www.intavia.org/timespan/1/83> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911" .
+    rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/1/84> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911" .
+    rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/1/85> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911" .
+    rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/1/86> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904" .
+    rdfs:label "1904" .
 
 <https://www.intavia.org/timespan/1/87> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904" .
+    rdfs:label "1904" .
 
 <https://www.intavia.org/timespan/1/88> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904" .
+    rdfs:label "1904" .
 
 <https://www.intavia.org/timespan/1/89> a crm:E52_Time_Span ;
-    crm:P3_has_note "1908/09" .
+    rdfs:label "1908/09" .
 
 <https://www.intavia.org/timespan/1/9> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911/12" .
+    rdfs:label "1911/12" .
 
 <https://www.intavia.org/timespan/1/90> a crm:E52_Time_Span ;
-    crm:P3_has_note "um 1908" .
+    rdfs:label "um 1908" .
 
 <https://www.intavia.org/timespan/1/91> a crm:E52_Time_Span ;
-    crm:P3_has_note "1916-17" .
+    rdfs:label "1916-17" .
 
 <https://www.intavia.org/timespan/1/92> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904/05" .
+    rdfs:label "1904/05" .
 
 <https://www.intavia.org/timespan/1/93> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904" .
+    rdfs:label "1904" .
 
 <https://www.intavia.org/timespan/1/94> a crm:E52_Time_Span ;
-    crm:P3_has_note "1907/08" .
+    rdfs:label "1907/08" .
 
 <https://www.intavia.org/timespan/1/95> a crm:E52_Time_Span ;
-    crm:P3_has_note "1907-08" .
+    rdfs:label "1907-08" .
 
 <https://www.intavia.org/timespan/1/96> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904-05" .
+    rdfs:label "1904-05" .
 
 <https://www.intavia.org/timespan/1/97> a crm:E52_Time_Span ;
-    crm:P3_has_note "1904/05" .
+    rdfs:label "1904/05" .
 
 <https://www.intavia.org/timespan/1/98> a crm:E52_Time_Span ;
-    crm:P3_has_note "1905/06" .
+    rdfs:label "1905/06" .
 
 <https://www.intavia.org/timespan/1/99> a crm:E52_Time_Span ;
-    crm:P3_has_note "1911" .
+    rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/2/12345> a crm:E52_Time_Span ;
     crm:P81a_begin_of_the_begin "1940-03-31+00:00:00" ;
@@ -8772,280 +9054,46 @@ bioc:Female a bioc:Gender ;
     edm:dataProvider "Albertina" ;
     idm:cho_proxy_for <https://www.intavia.org/cho/208> .
 
-<https://www.intavia.org/personproxy/12345> a crm:E21_Person,
+<https://www.intavia.org/personproxy/10055_t/12347> a crm:E21_Person,
         idm:Person_Proxy ;
-    crm:P1_is_identified_by <https://www.apis.acdh.oeaw.ac.at/personid/85656>,
-        <https://www.intavia.org/name/1/12345> ;
-    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/1> ;
-    bioc:has_gender bioc:Female ;
+    crm:P1_is_identified_by <https://www.intavia.org/idm/personid/BiographieNetSource1/10055_t>,
+        <https://www.intavia.org/name/1/10055_t12347> ;
+    bioc:has_gender bioc:Painter ;
     bioc:has_nationality bioc:austrian ;
     bioc:has_occupation bioc:Painter ;
-    idm:person_proxy_for <https://www.intavia.org/providedperson/12345> .
+    idm:person_proxy_for <https://www.intavia.org/providedperson/12347> .
 
-<https://www.intavia.org/personproxy/12346> a crm:E21_Person,
+<https://www.intavia.org/personproxy/70682/12346> a crm:E21_Person,
         idm:Person_Proxy ;
-    crm:P1_is_identified_by <https://www.apis.acdh.oeaw.ac.at/personid/70682>,
-        <https://www.intavia.org/name/1/12346> ;
-    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/10>,
-        <https://www.intavia.org/role/responsibleArtist/100>,
-        <https://www.intavia.org/role/responsibleArtist/101>,
-        <https://www.intavia.org/role/responsibleArtist/102>,
-        <https://www.intavia.org/role/responsibleArtist/103>,
-        <https://www.intavia.org/role/responsibleArtist/104>,
-        <https://www.intavia.org/role/responsibleArtist/105>,
-        <https://www.intavia.org/role/responsibleArtist/106>,
-        <https://www.intavia.org/role/responsibleArtist/107>,
-        <https://www.intavia.org/role/responsibleArtist/108>,
-        <https://www.intavia.org/role/responsibleArtist/109>,
-        <https://www.intavia.org/role/responsibleArtist/11>,
-        <https://www.intavia.org/role/responsibleArtist/110>,
-        <https://www.intavia.org/role/responsibleArtist/111>,
-        <https://www.intavia.org/role/responsibleArtist/112>,
-        <https://www.intavia.org/role/responsibleArtist/113>,
-        <https://www.intavia.org/role/responsibleArtist/114>,
-        <https://www.intavia.org/role/responsibleArtist/115>,
-        <https://www.intavia.org/role/responsibleArtist/116>,
-        <https://www.intavia.org/role/responsibleArtist/117>,
-        <https://www.intavia.org/role/responsibleArtist/118>,
-        <https://www.intavia.org/role/responsibleArtist/119>,
-        <https://www.intavia.org/role/responsibleArtist/12>,
-        <https://www.intavia.org/role/responsibleArtist/120>,
-        <https://www.intavia.org/role/responsibleArtist/121>,
-        <https://www.intavia.org/role/responsibleArtist/122>,
-        <https://www.intavia.org/role/responsibleArtist/123>,
-        <https://www.intavia.org/role/responsibleArtist/124>,
-        <https://www.intavia.org/role/responsibleArtist/125>,
-        <https://www.intavia.org/role/responsibleArtist/126>,
-        <https://www.intavia.org/role/responsibleArtist/127>,
-        <https://www.intavia.org/role/responsibleArtist/128>,
-        <https://www.intavia.org/role/responsibleArtist/129>,
-        <https://www.intavia.org/role/responsibleArtist/13>,
-        <https://www.intavia.org/role/responsibleArtist/130>,
-        <https://www.intavia.org/role/responsibleArtist/131>,
-        <https://www.intavia.org/role/responsibleArtist/132>,
-        <https://www.intavia.org/role/responsibleArtist/133>,
-        <https://www.intavia.org/role/responsibleArtist/134>,
-        <https://www.intavia.org/role/responsibleArtist/135>,
-        <https://www.intavia.org/role/responsibleArtist/136>,
-        <https://www.intavia.org/role/responsibleArtist/137>,
-        <https://www.intavia.org/role/responsibleArtist/138>,
-        <https://www.intavia.org/role/responsibleArtist/139>,
-        <https://www.intavia.org/role/responsibleArtist/14>,
-        <https://www.intavia.org/role/responsibleArtist/140>,
-        <https://www.intavia.org/role/responsibleArtist/141>,
-        <https://www.intavia.org/role/responsibleArtist/142>,
-        <https://www.intavia.org/role/responsibleArtist/143>,
-        <https://www.intavia.org/role/responsibleArtist/144>,
-        <https://www.intavia.org/role/responsibleArtist/145>,
-        <https://www.intavia.org/role/responsibleArtist/146>,
-        <https://www.intavia.org/role/responsibleArtist/147>,
-        <https://www.intavia.org/role/responsibleArtist/148>,
-        <https://www.intavia.org/role/responsibleArtist/149>,
-        <https://www.intavia.org/role/responsibleArtist/15>,
-        <https://www.intavia.org/role/responsibleArtist/150>,
-        <https://www.intavia.org/role/responsibleArtist/151>,
-        <https://www.intavia.org/role/responsibleArtist/152>,
-        <https://www.intavia.org/role/responsibleArtist/153>,
-        <https://www.intavia.org/role/responsibleArtist/154>,
-        <https://www.intavia.org/role/responsibleArtist/155>,
-        <https://www.intavia.org/role/responsibleArtist/156>,
-        <https://www.intavia.org/role/responsibleArtist/157>,
-        <https://www.intavia.org/role/responsibleArtist/158>,
-        <https://www.intavia.org/role/responsibleArtist/159>,
-        <https://www.intavia.org/role/responsibleArtist/16>,
-        <https://www.intavia.org/role/responsibleArtist/160>,
-        <https://www.intavia.org/role/responsibleArtist/161>,
-        <https://www.intavia.org/role/responsibleArtist/162>,
-        <https://www.intavia.org/role/responsibleArtist/163>,
-        <https://www.intavia.org/role/responsibleArtist/164>,
-        <https://www.intavia.org/role/responsibleArtist/165>,
-        <https://www.intavia.org/role/responsibleArtist/166>,
-        <https://www.intavia.org/role/responsibleArtist/167>,
-        <https://www.intavia.org/role/responsibleArtist/168>,
-        <https://www.intavia.org/role/responsibleArtist/169>,
-        <https://www.intavia.org/role/responsibleArtist/17>,
-        <https://www.intavia.org/role/responsibleArtist/170>,
-        <https://www.intavia.org/role/responsibleArtist/171>,
-        <https://www.intavia.org/role/responsibleArtist/172>,
-        <https://www.intavia.org/role/responsibleArtist/173>,
-        <https://www.intavia.org/role/responsibleArtist/174>,
-        <https://www.intavia.org/role/responsibleArtist/175>,
-        <https://www.intavia.org/role/responsibleArtist/176>,
-        <https://www.intavia.org/role/responsibleArtist/177>,
-        <https://www.intavia.org/role/responsibleArtist/178>,
-        <https://www.intavia.org/role/responsibleArtist/179>,
-        <https://www.intavia.org/role/responsibleArtist/18>,
-        <https://www.intavia.org/role/responsibleArtist/180>,
-        <https://www.intavia.org/role/responsibleArtist/181>,
-        <https://www.intavia.org/role/responsibleArtist/182>,
-        <https://www.intavia.org/role/responsibleArtist/183>,
-        <https://www.intavia.org/role/responsibleArtist/184>,
-        <https://www.intavia.org/role/responsibleArtist/185>,
-        <https://www.intavia.org/role/responsibleArtist/186>,
-        <https://www.intavia.org/role/responsibleArtist/187>,
-        <https://www.intavia.org/role/responsibleArtist/188>,
-        <https://www.intavia.org/role/responsibleArtist/189>,
-        <https://www.intavia.org/role/responsibleArtist/19>,
-        <https://www.intavia.org/role/responsibleArtist/190>,
-        <https://www.intavia.org/role/responsibleArtist/191>,
-        <https://www.intavia.org/role/responsibleArtist/192>,
-        <https://www.intavia.org/role/responsibleArtist/193>,
-        <https://www.intavia.org/role/responsibleArtist/194>,
-        <https://www.intavia.org/role/responsibleArtist/195>,
-        <https://www.intavia.org/role/responsibleArtist/196>,
-        <https://www.intavia.org/role/responsibleArtist/197>,
-        <https://www.intavia.org/role/responsibleArtist/198>,
-        <https://www.intavia.org/role/responsibleArtist/199>,
-        <https://www.intavia.org/role/responsibleArtist/2>,
-        <https://www.intavia.org/role/responsibleArtist/20>,
-        <https://www.intavia.org/role/responsibleArtist/200>,
-        <https://www.intavia.org/role/responsibleArtist/201>,
-        <https://www.intavia.org/role/responsibleArtist/202>,
-        <https://www.intavia.org/role/responsibleArtist/203>,
-        <https://www.intavia.org/role/responsibleArtist/204>,
-        <https://www.intavia.org/role/responsibleArtist/205>,
-        <https://www.intavia.org/role/responsibleArtist/206>,
-        <https://www.intavia.org/role/responsibleArtist/207>,
-        <https://www.intavia.org/role/responsibleArtist/21>,
-        <https://www.intavia.org/role/responsibleArtist/22>,
-        <https://www.intavia.org/role/responsibleArtist/23>,
-        <https://www.intavia.org/role/responsibleArtist/24>,
-        <https://www.intavia.org/role/responsibleArtist/25>,
-        <https://www.intavia.org/role/responsibleArtist/26>,
-        <https://www.intavia.org/role/responsibleArtist/27>,
-        <https://www.intavia.org/role/responsibleArtist/28>,
-        <https://www.intavia.org/role/responsibleArtist/29>,
-        <https://www.intavia.org/role/responsibleArtist/3>,
-        <https://www.intavia.org/role/responsibleArtist/30>,
-        <https://www.intavia.org/role/responsibleArtist/31>,
-        <https://www.intavia.org/role/responsibleArtist/32>,
-        <https://www.intavia.org/role/responsibleArtist/33>,
-        <https://www.intavia.org/role/responsibleArtist/34>,
-        <https://www.intavia.org/role/responsibleArtist/35>,
-        <https://www.intavia.org/role/responsibleArtist/36>,
-        <https://www.intavia.org/role/responsibleArtist/37>,
-        <https://www.intavia.org/role/responsibleArtist/38>,
-        <https://www.intavia.org/role/responsibleArtist/39>,
-        <https://www.intavia.org/role/responsibleArtist/4>,
-        <https://www.intavia.org/role/responsibleArtist/40>,
-        <https://www.intavia.org/role/responsibleArtist/41>,
-        <https://www.intavia.org/role/responsibleArtist/42>,
-        <https://www.intavia.org/role/responsibleArtist/43>,
-        <https://www.intavia.org/role/responsibleArtist/44>,
-        <https://www.intavia.org/role/responsibleArtist/45>,
-        <https://www.intavia.org/role/responsibleArtist/46>,
-        <https://www.intavia.org/role/responsibleArtist/47>,
-        <https://www.intavia.org/role/responsibleArtist/48>,
-        <https://www.intavia.org/role/responsibleArtist/49>,
-        <https://www.intavia.org/role/responsibleArtist/5>,
-        <https://www.intavia.org/role/responsibleArtist/50>,
-        <https://www.intavia.org/role/responsibleArtist/51>,
-        <https://www.intavia.org/role/responsibleArtist/52>,
-        <https://www.intavia.org/role/responsibleArtist/53>,
-        <https://www.intavia.org/role/responsibleArtist/54>,
-        <https://www.intavia.org/role/responsibleArtist/55>,
-        <https://www.intavia.org/role/responsibleArtist/56>,
-        <https://www.intavia.org/role/responsibleArtist/57>,
-        <https://www.intavia.org/role/responsibleArtist/58>,
-        <https://www.intavia.org/role/responsibleArtist/59>,
-        <https://www.intavia.org/role/responsibleArtist/6>,
-        <https://www.intavia.org/role/responsibleArtist/60>,
-        <https://www.intavia.org/role/responsibleArtist/61>,
-        <https://www.intavia.org/role/responsibleArtist/62>,
-        <https://www.intavia.org/role/responsibleArtist/63>,
-        <https://www.intavia.org/role/responsibleArtist/64>,
-        <https://www.intavia.org/role/responsibleArtist/65>,
-        <https://www.intavia.org/role/responsibleArtist/66>,
-        <https://www.intavia.org/role/responsibleArtist/67>,
-        <https://www.intavia.org/role/responsibleArtist/68>,
-        <https://www.intavia.org/role/responsibleArtist/69>,
-        <https://www.intavia.org/role/responsibleArtist/7>,
-        <https://www.intavia.org/role/responsibleArtist/70>,
-        <https://www.intavia.org/role/responsibleArtist/71>,
-        <https://www.intavia.org/role/responsibleArtist/72>,
-        <https://www.intavia.org/role/responsibleArtist/73>,
-        <https://www.intavia.org/role/responsibleArtist/74>,
-        <https://www.intavia.org/role/responsibleArtist/75>,
-        <https://www.intavia.org/role/responsibleArtist/76>,
-        <https://www.intavia.org/role/responsibleArtist/77>,
-        <https://www.intavia.org/role/responsibleArtist/78>,
-        <https://www.intavia.org/role/responsibleArtist/79>,
-        <https://www.intavia.org/role/responsibleArtist/8>,
-        <https://www.intavia.org/role/responsibleArtist/80>,
-        <https://www.intavia.org/role/responsibleArtist/81>,
-        <https://www.intavia.org/role/responsibleArtist/82>,
-        <https://www.intavia.org/role/responsibleArtist/83>,
-        <https://www.intavia.org/role/responsibleArtist/84>,
-        <https://www.intavia.org/role/responsibleArtist/85>,
-        <https://www.intavia.org/role/responsibleArtist/86>,
-        <https://www.intavia.org/role/responsibleArtist/87>,
-        <https://www.intavia.org/role/responsibleArtist/88>,
-        <https://www.intavia.org/role/responsibleArtist/89>,
-        <https://www.intavia.org/role/responsibleArtist/9>,
-        <https://www.intavia.org/role/responsibleArtist/90>,
-        <https://www.intavia.org/role/responsibleArtist/91>,
-        <https://www.intavia.org/role/responsibleArtist/92>,
-        <https://www.intavia.org/role/responsibleArtist/93>,
-        <https://www.intavia.org/role/responsibleArtist/94>,
-        <https://www.intavia.org/role/responsibleArtist/95>,
-        <https://www.intavia.org/role/responsibleArtist/96>,
-        <https://www.intavia.org/role/responsibleArtist/97>,
-        <https://www.intavia.org/role/responsibleArtist/98>,
-        <https://www.intavia.org/role/responsibleArtist/99> ;
+    crm:P1_is_identified_by <https://www.intavia.org/idm/personid/Apis/70682>,
+        <https://www.intavia.org/name/1/7068212346> ;
     bioc:has_family_relation <https://www.intavia.org/familyrelation/1/12346> ;
     bioc:has_gender bioc:Male ;
     bioc:has_nationality bioc:austrian ;
     bioc:has_occupation bioc:Painter ;
     idm:person_proxy_for <https://www.intavia.org/providedperson/12346> .
 
-<https://www.intavia.org/personproxy/12347> a crm:E21_Person,
+<https://www.intavia.org/personproxy/85656/12345> a crm:E21_Person,
         idm:Person_Proxy ;
-    crm:P1_is_identified_by <https://www.apis.acdh.oeaw.ac.at/personid/92486>,
-        <https://www.intavia.org/name/1/12347> ;
-    bioc:bearer_of <https://www.intavia.org/role/responsibleArtist/208>,
-        <https://www.intavia.org/role/responsibleArtist/209>,
-        <https://www.intavia.org/role/responsibleArtist/210>,
-        <https://www.intavia.org/role/responsibleArtist/211>,
-        <https://www.intavia.org/role/responsibleArtist/212>,
-        <https://www.intavia.org/role/responsibleArtist/213>,
-        <https://www.intavia.org/role/responsibleArtist/214>,
-        <https://www.intavia.org/role/responsibleArtist/215>,
-        <https://www.intavia.org/role/responsibleArtist/216>,
-        <https://www.intavia.org/role/responsibleArtist/217>,
-        <https://www.intavia.org/role/responsibleArtist/218>,
-        <https://www.intavia.org/role/responsibleArtist/219>,
-        <https://www.intavia.org/role/responsibleArtist/220>,
-        <https://www.intavia.org/role/responsibleArtist/221>,
-        <https://www.intavia.org/role/responsibleArtist/222>,
-        <https://www.intavia.org/role/responsibleArtist/223>,
-        <https://www.intavia.org/role/responsibleArtist/224>,
-        <https://www.intavia.org/role/responsibleArtist/225>,
-        <https://www.intavia.org/role/responsibleArtist/226>,
-        <https://www.intavia.org/role/responsibleArtist/227>,
-        <https://www.intavia.org/role/responsibleArtist/228>,
-        <https://www.intavia.org/role/responsibleArtist/229>,
-        <https://www.intavia.org/role/responsibleArtist/230>,
-        <https://www.intavia.org/role/responsibleArtist/231>,
-        <https://www.intavia.org/role/responsibleArtist/232>,
-        <https://www.intavia.org/role/responsibleArtist/233>,
-        <https://www.intavia.org/role/responsibleArtist/234>,
-        <https://www.intavia.org/role/responsibleArtist/235>,
-        <https://www.intavia.org/role/responsibleArtist/236>,
-        <https://www.intavia.org/role/responsibleArtist/237>,
-        <https://www.intavia.org/role/responsibleArtist/238>,
-        <https://www.intavia.org/role/responsibleArtist/239>,
-        <https://www.intavia.org/role/responsibleArtist/240>,
-        <https://www.intavia.org/role/responsibleArtist/241>,
-        <https://www.intavia.org/role/responsibleArtist/242>,
-        <https://www.intavia.org/role/responsibleArtist/243>,
-        <https://www.intavia.org/role/responsibleArtist/244>,
-        <https://www.intavia.org/role/responsibleArtist/245>,
-        <https://www.intavia.org/role/responsibleArtist/246>,
-        <https://www.intavia.org/role/responsibleArtist/247> ;
+    crm:P1_is_identified_by <https://www.intavia.org/idm/personid/Apis/85656>,
+        <https://www.intavia.org/name/1/8565612345> ;
+    bioc:has_gender bioc:Female ;
+    bioc:has_nationality bioc:austrian ;
+    bioc:has_occupation bioc:Painter ;
+    idm:person_proxy_for <https://www.intavia.org/providedperson/12345> .
+
+<https://www.intavia.org/personproxy/92486/12347> a crm:E21_Person,
+        idm:Person_Proxy ;
+    crm:P1_is_identified_by <https://www.intavia.org/idm/personid/Apis/92486>,
+        <https://www.intavia.org/name/1/9248612347> ;
     bioc:has_gender bioc:Female ;
     bioc:has_nationality bioc:austrian ;
     bioc:has_occupation bioc:Painter ;
     idm:person_proxy_for <https://www.intavia.org/providedperson/12347> .
+
+<https://www.intavia.org/providedperson/12345> a idm:Provided_Person .
+
+<https://www.intavia.org/providedperson/12346> a idm:Provided_Person .
 
 <https://www.intavia.org/role/responsibleArtist/1> a bioc:Event_Role .
 
@@ -9540,12 +9588,6 @@ bioc:Female a bioc:Gender ;
 <https://www.intavia.org/role/responsibleArtist/98> a bioc:Event_Role .
 
 <https://www.intavia.org/role/responsibleArtist/99> a bioc:Event_Role .
-
-bioc:Painter a bioc:Occupation ;
-    rdfs:label "Painter" .
-
-bioc:austrian a bioc:Nationality ;
-    rdfs:label "austrian" .
 
 <https://www.intavia.org/choproxy/10> a crm:E18_Physical_Thing,
         idm:CHO_Proxy ;
@@ -11491,8 +11533,16 @@ bioc:austrian a bioc:Nationality ;
     edm:dataProvider "Albertina" ;
     idm:cho_proxy_for <https://www.intavia.org/cho/99> .
 
-<https://www.intavia.org/idtype/apis_id> a crm:E55_Type ;
-    rdfs:label "APIS Identifier" .
+<https://www.intavia.org/personid/Apis> rdfs:label "Apis" .
+
+<https://www.intavia.org/providedperson/12347> a idm:Provided_Person .
+
+bioc:austrian a bioc:Nationality ;
+    rdfs:label "austrian" .
+
+bioc:Painter a bioc:Gender,
+        bioc:Occupation ;
+    rdfs:label "Painter" .
 
 <https://www.intavia.org/nametype/forename> rdfs:label "forename" .
 

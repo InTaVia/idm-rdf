@@ -677,6 +677,29 @@ crm:P3_has_note rdf:type owl:DatatypeProperty ;
                 rdfs:label "has note (crm)"@en .
 
 
+###  http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within
+crm:P82_at_some_time_within rdf:type owl:DatatypeProperty ;
+                            rdfs:domain crm:E52_Time_Span ;
+                            rdfs:range xsd:dateTime ;
+                            rdfs:label "at some time within (crm)"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin
+crm:P82a_begin_of_the_begin rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf crm:P82_at_some_time_within ;
+                            rdfs:domain crm:E52_Time_Span ;
+                            rdfs:range xsd:dateTime ;
+                            rdfs:label "begin of the begin (crm)"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end
+crm:P82b_end_of_the_end rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf crm:P82_at_some_time_within ;
+                        rdfs:domain crm:E52_Time_Span ;
+                        rdfs:range xsd:dateTime ;
+                        rdfs:label "end of the end"@en .
+
+
 ###  http://www.cidoc-crm.org/cidoc-crm/P90_has_value
 crm:P90_has_value rdf:type owl:DatatypeProperty ;
                   rdfs:domain crm:E54_Dimension ;

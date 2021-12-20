@@ -1,4 +1,4 @@
-@prefix : <http://www.example.org/2021/intavia_idm#> .
+@prefix idm: <http://www.intavia.eu/idm-core/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix ore: <http://www.openarchives.org/ore/terms/> .
@@ -8,9 +8,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix bioc: <http://ldf.fi/schema/bioc/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.example.org/2021/intavia_idm> .
 
-<http://www.example.org/2021/intavia_idm> rdf:type owl:Ontology ;
+
+<http://www.intavia.eu/idm-core/> rdf:type owl:Ontology ;
                                            rdfs:comment "IDM (InTaVia data model) (in progress) combines Cidoc CRM version 7.1.1 (https://cidoc-crm.org/rdfs/7.1.1/CIDOC_CRM_v7.1.1.rdfs), BioCRM extension, EDM/ Europana Data Model 5.2.8., skos:definition of EDM is implemented as rdfs:comment), PROV-O and Open Archives Initiatives ORE (Version 1.0, 2008-10-17))."@en .
 
 #################################################################
@@ -20,8 +20,8 @@
 ###  http://ldf.fi/schema/bioc/bearer_of
 bioc:bearer_of rdf:type owl:ObjectProperty ;
                owl:inverseOf bioc:inheres_in ;
-               rdfs:domain :Group_Proxy ,
-                           :Person_Proxy ;
+               rdfs:domain idm:Group_Proxy ,
+                           idm:Person_Proxy ;
                rdfs:range bioc:Actor_Role ,
                           bioc:Event_Role ;
                rdfs:comment "enduring or time limited unary role"@en ;
@@ -38,7 +38,7 @@ bioc:had_participant_in_role rdf:type owl:ObjectProperty ;
 ###  http://ldf.fi/schema/bioc/has_family_relation
 bioc:has_family_relation rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf bioc:has_person_relation ;
-                         rdfs:domain :Person_Proxy ;
+                         rdfs:domain idm:Person_Proxy ;
                          rdfs:range bioc:Family_Relationship_Role ;
                          rdfs:label "has family relation (bioc)"@en .
 
@@ -46,7 +46,7 @@ bioc:has_family_relation rdf:type owl:ObjectProperty ;
 ###  http://ldf.fi/schema/bioc/has_gender
 bioc:has_gender rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf bioc:bearer_of ;
-                rdfs:domain :Person_Proxy ;
+                rdfs:domain idm:Person_Proxy ;
                 rdfs:range bioc:Gender ;
                 rdfs:comment "enduring  or time limited unary occupation role"@en ;
                 rdfs:label "has gender (bioc)"@en .
@@ -55,7 +55,7 @@ bioc:has_gender rdf:type owl:ObjectProperty ;
 ###  http://ldf.fi/schema/bioc/has_group_relation
 bioc:has_group_relation rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf bioc:has_relation ;
-                        rdfs:domain :Person_Proxy ;
+                        rdfs:domain idm:Person_Proxy ;
                         rdfs:range bioc:Group_Relationship_Role ;
                         rdfs:label "has group relation (bioc)"@en .
 
@@ -63,7 +63,7 @@ bioc:has_group_relation rdf:type owl:ObjectProperty ;
 ###  http://ldf.fi/schema/bioc/has_intergroup_relation
 bioc:has_intergroup_relation rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf bioc:has_relation ;
-                             rdfs:domain :Group_Proxy ;
+                             rdfs:domain idm:Group_Proxy ;
                              rdfs:range bioc:Intergroup_Relationship_Role ;
                              rdfs:label "has intergroup relation (bioc)"@en .
 
@@ -71,7 +71,7 @@ bioc:has_intergroup_relation rdf:type owl:ObjectProperty ;
 ###  http://ldf.fi/schema/bioc/has_nationality
 bioc:has_nationality rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf bioc:bearer_of ;
-                     rdfs:domain :Person_Proxy ;
+                     rdfs:domain idm:Person_Proxy ;
                      rdfs:range bioc:Nationality ;
                      rdfs:comment "enduring  or time limited unary nationality role"@en ;
                      rdfs:label "has nationality (bioc)"@en .
@@ -80,7 +80,7 @@ bioc:has_nationality rdf:type owl:ObjectProperty ;
 ###  http://ldf.fi/schema/bioc/has_occupation
 bioc:has_occupation rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf bioc:bearer_of ;
-                    rdfs:domain :Person_Proxy ;
+                    rdfs:domain idm:Person_Proxy ;
                     rdfs:range bioc:Occupation ;
                     rdfs:comment "enduring  or time limited unary occupation role"@en ;
                     rdfs:label "has occupation (bioc)"@en .
@@ -89,7 +89,7 @@ bioc:has_occupation rdf:type owl:ObjectProperty ;
 ###  http://ldf.fi/schema/bioc/has_person_relation
 bioc:has_person_relation rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf bioc:has_relation ;
-                         rdfs:domain :Person_Proxy ;
+                         rdfs:domain idm:Person_Proxy ;
                          rdfs:range bioc:Person_Relationship_Role ;
                          rdfs:label "has person relation (bioc)"@en .
 
@@ -98,8 +98,8 @@ bioc:has_person_relation rdf:type owl:ObjectProperty ;
 bioc:has_relation rdf:type owl:ObjectProperty ;
                   owl:inverseOf bioc:in_relation_to ;
                   rdfs:domain bioc:Actor_Role ;
-                  rdfs:range :Group_Proxy ,
-                             :Person_Proxy ;
+                  rdfs:range idm:Group_Proxy ,
+                             idm:Person_Proxy ;
                   rdfs:comment "Interpersonal relationships are represented by relating an actor (a person or group) to another actor in a role by using has_relation or one of its properties."@en ;
                   rdfs:label "in relation to (bioc)"@en .
 
@@ -107,7 +107,7 @@ bioc:has_relation rdf:type owl:ObjectProperty ;
 ###  http://ldf.fi/schema/bioc/has_social_relation
 bioc:has_social_relation rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf bioc:has_person_relation ;
-                         rdfs:domain :Person_Proxy ;
+                         rdfs:domain idm:Person_Proxy ;
                          rdfs:range bioc:Social_Relationship_Role ;
                          rdfs:label "has social relation (bioc)"@en .
 
@@ -115,8 +115,8 @@ bioc:has_social_relation rdf:type owl:ObjectProperty ;
 ###  http://ldf.fi/schema/bioc/in_relation_to
 bioc:in_relation_to rdf:type owl:ObjectProperty ;
                     rdfs:domain bioc:Actor_Role ;
-                    rdfs:range :Group_Proxy ,
-                               :Person_Proxy ;
+                    rdfs:range idm:Group_Proxy ,
+                               idm:Person_Proxy ;
                     rdfs:label "in relation to (bioc)"@en .
 
 
@@ -140,7 +140,7 @@ bioc:occured_in_the_presence_of_in_role rdf:type owl:ObjectProperty ;
 ###  http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of
 crm:P100_was_death_of rdf:type owl:ObjectProperty ;
                       rdfs:domain crm:E69_Death ;
-                      rdfs:range :Person_Proxy ;
+                      rdfs:range idm:Person_Proxy ;
                       rdfs:comment """This property links an instance of E69 Death to the instance of E21 Person that died.
 An instance of E69 Death may involve multiple people, for example in the case of a battle or disaster.
 This is not intended for use with general natural history material, only people."""@en ;
@@ -151,7 +151,7 @@ This is not intended for use with general natural history material, only people.
 crm:P104_is_subject_to rdf:type owl:ObjectProperty ;
                        rdfs:domain crm:E31_Document ,
                                    crm:E36_Visual_Item ,
-                                   :CHO_Proxy ;
+                                   idm:CHO_Proxy ;
                        rdfs:range crm:E30_Right ;
                        rdfs:comment "This property links a particular instance of E72 Legal Object to the instances of E30 Right to which it is subject. The Right is held by an E39 Actor as described by P75 possesses (is possessed by)."@en ;
                        rdfs:label "is subject to"@en .
@@ -160,7 +160,7 @@ crm:P104_is_subject_to rdf:type owl:ObjectProperty ;
 ###  http://www.cidoc-crm.org/cidoc-crm/P108_has_produced
 crm:P108_has_produced rdf:type owl:ObjectProperty ;
                       rdfs:domain crm:E12_Production ;
-                      rdfs:range :CHO_Proxy ;
+                      rdfs:range idm:CHO_Proxy ;
                       rdfs:comment """This property identifies the instance of E24 Physical Human-Made Thing that came into existence as a result of the instance of E12 Production.
 The identity of an instance of E24 Physical Human-Made Thing is not defined by its matter, but by its existence as a subject of documentation. An E12 Production can result in the creation of multiple instances of E24 Physical Human-Made Thing."""@en ;
                       rdfs:label "has produced (crm)"@en .
@@ -168,7 +168,7 @@ The identity of an instance of E24 Physical Human-Made Thing is not defined by i
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P128_carries
 crm:P128_carries rdf:type owl:ObjectProperty ;
-                 rdfs:domain :CHO_Proxy ;
+                 rdfs:domain idm:CHO_Proxy ;
                  rdfs:range crm:E33_Linguistic_Object ;
                  rdfs:comment "This property identifies an instance E90 Symbolic Object carried by an instance of E18 Physical Thing. Since an instance of E90 Symbolic Object is defined as an immaterial idealization over potentially multiple carriers, any individual realization on a particular physical carrier may be defective, due to deterioration or shortcomings in the process of creating the realization compared to the intended ideal. As long as such defects do not substantially affect the complete recognition of the respective symbolic object, it is still regarded as carrying an instance of this E90 Symbolic Object. If these defects are of scholarly interest, the particular realization can be modelled as an instance of E25 Human-Made Feature. Note, that any instance of E90 Symbolic Object incorporated (P165) in the carried symbolic object is also carried by the same instance of E18 Physical Thing."@en ;
                  rdfs:label "carries (crm)"@en .
@@ -177,7 +177,7 @@ crm:P128_carries rdf:type owl:ObjectProperty ;
 ###  http://www.cidoc-crm.org/cidoc-crm/P138_represents
 crm:P138_represents rdf:type owl:ObjectProperty ;
                     rdfs:domain crm:E36_Visual_Item ;
-                    rdfs:range :CHO_Proxy ;
+                    rdfs:range idm:CHO_Proxy ;
                     rdfs:comment "This property establishes the relationship between an instance of E36 Visual Item and the instance of E1 CRM Entity that it visually represents. Any entity may be represented visually. This property is part of the fully developed path from E24 Physical Human-Made Thing through P65 shows visual item (is shown by), E36 Visual Item, P138 represents (has representation) to E1 CRM Entity, which is shortcut by P62 depicts (is depicted by). P138.1 mode of representation allows the nature of the representation to be refined. This property is also used for the relationship between an original and a digitisation of the original by the use of techniques such as digital photography, flatbed or infrared scanning. Digitisation is here seen as a process with a mechanical, causal component rendering the spatial distribution of structural and optical properties of the original and does not necessarily include any visual similarity identifiable by human observation."@en ;
                     rdfs:label "represents (crm)"@en .
 
@@ -185,7 +185,7 @@ crm:P138_represents rdf:type owl:ObjectProperty ;
 ###  http://www.cidoc-crm.org/cidoc-crm/P13_destroyed
 crm:P13_destroyed rdf:type owl:ObjectProperty ;
                   rdfs:domain crm:E6_Destruction ;
-                  rdfs:range :CHO_Proxy ;
+                  rdfs:range idm:CHO_Proxy ;
                   rdfs:comment """This property links an instance of E6 Destruction to an instance of E18 Physical Thing that has been destroyed by it.
 Destruction implies the end of an item’s life as a subject of cultural documentation – the physical matter of which the item was composed may in fact continue to exist. An instance of E6 Destruction may be contiguous with an instance of E12 Production that brings into existence a derived object composed partly of matter from the destroyed object."""@en ;
                   rdfs:label "destroyed (crm)"@en .
@@ -204,9 +204,9 @@ This property is transitive."""@en ;
 crm:P15_was_influenced_by rdf:type owl:ObjectProperty ;
                           rdfs:domain crm:E7_Activity ;
                           rdfs:range crm:E1_CRM_Entity ,
-                                     :EDM_Classes ,
-                                     :IDM_classes ,
-                                     :ORE_classes ;
+                                     idm:EDM_Classes ,
+                                     idm:IDM_classes ,
+                                     idm:ORE_classes ;
                           rdfs:comment """This is a high-level property, which captures the relationship between an instance of E7 Activity and anything, that is, an instance of E1 CRM Entity that may have had some bearing upon it.
 The property has more specific sub properties.
 
@@ -219,9 +219,9 @@ crm:P17_was_motivated_by rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf crm:P15_was_influenced_by ;
                          rdfs:domain crm:E7_Activity ;
                          rdfs:range crm:E1_CRM_Entity ,
-                                    :EDM_Classes ,
-                                    :IDM_classes ,
-                                    :ORE_classes ;
+                                    idm:EDM_Classes ,
+                                    idm:IDM_classes ,
+                                    idm:ORE_classes ;
                          rdfs:comment """This property describes an item or items that are regarded as a reason for carrying out the instance of E7 Activity.
 For example, the discovery of a large hoard of treasure may call for a celebration, an order from headquarters can start a military manoeuvre.
 
@@ -233,7 +233,7 @@ INTAVIA: property is mainly needed for Production Event (also for Move)"""@en ;
 crm:P19_was_intended_use_of rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf crm:P15_was_influenced_by ;
                             rdfs:domain crm:E7_Activity ;
-                            rdfs:range :CHO_Proxy ;
+                            rdfs:range idm:CHO_Proxy ;
                             rdfs:comment """This property relates an instance of E7 Activity with instances of E71 Human-Made Thing, created specifically for use in the activity.
 This is distinct from the intended use of an item in some general type of activity such as the book of common prayer which was intended for use in Church of England services (see P101 had as general use (was use of))."""@en ;
                             rdfs:label "was intended use of (crm)"@en .
@@ -242,9 +242,9 @@ This is distinct from the intended use of an item in some general type of activi
 ###  http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by
 crm:P1_is_identified_by rdf:type owl:ObjectProperty ;
                         rdfs:domain crm:E53_Place ,
-                                    :CHO_Proxy ,
-                                    :Group_Proxy ,
-                                    :Person_Proxy ;
+                                    idm:CHO_Proxy ,
+                                    idm:Group_Proxy ,
+                                    idm:Person_Proxy ;
                         rdfs:range crm:E33_E41_Linguistic_Appellation ,
                                    crm:E42_Identifier ;
                         rdfs:comment """This property describes the naming or identification of any real-world item by a name or any other identifier.
@@ -257,7 +257,7 @@ It is also a shortcut for the path from E1 CRM Entity through P1 is identified b
 ###  http://www.cidoc-crm.org/cidoc-crm/P24_transferred_title_of
 crm:P24_transferred_title_of rdf:type owl:ObjectProperty ;
                              rdfs:domain crm:E8_Acquisition ;
-                             rdfs:range :CHO_Proxy ;
+                             rdfs:range idm:CHO_Proxy ;
                              rdfs:comment """This property identifies the instance(s) of E18 Physical Thing involved in an instance of E8 Acquisition.
 In reality, an acquisition must refer to at least one transferred item
 ."""@en ;
@@ -276,8 +276,8 @@ Therefore, the described destination is an instance of E53 Place which P89 falls
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P27_moved_from
 crm:P27_moved_from rdf:type owl:ObjectProperty ;
-                   rdfs:domain :CHO_Proxy ,
-                               :Person_Proxy ;
+                   rdfs:domain idm:CHO_Proxy ,
+                               idm:Person_Proxy ;
                    rdfs:range crm:E53_Place ;
                    rdfs:comment """This property identifies an origin, an instance of E53 Place, of an instance of E9 Move.
 A move will be linked to an origin, such as the move of an artifact from storage to display. A move may be linked to many starting instances of E53 Place by multiple instances of this property. In this case the move describes the picking up of a set of objects. The area of the move includes the origin(s), route and destination(s).
@@ -304,7 +304,7 @@ This property is a shortcut for the path from E1 CRM Entity through P41i was cla
 ###  http://www.cidoc-crm.org/cidoc-crm/P30_transferred_custody_of
 crm:P30_transferred_custody_of rdf:type owl:ObjectProperty ;
                                rdfs:domain crm:E10_Transfer_of_Custody ;
-                               rdfs:range :CHO_Proxy ;
+                               rdfs:range idm:CHO_Proxy ;
                                rdfs:comment """This property identifies the instance(s) of E18 Physical Thing concerned in an instance of E10 Transfer of Custody.
 The property will typically describe the object that is handed over by an instance of E39 Actor to to the custody of another instance of E39 Actor. On occasion, physical custody may be transferred involuntarily or illegally – through accident, unsolicited donation, or theft."""@en ;
                                rdfs:label "transferred custody of (crm)"@en .
@@ -313,7 +313,7 @@ The property will typically describe the object that is handed over by an instan
 ###  http://www.cidoc-crm.org/cidoc-crm/P31_has_modified
 crm:P31_has_modified rdf:type owl:ObjectProperty ;
                      rdfs:domain crm:E11_Modification ;
-                     rdfs:range :CHO_Proxy ;
+                     rdfs:range idm:CHO_Proxy ;
                      rdfs:comment "This property identifies the instance of E18 Physical Thing modified in an instance of E11 Modification."@en ;
                      rdfs:label "has modified (crm)"@en .
 
@@ -338,7 +338,7 @@ crm:P37_assigned rdf:type owl:ObjectProperty ;
 ###  http://www.cidoc-crm.org/cidoc-crm/P39_measured
 crm:P39_measured rdf:type owl:ObjectProperty ;
                  rdfs:domain crm:E16_Measurement ;
-                 rdfs:range :CHO_Proxy ;
+                 rdfs:range idm:CHO_Proxy ;
                  rdfs:comment "This property associates an instance of E16 Measurement with the instance of E18 Physical Thing upon which it acted. The instance of E16 Measurement is specific to the measured object. An instance of E18 Physical Thing may be measured more than once with different results, constituting different instances of E16 Measurement."@en ;
                  rdfs:label "measured (crm)"@en .
 
@@ -356,7 +356,7 @@ Even though knowledge of the value of a dimension requires measurement, the dime
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P45_consists_of
 crm:P45_consists_of rdf:type owl:ObjectProperty ;
-                    rdfs:domain :CHO_Proxy ;
+                    rdfs:domain idm:CHO_Proxy ;
                     rdfs:range crm:E57_Material ;
                     rdfs:comment """This property describes the decomposition of an instance of E3 Condition State into discrete, subsidiary states.
 It is assumed that the sub-states into which the condition state is analysed form a logical whole - although the entire story may not be completely known – and that the sub-states are in fact constitutive of the general condition state. For example, a general condition state of “in ruins” may be decomposed into the individual stages of decay.
@@ -367,7 +367,7 @@ This property is transitive and non-reflexive."""@en ;
 ###  http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of
 crm:P46_is_composed_of rdf:type owl:ObjectProperty ;
                        rdfs:domain crm:E78_Curated_Holding ;
-                       rdfs:range :CHO_Proxy ;
+                       rdfs:range idm:CHO_Proxy ;
                        rdfs:comment """This property associates an instance of E18 Physical Thing with another instance of Physical Thing that forms part of it. The spatial extent of the composing part is included in the spatial extent of the whole.
 Component elements, since they are themselves instances of E18 Physical Thing, may be further analysed into sub-components, thereby creating a hierarchy of part decomposition. An instance of E18 Physical Thing may be shared between multiple wholes, for example two buildings may share a common wall. This property does not specify when and for how long a component element resided in the respective whole. If a component is not part of a whole from the beginning of existence or until the end of existence of the whole, the classes E79 Part Addition and E90 Part Removal can be used to document when a component became part of a particular whole and/or when it stopped being a part of it. For the time-span of being part of the respective whole, the component is completely contained in the place the whole occupies.
 This property is intended to describe specific components that are individually documented, rather than general aspects. Overall descriptions of the structure of an instance of E18 Physical Thing are captured by the P3 has note property.
@@ -388,7 +388,7 @@ crm:P4_has_time_span rdf:type owl:ObjectProperty ;
 ###  http://www.cidoc-crm.org/cidoc-crm/P55_has_current_location
 crm:P55_has_current_location rdf:type owl:ObjectProperty ;
                              owl:equivalentProperty edm:currentLocation ;
-                             rdfs:domain :CHO_Proxy ;
+                             rdfs:domain idm:CHO_Proxy ;
                              rdfs:range crm:E53_Place ;
                              rdfs:comment """This property records the location of an instance of E19 Physical Object at the time of validity of the record or database containing the statement that uses this property.
 This property is a specialisation of P53 has former or current location (is former or current location of). It indicates that the instance of E53 Place associated with the instance of E19 Physical Object is the current location of the object. The property does not allow any indication of how long the object has been at the current location.
@@ -398,7 +398,7 @@ This property is a shortcut. A more detailed representation can make use of the 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P62_depicts
 crm:P62_depicts rdf:type owl:ObjectProperty ;
-                rdfs:domain :CHO_Proxy ;
+                rdfs:domain idm:CHO_Proxy ;
                 rdfs:range crm:E1_CRM_Entity ;
                 rdfs:comment """This property identifies something that is depicted by an instance of E24 Physical Human-Made Thing. Depicting is meant in the sense that an instance of E24 Physical Human-Made Thing intentionally shows, through its optical qualities or form, a representation of the entity depicted. Photographs are by default regarded as being intentional in this sense. Anything that is designed to change the properties of the depiction, such as an e-book reader, is specifically excluded. The property does not pertain to inscriptions or any other information encoding.
 This property is a shortcut of the more fully developed path from E24 Physical Human-Made Thing through P65 shows visual item, E36 Visual Item, P138 represents to E1 CRM Entity. P138.1 mode of depiction allows the nature of the depiction to be refined."""@en ;
@@ -451,7 +451,7 @@ crm:P91_has_unit rdf:type owl:ObjectProperty ;
 ###  http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life
 crm:P98_brought_into_life rdf:type owl:ObjectProperty ;
                           rdfs:domain crm:E67_Birth ;
-                          rdfs:range :Person_Proxy ;
+                          rdfs:range idm:Person_Proxy ;
                           rdfs:comment """This property links an instance of E67 Birth event to an instance of E21 Person in the role of offspring.
 Twins, triplets etc. are brought into life by the same instance of E67 Birth. This is not intended for use with general Natural History material, only people. There is no explicit method for modelling conception and gestation except by using extensions."""@en ;
                           rdfs:label "brought into life (crm)"@en .
@@ -459,7 +459,7 @@ Twins, triplets etc. are brought into life by the same instance of E67 Birth. Th
 
 ###  http://www.europeana.eu/schemas/edm/currentLocation
 edm:currentLocation rdf:type owl:ObjectProperty ;
-                    rdfs:domain :CHO_Proxy ;
+                    rdfs:domain idm:CHO_Proxy ;
                     rdfs:range crm:E53_Place ;
                     rdfs:comment "The geographic location and/or name of the repository, building, site, or other entity whose boundaries presently include the resource."@en ;
                     rdfs:label "current Location (edm)"@en .
@@ -488,34 +488,34 @@ edm:occuredAt rdf:type owl:ObjectProperty ;
               rdfs:label "occured at (edm)"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#cho_proxy_for
-:cho_proxy_for rdf:type owl:ObjectProperty ;
+###  http://www.intavia.eu/idm-core/cho_proxy_for
+idm:cho_proxy_for rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ore:proxyFor ;
-               rdfs:domain :CHO_Proxy ;
-               rdfs:range :Provided_CHO ;
+               rdfs:domain idm:CHO_Proxy ;
+               rdfs:range idm:Provided_CHO ;
                rdfs:label "cho proxy for"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#group_proxy_for
-:group_proxy_for rdf:type owl:ObjectProperty ;
+###  http://www.intavia.eu/idm-core/group_proxy_for
+idm:group_proxy_for rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf ore:proxyFor ;
-                 rdfs:domain :Group_Proxy ;
-                 rdfs:range :Provided_Group .
+                 rdfs:domain idm:Group_Proxy ;
+                 rdfs:range idm:Provided_Group .
 
 
-###  http://www.example.org/2021/intavia_idm#person_proxy_for
-:person_proxy_for rdf:type owl:ObjectProperty ;
+###  http://www.intavia.eu/idm-core/person_proxy_for
+idm:person_proxy_for rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ore:proxyFor ;
-                  rdfs:domain :Person_Proxy ;
-                  rdfs:range :Provided_Person .
+                  rdfs:domain idm:Person_Proxy ;
+                  rdfs:range idm:Provided_Person .
 
 
 ###  http://www.openarchives.org/ore/terms/aggregates
 ore:aggregates rdf:type owl:ObjectProperty ;
                rdfs:domain ore:Aggregation ;
                rdfs:range edm:InformationResource ,
-                          :Provided_Group ,
-                          :Provided_Person ;
+                          idm:Provided_Group ,
+                          idm:Provided_Person ;
                rdfs:comment "Aggregations, by definition, aggregate resources. The ore:aggregates relationship expresses that the object resource is a member of the set of Aggregated Resources of the subject (the Aggregation). This relationship between the Aggregation and its Aggregated Resources is thus more specific than a simple part/whole relationship, as expressed by dcterms:hasPart for example."@en ;
                rdfs:label "aggregates (ore)"@en .
 
@@ -523,9 +523,9 @@ ore:aggregates rdf:type owl:ObjectProperty ;
 ###  http://www.openarchives.org/ore/terms/proxyFor
 ore:proxyFor rdf:type owl:ObjectProperty ;
              rdfs:domain ore:Proxy ;
-             rdfs:range :Provided_CHO ,
-                        :Provided_Group ,
-                        :Provided_Person ;
+             rdfs:range idm:Provided_CHO ,
+                        idm:Provided_Group ,
+                        idm:Provided_Person ;
              rdfs:comment "Proxy objects are used to represent a Resource as it is aggregated in a particular Aggregation. The ore:proxyFor relationship is used to link the proxy to the Aggregated Resource it is a proxy for. The subject of the relationship is a Proxy object, and the object of the relationship is the Aggregated Resource."@en ;
              rdfs:label "proxy for (ore)"@en .
 
@@ -536,6 +536,139 @@ ore:proxyIn rdf:type owl:ObjectProperty ;
             rdfs:range ore:Aggregation ;
             rdfs:comment "Proxy objects must also link to the Aggregation in which the resource being proxied is aggregated. The ore:proxyIn relationship is used for this purpose. The subject of the relationship is a Proxy object, and the object of the relationship is the Aggregation."@en ;
             rdfs:label "proxy in (ore)"@en .
+            
+###  http://www.intavia.eu/idm-core/bearer_of
+idm:bearer_of rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf bioc:bearer_of ;
+               owl:inverseOf idm:inheres_in ;
+               rdfs:domain idm:Group_Proxy ,
+                           idm:Person_Proxy ;
+               rdfs:range idm:Actor_Role ,
+                          idm:Event_Role ;
+               rdfs:comment "enduring or time limited unary role"@en ;
+               rdfs:label "bearer of (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/had_participant_in_role
+idm:had_participant_in_role rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf bioc:had_participant_in_role ;
+                             rdfs:domain crm:E5_Event ;
+                             rdfs:range idm:Event_Role ;
+                             rdfs:label "had participant in role (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/has_family_relation
+idm:has_family_relation rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf idm:has_person_relation ;
+                         rdfs:subPropertyOf bioc:has_family_relation ;
+                         rdfs:domain idm:Person_Proxy ;
+                         rdfs:range idm:Family_Relationship_Role ;
+                         rdfs:label "has family relation (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/has_gender
+idm:has_gender rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf bioc:has_gender ;
+                rdfs:subPropertyOf idm:bearer_of ;
+                rdfs:domain idm:Person_Proxy ;
+                rdfs:range idm:Gender ;
+                rdfs:comment "enduring  or time limited unary occupation role"@en ;
+                rdfs:label "has gender (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/has_group_relation
+idm:has_group_relation rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf bioc:has_group_relation ;
+                        rdfs:subPropertyOf idm:has_relation ;
+                        rdfs:domain idm:Person_Proxy ;
+                        rdfs:range idm:Group_Relationship_Role ;
+                        rdfs:label "has group relation (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/has_intergroup_relation
+idm:has_intergroup_relation rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf bioc:has_intergroup_relation ;
+                             rdfs:subPropertyOf idm:has_relation ;
+                             rdfs:domain idm:Group_Proxy ;
+                             rdfs:range idm:Intergroup_Relationship_Role ;
+                             rdfs:label "has intergroup relation (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/has_nationality
+idm:has_nationality rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf bioc:has_nationality ;
+                     rdfs:subPropertyOf idm:bearer_of ;
+                     rdfs:domain idm:Person_Proxy ;
+                     rdfs:range idm:Nationality ;
+                     rdfs:comment "enduring  or time limited unary nationality role"@en ;
+                     rdfs:label "has nationality (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/has_occupation
+idm:has_occupation rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf bioc:has_occupation ;
+                    rdfs:subPropertyOf idm:bearer_of ;
+                    rdfs:domain idm:Person_Proxy ;
+                    rdfs:range idm:Occupation ;
+                    rdfs:comment "enduring  or time limited unary occupation role"@en ;
+                    rdfs:label "has occupation (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/has_person_relation
+idm:has_person_relation rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf bioc:has_person_relation ;
+                         rdfs:subPropertyOf idm:has_relation ;
+                         rdfs:domain idm:Person_Proxy ;
+                         rdfs:range idm:Person_Relationship_Role ;
+                         rdfs:label "has person relation (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/has_relation
+idm:has_relation rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf bioc:has_relation ;
+                  owl:inverseOf idm:in_relation_to ;
+                  rdfs:domain idm:Actor_Role ;
+                  rdfs:range idm:Group_Proxy ,
+                             idm:Person_Proxy ;
+                  rdfs:comment "Interpersonal relationships are represented by relating an actor (a person or group) to another actor in a role by using has_relation or one of its properties."@en ;
+                  rdfs:label "in relation to (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/has_social_relation
+idm:has_social_relation rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf bioc:has_social_relation ;
+                         rdfs:subPropertyOf idm:has_person_relation ;
+                         rdfs:domain idm:Person_Proxy ;
+                         rdfs:range idm:Social_Relationship_Role ;
+                         rdfs:label "has social relation (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/in_relation_to
+idm:in_relation_to rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf bioc:in_relation_to ;
+                    rdfs:domain idm:Actor_Role ;
+                    rdfs:range idm:Group_Proxy ,
+                               idm:Person_Proxy ;
+                    rdfs:label "in relation to (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/inheres_in
+idm:inheres_in rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf bioc:inheres_in ;
+                rdfs:domain idm:Entity_Role ;
+                rdfs:range crm:E1_CRM_Entity ;
+                rdfs:comment """Inverse property of idm:bearer_of. idm:inheres_in connects a role which is attached to an actor in an interpersonal relationship and the other person in this relationship.
+Relationships are represented by relating an actor (a person or group) to another actor in a role by using one of the subproperties of the property idm:has relation."""@en ;
+                rdfs:label "inheres in (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/occured_in_the_presence_of_in_role
+idm:occured_in_the_presence_of_in_role rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf bioc:occured_in_the_presence_of_in_role ;
+                                        rdfs:domain crm:E5_Event ;
+                                        rdfs:range idm:Thing_Role ;
+                                        rdfs:comment "role of a thing (cultural heritage object) in an event"@en ;
+                                        rdfs:label "occured in the presence of in role (idm)"@en .
 
 
 #################################################################
@@ -587,8 +720,8 @@ edm:dataProvider rdf:type owl:DatatypeProperty ;
 
 ###  http://www.w3.org/2002/07/owl#sameAs
 owl:sameAs rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Provided_Group ,
-                       :Provided_Person ;
+           rdfs:domain idm:Provided_Group ,
+                       idm:Provided_Person ;
            rdfs:range xsd:anyURI .
 
 
@@ -642,14 +775,14 @@ bioc:Group_Relationship_Role rdf:type owl:Class ;
 
 ###  http://ldf.fi/schema/bioc/Intergroup_Relationship_Role
 bioc:Intergroup_Relationship_Role rdf:type owl:Class ;
-                                  rdfs:subClassOf bioc:Binary_Relationship_Role ;
-                                  rdfs:label "Inter Group Relationship Role"@en .
+                              rdfs:subClassOf bioc:Binary_Relationship_Role ;
+                              rdfs:label "Inter Group Relationship Role"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Nationality
 bioc:Nationality rdf:type owl:Class ;
-                 rdfs:subClassOf bioc:Unary_Role ;
-                 rdfs:label "Nationality"@en .
+                              rdfs:subClassOf bioc:Unary_Role ;
+                              rdfs:label "Nationality"@en .
 
 
 ###  http://ldf.fi/schema/bioc/Occupation
@@ -753,7 +886,6 @@ Regardless whether a measurement is made by an instrument or by human senses, it
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing
 crm:E18_Physical_Thing rdf:type owl:Class ;
-                       owl:equivalentClass :CHO_Proxy ;
                        rdfs:subClassOf crm:E70_Thing ;
                        rdfs:comment """This class comprises all persistent physical items with a relatively stable form, human-made or natural.
 Depending on the existence of natural boundaries of such things, the CIDOC CRM distinguishes the instances of E19 Physical Object from instances of E26 Physical Feature, such as holes, rivers, pieces of land etc. Most instances of E19 Physical Object can be moved (if not too heavy), whereas features are integral to the surrounding matter.
@@ -775,7 +907,7 @@ All other classes within the CIDOC CRM are directly or indirectly specialisation
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E21_Person
 crm:E21_Person rdf:type owl:Class ;
-               owl:equivalentClass :Person_Proxy ;
+               owl:equivalentClass idm:Person_Proxy ;
                rdfs:subClassOf crm:E39_Actor ;
                rdfs:comment """This class comprises real persons who live or are assumed to have lived.
 Legendary figures that may have existed, such as Ulysses and King Arthur, fall into this class if the documentation refers to them as historical figures. In cases where doubt exists as to whether several persons are in fact identical, multiple instances can be created and linked to indicate their relationship. The CIDOC CRM does not propose a specific form to support reasoning about possible identity.
@@ -1016,7 +1148,7 @@ They may be intellectual products or physical things. They may for instance have
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E74_Group
 crm:E74_Group rdf:type owl:Class ;
-              owl:equivalentClass :Group_Proxy ;
+              owl:equivalentClass idm:Group_Proxy ;
               rdfs:subClassOf crm:E39_Actor ;
               rdfs:comment """This class comprises any gatherings or organizations of human individuals or groups that act collectively or in a similar way due to any form of unifying relationship. In the wider sense this class also comprises official positions which used to be regarded in certain contexts as one actor, independent of the current holder of the office, such as the president of a country. In such cases, it may happen that the group never had more than one member. A joint pseudonym (i.e., a name that seems indicative of an individual but that is actually used as a persona by two or more people) is a particular case of E74 Group.
 A gathering of people becomes an instance of E74 Group when it exhibits organizational characteristics usually typified by a set of ideas or beliefs held in common, or actions performed together. These might be communication, creating some common artifact, a common purpose such as study, worship, business, sports, etc. Nationality can be modelled as membership in an instance of E74 Group. Married couples and other concepts of family are regarded as particular examples of E74 Group."""@en ;
@@ -1083,14 +1215,14 @@ edm:Agent rdf:type owl:Class ;
 
 ###  http://www.europeana.eu/schemas/edm/InformationResource
 edm:InformationResource rdf:type owl:Class ;
-                        rdfs:subClassOf :EDM_Classes ;
+                        rdfs:subClassOf idm:EDM_Classes ;
                         rdfs:comment "An information resource is a resource whose essential characteristics can be conveyed in a single message. It can be associated with a URI, it can have a representation, for example: a text is an InformationResource."@en ;
                         rdfs:label "InformationResource (edm)"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/NonInformationResource
 edm:NonInformationResource rdf:type owl:Class ;
-                           rdfs:subClassOf :EDM_Classes ;
+                           rdfs:subClassOf idm:EDM_Classes ;
                            rdfs:comment "All resources that are not information resources."@en ;
                            rdfs:label "Non-Information Resource (edm)"@en .
 
@@ -1102,8 +1234,8 @@ edm:WebResource rdf:type owl:Class ;
                 rdfs:label "Web Resource (edm)"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#CHO_Proxy
-:CHO_Proxy rdf:type owl:Class ;
+###  http://www.intavia.eu/idm-core/CHO_Proxy
+idm:CHO_Proxy rdf:type owl:Class ;
            rdfs:subClassOf ore:Proxy ;
            rdfs:comment """A proxy is a resource that stands for an aggregated resource A in the context of a specific aggregation. The URI of a proxy then can be used in assertions specific to the aggregated resource A in the context of that aggregation.
 This class is used to create aliases of cultural heritage objects to which descriptions are attached. Europeana uses proxies as placeholders for cultural heritage objects within aggregations (whether Europeana aggregations or not) in order to make assertions about the corresponding cultural heritage objects while distinguishing the provenance of these assertions.
@@ -1112,74 +1244,175 @@ According to EDM documentation 5.2.8., CHO Proxy is equivalent to E18 Physical T
            rdfs:label "CHO Proxy"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#EDM_Classes
-:EDM_Classes rdf:type owl:Class ;
+###  http://www.intavia.eu/idm-core/EDM_Classes
+idm:EDM_Classes rdf:type owl:Class ;
              rdfs:comment "This class is used only for structuring the data model. It will be resolved at a later time."@en ;
              rdfs:label "EDM classes"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#Group_Proxy
-:Group_Proxy rdf:type owl:Class ;
+###  http://www.intavia.eu/idm-core/Group_Proxy
+idm:Group_Proxy rdf:type owl:Class ;
              rdfs:subClassOf ore:Proxy ;
              rdfs:comment """A proxy is a resource that stands for an aggregated resource A in the context of a specific aggregation. The URI of a proxy then can be used in assertions specific to the aggregated resource A in the context of that aggregation.
 This class is used to create aliases of cultural heritage objects to which descriptions are attached. Europeana uses proxies as placeholders for cultural heritage objects within aggregations (whether Europeana aggregations or not) in order to make assertions about the corresponding cultural heritage objects while distinguishing the provenance of these assertions."""@en ;
              rdfs:label "Group Proxy"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#IDM_classes
-:IDM_classes rdf:type owl:Class ;
+###  http://www.intavia.eu/idm-core/IDM_classes
+idm:IDM_classes rdf:type owl:Class ;
              rdfs:comment "Classes developed for IDM. This class is used only for structuring the data model. It will be resolved at a later time."@en ;
              rdfs:label "IDM classes"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#ORE_classes
-:ORE_classes rdf:type owl:Class ;
+###  http://www.intavia.eu/idm-core/ORE_classes
+idm:ORE_classes rdf:type owl:Class ;
              rdfs:comment "This class is used only for structuring the data model. It will be resolved for the final data model."@en ;
              rdfs:label "ORE classes"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#Person_Proxy
-:Person_Proxy rdf:type owl:Class ;
+###  http://www.intavia.eu/idm-core/Person_Proxy
+idm:Person_Proxy rdf:type owl:Class ;
               rdfs:subClassOf ore:Proxy ;
               rdfs:comment """A proxy is a resource that stands for an aggregated resource A in the context of a specific aggregation. The URI of a proxy then can be used in assertions specific to the aggregated resource A in the context of that aggregation.
 This class is used to create aliases of cultural heritage objects to which descriptions are attached. Europeana uses proxies as placeholders for cultural heritage objects within aggregations (whether Europeana aggregations or not) in order to make assertions about the corresponding cultural heritage objects while distinguishing the provenance of these assertions."""@en ;
               rdfs:label "Person Proxy"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#Provided_CHO
-:Provided_CHO rdf:type owl:Class ;
-              rdfs:subClassOf :IDM_classes ;
+###  http://www.intavia.eu/idm-core/Provided_CHO
+idm:Provided_CHO rdf:type owl:Class ;
+              rdfs:subClassOf idm:IDM_classes ;
               rdfs:comment "This class comprises the Cultural Heritage objects that Europeana collects descriptions about. Properties are attached to the Proxies. Not to \"Provided CHO\"."@en ;
               rdfs:label "Provided CHO"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#Provided_Group
-:Provided_Group rdf:type owl:Class ;
-                rdfs:subClassOf :IDM_classes ;
+###  http://www.intavia.eu/idm-core/Provided_Group
+idm:Provided_Group rdf:type owl:Class ;
+                rdfs:subClassOf idm:IDM_classes ;
                 rdfs:comment "Class for groups in InTaVia, the class works equivalent to Provided CHO in EDM, properties are attached to the Proxies. Not to \"Provided Group\"."@en ;
                 rdfs:label "Provided Group"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#Provided_Person
-:Provided_Person rdf:type owl:Class ;
-                 rdfs:subClassOf :IDM_classes ;
+###  http://www.intavia.eu/idm-core/Provided_Person
+idm:Provided_Person rdf:type owl:Class ;
+                 rdfs:subClassOf idm:IDM_classes ;
                  rdfs:comment "Class for persons in InTaVia, functions equivalent to Provided CHO in EDM, properties are attached to the Proxies. not to \"Provided Person\"."@en ;
                  rdfs:label "Provided Person"@en .
 
 
 ###  http://www.openarchives.org/ore/terms/Aggregation
 ore:Aggregation rdf:type owl:Class ;
-                rdfs:subClassOf :ORE_classes ;
+                rdfs:subClassOf idm:ORE_classes ;
                 rdfs:comment "A set of related resources (Aggregated Resources), grouped together such that the set can be treated as a single resource. This is the entity described within the ORE interoperability framework by a Resource Map."@en ;
                 rdfs:label "Aggregation (ore)"@en .
 
 
 ###  http://www.openarchives.org/ore/terms/Proxy
 ore:Proxy rdf:type owl:Class ;
-          rdfs:subClassOf :ORE_classes ;
+          rdfs:subClassOf idm:ORE_classes ;
           rdfs:comment """A proxy is a resource that stands for an aggregated resource A in the context of a specific aggregation. The URI of a proxy then can be used in assertions specific to the aggregated resource A in the context of that aggregation.
 This class is used to create aliases of cultural heritage objects to which descriptions are attached. Europeana uses proxies as placeholders for cultural heritage objects within aggregations (whether Europeana aggregations or not) in order to make assertions about the corresponding cultural heritage objects while distinguishing the provenance of these assertions."""@en ;
           rdfs:label "Proxy(ore)"@en .
+          
+ 
+###  http://www.intavia.eu/idm-core/Actor_Role
+idm:Actor_Role rdf:type owl:Class ;
+                rdfs:subClassOf idm:Entity_Role ;
+                rdfs:subClassOf bioc:Actor_Role ;
+                rdfs:label "Actor Role"@en .
+
+
+###  http://www.intavia.eu/idm-core/Binary_Relationship_Role
+idm:Binary_Relationship_Role rdf:type owl:Class ;
+                              rdfs:subClassOf bioc:Binary_Relationship_Role  ;
+                              rdfs:subClassOf idm:Actor_Role ;
+                              rdfs:comment "This is an atemporal role, i.e., the role exists for the duration of its bearer's existence."@en ;
+                              rdfs:label "Binary Relationship Role"@en .
+
+
+###  http://www.intavia.eu/idm-core/Entity_Role
+idm:Entity_Role rdf:type owl:Class ;
+                 rdfs:subClassOf crm:E1_CRM_Entity ;
+                 rdfs:subClassOf bioc:Entity_Role ;
+                 rdfs:label "Entity Role (idm)"@en .
+
+
+###  http://www.intavia.eu/idm-core/Event_Role
+idm:Event_Role rdf:type owl:Class ;
+                rdfs:subClassOf idm:Actor_Role ;
+                rdfs:subClassOf bioc:Event_Role ;
+                rdfs:comment "This is a temporal role, i.e., the role exists only for the duration of the event the it (its bearer) participates in."@en ;
+                rdfs:label "Event Role"@en .
+
+
+###  http://www.intavia.eu/idm-core/Family_Relationship_Role
+idm:Family_Relationship_Role rdf:type owl:Class ;
+                              rdfs:subClassOf idm:Person_Relationship_Role ;
+                              rdfs:subClassOf bioc:Family_Relationship_Role ;
+                              rdfs:label "Family Relationship Role"@en .
+
+
+###  http://www.intavia.eu/idm-core/Gender
+idm:Gender rdf:type owl:Class ;
+            rdfs:subClassOf idm:Unary_Role ;
+            rdfs:subClassOf bioc:Gender ;
+            rdfs:label "Gender"@en .
+
+
+###  http://www.intavia.eu/idm-core/Group_Relationship_Role
+idm:Group_Relationship_Role rdf:type owl:Class ;
+                             rdfs:subClassOf idm:Binary_Relationship_Role ;
+                             rdfs:subClassOf bioc:Group_Relationship_Role ;
+                             rdfs:label "Group Relationship Role"@en .
+
+
+###  http://www.intavia.eu/idm-core/Intergroup_Relationship_Role
+idm:Intergroup_Relationship_Role rdf:type owl:Class ;
+                                  rdfs:subClassOf idm:Intergroup_Relationship_Role ;
+                                  rdfs:subClassOf idm:Binary_Relationship_Role ;
+                                  rdfs:label "Inter Group Relationship Role"@en .
+
+
+###  http://www.intavia.eu/idm-core/Nationality
+idm:Nationality rdf:type owl:Class ;
+                 rdfs:subClassOf idm:Unary_Role ;
+                 rdfs:subClassOf bioc:Nationality ;
+                 rdfs:label "Nationality"@en .
+
+
+###  http://www.intavia.eu/idm-core/Occupation
+idm:Occupation rdf:type owl:Class ;
+                rdfs:subClassOf bioc:Occupation ;
+                rdfs:subClassOf idm:Unary_Role .
+
+
+###  http://www.intavia.eu/idm-core/Person_Relationship_Role
+idm:Person_Relationship_Role rdf:type owl:Class ;
+                              rdfs:subClassOf bioc:Person_Relationship_Role ;
+                              rdfs:subClassOf idm:Binary_Relationship_Role ;
+                              rdfs:label "Person Relationship Role"@en .
+
+
+###  http://www.intavia.eu/idm-core/Social_Relationship_Role
+idm:Social_Relationship_Role rdf:type owl:Class ;
+                              rdfs:subClassOf bioc:Social_Relationship_Role ;
+                              rdfs:subClassOf idm:Person_Relationship_Role ;
+                              rdfs:label "Social Relationship Role"@en .
+
+
+###  http://www.intavia.eu/idm-core/Thing_Role
+idm:Thing_Role rdf:type owl:Class ;
+                rdfs:subClassOf bioc:Thing_Role ;
+                rdfs:subClassOf idm:Entity_Role ;
+                rdfs:label "Thing Role"@en .
+
+
+###  http://www.intavia.eu/idm-core/Unary_Role
+idm:Unary_Role rdf:type owl:Class ;
+                rdfs:subClassOf bioc:Unary_Role ;
+                rdfs:subClassOf idm:Actor_Role ;
+                rdfs:comment "This is an atemporal role, i.e., the role exists for the duration of its bearer's existence."@en ;
+                rdfs:label "Unary Role"@en .
+
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

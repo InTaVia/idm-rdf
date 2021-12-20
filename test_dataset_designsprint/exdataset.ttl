@@ -3,6 +3,7 @@
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix idm: <https://www.intavia.org/idm/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://sammlungenonline.albertina.at/cc/imageproxy.ashx?server=localhost&port=15001&filename=images/22396.JPG&width=500> a crm:E36_Visual_Item ;
     crm:P104_is_subject_to <http://www.europeana.eu/rights/rr-f/> ;
@@ -7097,8 +7098,8 @@ Graphite""" .
     rdfs:label "1911-12" .
 
 <https://www.intavia.org/timespan/1/10055_t/12347> a crm:E52_Time_Span ;
-    crm:P81a_begin_of_the_begin "1845-11-16+00:00:00" ;
-    crm:P82b_end_of_the_end "1845-11-16+23:59:59" .
+    crm:P81a_begin_of_the_begin "1845-11-16T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1845-11-16T23:59:59"^^xsd:dateTime .
 
 <https://www.intavia.org/timespan/1/101> a crm:E52_Time_Span ;
     rdfs:label "um 1916" .
@@ -7739,8 +7740,8 @@ Graphite""" .
     rdfs:label "um 1916" .
 
 <https://www.intavia.org/timespan/1/70682/12346> a crm:E52_Time_Span ;
-    crm:P81a_begin_of_the_begin "1862-07-14+00:00:00" ;
-    crm:P82b_end_of_the_end "1862-07-14+23:59:59" .
+    crm:P81a_begin_of_the_begin "1862-07-14T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1862-07-14T23:59:59"^^xsd:dateTime .
 
 <https://www.intavia.org/timespan/1/71> a crm:E52_Time_Span ;
     rdfs:label "1907/08" .
@@ -7791,8 +7792,8 @@ Graphite""" .
     rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/1/85656/12345> a crm:E52_Time_Span ;
-    crm:P81a_begin_of_the_begin "1850-08-25+00:00:00" ;
-    crm:P82b_end_of_the_end "1850-08-25+23:59:59" .
+    crm:P81a_begin_of_the_begin "1850-08-25T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1850-08-25T23:59:59"^^xsd:dateTime .
 
 <https://www.intavia.org/timespan/1/86> a crm:E52_Time_Span ;
     rdfs:label "1904" .
@@ -7819,8 +7820,8 @@ Graphite""" .
     rdfs:label "1904/05" .
 
 <https://www.intavia.org/timespan/1/92486/12347> a crm:E52_Time_Span ;
-    crm:P81a_begin_of_the_begin "1845-11-15+00:00:00" ;
-    crm:P82b_end_of_the_end "1845-11-15+23:59:59" .
+    crm:P81a_begin_of_the_begin "1845-11-15T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1845-11-15T23:59:59"^^xsd:dateTime .
 
 <https://www.intavia.org/timespan/1/93> a crm:E52_Time_Span ;
     rdfs:label "1904" .
@@ -7844,20 +7845,20 @@ Graphite""" .
     rdfs:label "1911" .
 
 <https://www.intavia.org/timespan/2/10055_t/12347> a crm:E52_Time_Span ;
-    crm:P81a_begin_of_the_begin "1916-10-31+00:00:00" ;
-    crm:P82b_end_of_the_end "1916-10-31+23:59:59" .
+    crm:P81a_begin_of_the_begin "1916-10-31T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1916-10-31T23:59:59"^^xsd:dateTime .
 
 <https://www.intavia.org/timespan/2/70682/12346> a crm:E52_Time_Span ;
-    crm:P81a_begin_of_the_begin "1918-02-06+00:00:00" ;
-    crm:P82b_end_of_the_end "1918-02-06+23:59:59" .
+    crm:P81a_begin_of_the_begin "1918-02-06T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1918-02-06T23:59:59"^^xsd:dateTime .
 
 <https://www.intavia.org/timespan/2/85656/12345> a crm:E52_Time_Span ;
-    crm:P81a_begin_of_the_begin "1940-03-31+00:00:00" ;
-    crm:P82b_end_of_the_end "1940-03-31+23:59:59" .
+    crm:P81a_begin_of_the_begin "1940-03-31T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1940-03-31T23:59:59"^^xsd:dateTime .
 
 <https://www.intavia.org/timespan/2/92486/12347> a crm:E52_Time_Span ;
-    crm:P81a_begin_of_the_begin "1916-10-31+00:00:00" ;
-    crm:P82b_end_of_the_end "1916-10-31+23:59:59" .
+    crm:P81a_begin_of_the_begin "1916-10-31T00:00:00"^^xsd:dateTime ;
+    crm:P82b_end_of_the_end "1916-10-31T23:59:59"^^xsd:dateTime .
 
 <https://www.intavia.org/type/typeI/1> a crm:E55_Type ;
     rdfs:label "Zeichnung" .

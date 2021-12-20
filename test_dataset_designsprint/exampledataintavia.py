@@ -176,9 +176,9 @@ for index, row in pldf.iterrows():
     """time span for birth event"""
     g.add((URIRef(ex+'timespan/'+'1/'+row['source_dataset_id']+'/'+row['intavia_id']), RDF.type, crm.E52_Time_Span))
     """defines specific time-span as class E52 Time Span"""
-    g.add((URIRef(ex+'timespan/'+'1/'+row['source_dataset_id']+'/'+row['intavia_id']), crm.P81a_begin_of_the_begin, (Literal(row['birthdate'])+'+00:00:00')))
+    g.add((URIRef(ex+'timespan/'+'1/'+row['source_dataset_id']+'/'+row['intavia_id']), crm.P81a_begin_of_the_begin, Literal((row['birthdate']+'T00:00:00'),datatype=xsd.dateTime)))
     """defines begin of birthdate"""
-    g.add((URIRef(ex+'timespan/'+'1/'+row['source_dataset_id']+'/'+row['intavia_id']), crm.P82b_end_of_the_end, (Literal(row['birthdate'])+'+23:59:59')))
+    g.add((URIRef(ex+'timespan/'+'1/'+row['source_dataset_id']+'/'+row['intavia_id']), crm.P82b_end_of_the_end, Literal((row['birthdate']+'T23:59:59'),datatype=xsd.dateTime)))
     """defines begin of birthdate"""
     #death
     g.add((URIRef(ex+'deathevent/'+row['source_dataset_id']+'/'+row['intavia_id']), crm.P100_was_death_of, (URIRef(ex+'personproxy/'+row['source_dataset_id']+'/'+row['intavia_id']))))
@@ -187,11 +187,11 @@ for index, row in pldf.iterrows():
     """defines event as Cidoc Death Event"""
     g.add((URIRef(ex+'deathevent/'+row['source_dataset_id']+'/'+row['intavia_id']), crm.P4_has_time_span, (URIRef(ex+'timespan/'+'2/'+row['source_dataset_id']+'/'+row['intavia_id']))))
     """time span for death event"""
-    g.add((URIRef(ex+'timespan/'+'2/'+row['source_dataset_id']+'/'+row['intavia_id']), crm.P81a_begin_of_the_begin, (Literal(row['deathdate'])+'+00:00:00')))
+    g.add((URIRef(ex+'timespan/'+'2/'+row['source_dataset_id']+'/'+row['intavia_id']), crm.P81a_begin_of_the_begin, Literal((row['deathdate']+'T00:00:00'),datatype=xsd.dateTime)))
     """defines begin of deathdate"""
     g.add((URIRef(ex+'timespan/'+'2/'+row['source_dataset_id']+'/'+row['intavia_id']), RDF.type, crm.E52_Time_Span))
     """defines specific time-span as class E52 Time Span"""
-    g.add((URIRef(ex+'timespan/'+'2/'+row['source_dataset_id']+'/'+row['intavia_id']), crm.P82b_end_of_the_end, (Literal(row['deathdate'])+'+23:59:59')))
+    g.add((URIRef(ex+'timespan/'+'2/'+row['source_dataset_id']+'/'+row['intavia_id']), crm.P82b_end_of_the_end, Literal((row['deathdate']+'T23:59:59'),datatype=xsd.dateTime)))
     """defines end of deathdate"""
     #gender
     g.add((URIRef(ex+'personproxy/'+row['source_dataset_id']+'/'+row['intavia_id']), bioc.has_gender, (URIRef(bioc+row['gender']))))

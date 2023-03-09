@@ -1,0 +1,14 @@
+@prefix bioc: <http://ldf.fi/schema/bioc/> .
+@prefix idmclassess: <http://www.intavia.eu/idm-classes/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix idmcore: <http://www.intavia.eu/idm-core/> .
+@prefix idmrelations: <http://www.intavia.eu/idm-relations> .
+@prefix idmrole: <http://www.intavia.eu/idm-role/> .
+@prefix owl1: <http://www.w3.org/2002/7/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+idmrole:producing_artist a bioc:Event_Role ;
+    rdfs:label "Producing Artist"@en ;
+    rdfs:comment "The artist who is responsible for the production of the work."@en .

@@ -11,7 +11,7 @@
 @base <http://www.intavia.eu/idm-core/> .
 
 <http://www.intavia.eu/idm-core/> rdf:type owl:Ontology ;
-                                           rdfs:comment "IDM (InTaVia data model) (in progress) combines Cidoc CRM version 7.1.1 (https://cidoc-crm.org/rdfs/7.1.1/CIDOC_CRM_v7.1.1.rdfs), BioCRM extension, EDM/ Europana Data Model 5.2.8., skos:definition of EDM is implemented as rdfs:comment), PROV-O and Open Archives Initiatives ORE (Version 1.0, 2008-10-17))."@en .
+                                           rdfs:comment "IDM (InTaVia data model) (in progress) combines CIDOC CRM version 7.1.1 (https://cidoc-crm.org/rdfs/7.1.1/CIDOC_CRM_v7.1.1.rdfs), Bio CRM extension, EDM/Europana Data Model 5.2.8., skos:definition of EDM is implemented as rdfs:comment), PROV-O and Open Archives Initiatives ORE (Version 1.0, 2008-10-17))."@en .
 
 #################################################################
 #    Object Properties

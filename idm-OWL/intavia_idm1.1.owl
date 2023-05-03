@@ -388,7 +388,7 @@ edm:currentLocation rdf:type owl:ObjectProperty ;
                     rdfs:domain :CHO_Proxy ;
                     rdfs:range crm:E53_Place ;
                     rdfs:comment "The geographic location and/or name of the repository, building, site, or other entity whose boundaries presently include the resource."@en ;
-                    rdfs:label "current Location (edm)"@en .
+                    rdfs:label "current location (edm)"@en .
 
 
 ###  http://www.europeana.eu/schemas/edm/happenedAt
@@ -423,7 +423,9 @@ edm:occuredAt rdf:type owl:ObjectProperty ;
 ###  http://www.example.org/2021/intavia_idm#person_proxy_for
 :person_proxy_for rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ore:proxyFor ;
-                  rdfs:range :Provided_Person .
+                  rdfs:domain :Person_Proxy ;
+                  rdfs:range :Provided_Person ;
+                  rdfs:label "person proxy for"@en .
 
 
 ###  http://www.example.org/2021/intavia_idm#ex:has_role
@@ -459,7 +461,10 @@ ore:proxyIn rdf:type owl:ObjectProperty ;
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#label
-rdfs:label rdf:type owl:ObjectProperty ;
+rdfs:label rdf:type rdf:Property ;
+           rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+           rdfs:label "label" ;
+           rdfs:comment "A human-readable name for the subject." ;
            rdfs:domain bioc:Entity_Role ,
                        bioc:Thing_Role ,
                        crm:E2_Temporal_Entity ,
@@ -516,13 +521,17 @@ crm:P90_has_value rdf:type owl:DatatypeProperty ;
 ###  http://www.europeana.eu/schemas/edm/dataProvider
 edm:dataProvider rdf:type owl:DatatypeProperty ;
                  rdfs:range rdfs:Literal ,
-                            xsd:anyURI .
+                            xsd:anyURI ;
+                 rdfs:label "data provider (edm)"@en . 
 
 
 ###  http://www.w3.org/2002/07/owl#sameAs
-owl:sameAs rdf:type owl:DatatypeProperty ;
+owl:sameAs rdf:type rdf:Property ;
+           rdfs:label "sameAs" ;
+           rdfs:comment "The property that determines that two given individuals are equal." ;
+           rdfs:isDefinedBy <http://www.w3.org/2002/07/owl#> ;
            rdfs:domain :Provided_Person ;
-           rdfs:range xsd:anyURI .
+           rdfs:range owl:Thing .
 
 
 #################################################################
@@ -587,7 +596,8 @@ bioc:Nationality rdf:type owl:Class ;
 
 ###  http://ldf.fi/schema/bioc/Occupation
 bioc:Occupation rdf:type owl:Class ;
-                rdfs:subClassOf bioc:Unary_Role .
+                rdfs:subClassOf bioc:Unary_Role ;
+                rdfs:label "Occupation" .
 
 
 ###  http://ldf.fi/schema/bioc/Person_Relationship_Role
@@ -815,7 +825,9 @@ According to EDM documentation 5.2.8., CHO Proxy is equivalent to E18 Physical T
 
 
 ###  http://www.example.org/2021/intavia_idm#RDFS_Classes
-:RDFS_Classes rdf:type owl:Class .
+:RDFS_Classes rdf:type owl:Class ;
+              rdfs:comment "This class is used only for structuring the data model. It will be resolved for the final data model."@en ;
+              rdfs:label "RDFS classes"@en .
 
 
 ###  http://www.openarchives.org/ore/terms/Aggregation
@@ -835,6 +847,9 @@ This class is used to create aliases of cultural heritage objects to which descr
 
 ###  http://www.w3.org/2000/01/rdf-schema#Literal
 rdfs:Literal rdf:type owl:Class ;
+             rdfs:isDefinedBy <http://www.w3.org/2000/01/rdf-schema#> ;
+             rdfs:label "Literal" ;
+             rdfs:comment "The class of literal values, eg. textual strings and integers." ;
              rdfs:subClassOf :RDFS_Classes .
 
 

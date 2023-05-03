@@ -1,4 +1,4 @@
-@prefix : <http://www.example.org/2021/intavia_idm#> .
+@prefix : <http://www.intavia.eu/idm-core/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix ore: <http://www.openarchives.org/ore/terms/> .
@@ -8,9 +8,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix bioc: <http://ldf.fi/schema/bioc/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.example.org/2021/intavia_idm> .
+@base <http://www.intavia.eu/idm-core/> .
 
-<http://www.example.org/2021/intavia_idm> rdf:type owl:Ontology ;
+<http://www.intavia.eu/idm-core/> rdf:type owl:Ontology ;
                                            rdfs:comment "IDM (InTaVia data model) (in progress) combines Cidoc CRM version 7.1.1 (https://cidoc-crm.org/rdfs/7.1.1/CIDOC_CRM_v7.1.1.rdfs), BioCRM extension, EDM/ Europana Data Model 5.2.8., skos:definition of EDM is implemented as rdfs:comment), PROV-O and Open Archives Initiatives ORE (Version 1.0, 2008-10-17))."@en .
 
 #################################################################
@@ -412,7 +412,7 @@ edm:occuredAt rdf:type owl:ObjectProperty ;
               rdfs:label "occured at (edm)"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#cho_proxy_for
+###  http://www.intavia.eu/idm-core/cho_proxy_for
 :cho_proxy_for rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf ore:proxyFor ;
                rdfs:domain :CHO_Proxy ;
@@ -420,7 +420,7 @@ edm:occuredAt rdf:type owl:ObjectProperty ;
                rdfs:label "cho proxy for"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#person_proxy_for
+###  http://www.intavia.eu/idm-core/person_proxy_for
 :person_proxy_for rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf ore:proxyFor ;
                   rdfs:domain :Person_Proxy ;
@@ -428,7 +428,7 @@ edm:occuredAt rdf:type owl:ObjectProperty ;
                   rdfs:label "person proxy for"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#ex:has_role
+###  http://www.intavia.eu/idm-core/ex:has_role
 :ex:has_role rdf:type owl:ObjectProperty ;
              rdfs:range bioc:Thing_Role ;
              rdfs:comment "to connect CHO_Proxy and Thing Role -> replace with documented property"@en ;
@@ -788,7 +788,7 @@ Collective objects in the general sense, like a tomb full of gifts, a folder wit
                         rdfs:label "Curated Holding (crm)"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#CHO_Proxy
+###  http://www.intavia.eu/idm-core/CHO_Proxy
 :CHO_Proxy rdf:type owl:Class ;
            rdfs:subClassOf ore:Proxy ;
            rdfs:comment """A proxy is a resource that stands for an aggregated resource A in the context of a specific aggregation. The URI of a proxy then can be used in assertions specific to the aggregated resource A in the context of that aggregation.
@@ -798,33 +798,33 @@ According to EDM documentation 5.2.8., CHO Proxy is equivalent to E18 Physical T
            rdfs:label "CHO Proxy"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#IDM_classes
+###  http://www.intavia.eu/idm-core/IDM_classes
 :IDM_classes rdf:type owl:Class ;
              rdfs:comment "Classes developed for IDM. This class is used only for structuring the data model. It will be resolved at a later time."@en ;
              rdfs:label "IDM classes"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#ORE_classes
+###  http://www.intavia.eu/idm-core/ORE_classes
 :ORE_classes rdf:type owl:Class ;
              rdfs:comment "This class is used only for structuring the data model. It will be resolved for the final data model."@en ;
              rdfs:label "ORE classes"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#Provided_CHO
+###  http://www.intavia.eu/idm-core/Provided_CHO
 :Provided_CHO rdf:type owl:Class ;
               rdfs:subClassOf :IDM_classes ;
               rdfs:comment "This class comprises the Cultural Heritage objects that Europeana collects descriptions about. Properties are attached to the Proxies. Not to \"Provided CHO\"."@en ;
               rdfs:label "Provided CHO"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#Provided_Person
+###  http://www.intavia.eu/idm-core/Provided_Person
 :Provided_Person rdf:type owl:Class ;
                  rdfs:subClassOf :IDM_classes ;
                  rdfs:comment "Class for persons in InTaVia, functions equivalent to Provided CHO in EDM, properties are attached to the Proxies. not to \"Provided Person\"."@en ;
                  rdfs:label "Provided Person"@en .
 
 
-###  http://www.example.org/2021/intavia_idm#RDFS_Classes
+###  http://www.intavia.eu/idm-core/RDFS_Classes
 :RDFS_Classes rdf:type owl:Class ;
               rdfs:comment "This class is used only for structuring the data model. It will be resolved for the final data model."@en ;
               rdfs:label "RDFS classes"@en .

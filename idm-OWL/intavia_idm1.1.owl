@@ -686,6 +686,15 @@ In other cases, such as pages of an illuminated manuscript or recordings contain
                           rdfs:label "Linguistic Object (crm)"@en .
 
 
+  ###  http://www.cidoc-crm.org/cidoc-crm/E35_Title
+crm:E35_Title rdf:type owl:Class ;
+                          rdfs:subClassOf crm:E33_Linguistic_Object , crm:E41_Appellation ;
+                          rdfs:comment """This class comprises textual strings that within a cultural context can be clearly identified as titles due to their form. Being a subclass of E41 Appellation, E35 Title can only be used when such a string is actually used as a title of a work, such as a text, an artwork, or a piece of music.
+Titles are proper noun phrases or verbal phrases, and should not be confused with generic object names such as “chair”, “painting” or “book” (the latter are common nouns that stand for instances of E55 Type). Titles may be assigned by the creator of the work itself, or by a social group.
+This class also comprises the translations of titles that are used as surrogates for the original titles in different social contexts."""@en ;
+                          rdfs:label "Title (crm)"@en .
+
+
 ###  http://www.cidoc-crm.org/cidoc-crm/E41_Appellation
 crm:E41_Appellation rdf:type owl:Class ;
                     rdfs:subClassOf crm:E1_CRM_Entity ;
@@ -701,6 +710,17 @@ crm:E42_Identifier rdf:type owl:Class ;
                    rdfs:comment """This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory numbers, registration codes, etc. and are typically composed of alphanumeric sequences. Postal addresses, telephone numbers, urls and e-mail addresses are characteristic examples of identifiers used by services transporting things between clients.
 The class E42 Identifier is not normally used for machine-generated identifiers used for automated processing unless these are also used by human agents."""@en ;
                    rdfs:label "Identifier (crm)"@en .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E52_Time_Span
+crm:E52_Time-Span rdf:type owl:Class ;
+                  rdfs:subClassOf crm:E1_CRM_Entity ;
+                  rdfs:comment """This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration.
+Instances of E52 Time-Span have no semantic connotations about phenomena happening within the temporal extent they represent. They do not convey any meaning other than a positioning on the “time-line” of chronology. The actual extent of an instance of E52 Time-Span can be approximated by properties of E52 Time-Span giving inner and outer bounds in the form of dates (instances of E61 Time Primitive). Comparing knowledge about time-spans is fundamental for chronological reasoning.
+Some instances of E52 Time-Span may be defined as the actual, in principle observable, temporal extent of instances of E2 Temporal Entity via the property P4 has time-span (is time-span of): E52 Time-Span. They constitute phenomenal time-spans as defined in CRMgeo (Doerr &amp;amp; Hiebel 2013). Since our knowledge of history is imperfect and physical phenomena are fuzzy in nature, the extent of phenomenal time-spans can only be described in approximation. An extreme case of approximation, might, for example, define an instance of E52 Time-Span having unknown beginning, end and duration. It may, nevertheless, be associated with other descriptions by which we can infer knowledge about it, such as in relative chronologies.
+Some instances of E52 may be defined precisely as representing a declaration of a temporal extent, as, for instance, done in a business contract. They constitute declarative time-spans as defined in CRMgeo (Doerr &amp;amp; Hiebel 2013) and can be described via the property E61 Time Primitive P170 defines time (time is defined by): E52 Time-Span.
+When used as a common E52 Time-Span for two events, it will nevertheless describe them as being simultaneous, even if nothing else is known."""@en ;
+                  rdfs:label "Time-Span (crm)"@en .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E53_Place

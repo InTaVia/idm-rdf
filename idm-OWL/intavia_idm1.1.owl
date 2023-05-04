@@ -808,6 +808,23 @@ Collective objects in the general sense, like a tomb full of gifts, a folder wit
                         rdfs:label "Curated Holding (crm)"@en .
 
 
+###  http://www.intavia.eu/idm-core/Person_Proxy
+idm:Person_Proxy rdf:type owl:Class ;
+                 rdfs:subClassOf ore:Proxy ;
+                 rdfs:comment """This class comprises real persons who live or are assumed to have lived.
+Legendary figures that may have existed, such as Ulysses and King Arthur, fall into this class if the documentation refers to them as historical figures. In cases where doubt exists as to whether several persons are in fact identical, multiple instances can be created and linked to indicate their relationship. The CIDOC CRM does not propose a specific form to support reasoning about possible identity.
+In a bibliographic context, a name presented following the conventions usually employed for personal names will be assumed to correspond to an actual real person (an instance of E21 Person), unless evidence is available to indicate that this is not the case. The fact that a persona may erroneously be classified as an instance of E21 Person does not imply that the concept comprises personae."""@en ;
+                 rdfs:label "Person Proxy"@en .
+
+
+###  http://www.intavia.eu/idm-core/Place_Proxy
+idm:Place_Proxy rdf:type owl:Class ;
+                 rdfs:subClassOf ore:Proxy ;
+                 rdfs:comment """A proxy is a resource that stands for an aggregated resource A in the context of a specific aggregation. The URI of a proxy then can be used in assertions specific to the aggregated resource A in the context of that aggregation.
+This class is used to create aliases of places to which descriptions are attached."""@en ;
+                 rdfs:label "Place Proxy"@en .
+
+
 ###  http://www.intavia.eu/idm-core/CHO_Proxy
 :CHO_Proxy rdf:type owl:Class ;
            rdfs:subClassOf ore:Proxy ;

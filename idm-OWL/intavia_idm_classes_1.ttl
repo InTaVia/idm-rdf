@@ -5,10 +5,138 @@
 @prefix idmcore: <http://www.intavia.eu/idm-core/> .
 @prefix idmrelations: <http://www.intavia.eu/idm-relations> .
 @prefix idmrole: <http://www.intavia.eu/idm-role/> .
-@prefix owl1: <http://www.w3.org/2002/7/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 idmrole:producing_artist a bioc:Event_Role ;
     rdfs:label "Producing Artist"@en ;
     rdfs:comment "The artist who is responsible for the production of the work."@en .
+
+<http://www.intavia.eu/personreltype/parent> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Parent"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/sibling> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Sibling"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/student> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Student"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/child> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Child"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/doctoral_advisor> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Doctoral advisor"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/consecrator> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Consecrator"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/spouse> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Spouse"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/teacher> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Teacher"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/collaborator> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Collaborator"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/unmarried_partner> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Unmarried partner"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/significant_person> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Significant person"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/doctoral_student> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Doctoral student"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/influenced_by> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Influenced by"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/employee> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Employee"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/assistant> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Assistant"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/influencer> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Influencer"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/colleague> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Colleague"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/consort> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Consort"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/partner> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Partner"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/apprentice> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Apprentice"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/sponsor> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Sponsor"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/godparent> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Godparent"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/influenced> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Influenced"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/master> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Master"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/employer> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Employer"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/killed_by> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Killed by"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/stepparent> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Stepparent"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/friend> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Friend"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/patron_of> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Patron of"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/consort_of> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Consort of"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/patron> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Patron"@en ;
+	a owl:Class .
+
+<http://www.intavia.eu/personreltype/coworker> rdfs:subClassOf bioc:Person_Relationship_Role ;
+	rdfs:label "Coworker"@en ;
+	a owl:Class .

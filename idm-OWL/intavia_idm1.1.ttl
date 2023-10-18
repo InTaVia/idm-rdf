@@ -809,7 +809,7 @@ Collective objects in the general sense, like a tomb full of gifts, a folder wit
 
 
 ###  http://www.intavia.eu/idm-core/Person_Proxy
-idm:Person_Proxy rdf:type owl:Class ;
+:Person_Proxy rdf:type owl:Class ;
                  rdfs:subClassOf ore:Proxy ;
                  rdfs:comment """This class comprises real persons who live or are assumed to have lived.
 Legendary figures that may have existed, such as Ulysses and King Arthur, fall into this class if the documentation refers to them as historical figures. In cases where doubt exists as to whether several persons are in fact identical, multiple instances can be created and linked to indicate their relationship. The CIDOC CRM does not propose a specific form to support reasoning about possible identity.
@@ -818,7 +818,7 @@ In a bibliographic context, a name presented following the conventions usually e
 
 
 ###  http://www.intavia.eu/idm-core/Place_Proxy
-idm:Place_Proxy rdf:type owl:Class ;
+:Place_Proxy rdf:type owl:Class ;
                  rdfs:subClassOf ore:Proxy ;
                  rdfs:comment """A proxy is a resource that stands for an aggregated resource A in the context of a specific aggregation. The URI of a proxy then can be used in assertions specific to the aggregated resource A in the context of that aggregation.
 This class is used to create aliases of places to which descriptions are attached."""@en ;
